@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bimbel Prestasi - Bimbingan Belajar Terpercaya</title>
+    <!-- Google Fonts Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- RESET & VARIABLES --- */
+        :root {
+            --primary: #0284c7;
+            --primary-dark: #0369a1;
+            --primary-light: #e0f2fe;
+            --accent: #f59e0b;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --radius: 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            background-color: var(--white);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* --- LAYOUT CONTAINER --- */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-bg {
+            background-color: var(--bg-light);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--primary-dark);
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* --- BUTTONS --- */
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-wa {
+            background-color: #25D366;
+            color: var(--white);
+        }
+
+        .btn-wa:hover {
+            background-color: #1eb956;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-light);
+        }
+
+        /* --- NAVBAR --- */
+        .navbar {
+            position: sticky;
+            top: 0;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(5px);
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 15px 0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary-light) 0%, #ffffff 100%);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 2.8rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: var(--text-main);
+            font-weight: 800;
+        }
+
+        .hero-text h1 span {
+            color: var(--primary);
+        }
+
+        .hero-text p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .hero-image svg {
+            width: 100%;
+            height: auto;
+            border-radius: var(--radius);
+        }
+
+        /* --- TENTANG KAMI --- */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-features {
+            margin-top: 25px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+        }
+
+        .feature-icon {
+            width: 24px;
+            height: 24px;
+            background-color: var(--primary-light);
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+        }
+
+        /* --- KEGIATAN & FASILITAS (GALERI) --- */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .gallery-card {
+            background-color: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .gallery-info {
+            padding: 20px;
+        }
+
+        .gallery-info h3 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+
+        .gallery-info p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* --- PAKET & BIAYA --- */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .pricing-card {
+            background-color: var(--white);
+            border-radius: var(--radius);
+            padding: 35px 25px;
+            box-shadow: var(--shadow);
+            border: 1px solid #e2e8f0;
+            text-align: center;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .pricing-card.popular {
+            border: 2px solid var(--primary);
+            transform: scale(1.03);
+        }
+
+        .badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--accent);
+            color: var(--white);
+            padding: 4px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .pricing-header h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+        }
+
+        .price span {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--text-muted);
+        }
+
+        .pricing-features {
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            padding: 8px 0;
+            border-bottom: 1px border-bottom: 1px solid #f1f5f9;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* --- PENGURUS & PENGAJAR --- */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 30px;
+        }
+
+        .team-card {
+            background-color: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        .team-info {
+            padding: 20px;
+        }
+
+        .team-info h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .team-info .role {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .team-info p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* --- ALAMAT & PETA --- */
+        .location-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .location-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .info-item {
+            margin-bottom: 20px;
+        }
+
+        .info-item strong {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--primary-dark);
+        }
+
+        .map-wrapper {
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            border: 2px solid #e2e8f0;
+        }
+
+        /* --- KONTAK & FORM --- */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #0f172a;
+            color: var(--white);
+            padding: 40px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-col p {
+            color: #94a3b8;
+            margin-top: 15px;
+        }
+
+        .footer-col h4 {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #334155;
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        /* --- RESPONSIVE MOBILE --- */
+        @media (max-width: 768px) {
+            .hero-grid, .about-grid, .location-grid, .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none; /* Disederhanakan untuk contoh preview */
+            }
+
+            .hero-text h1 {
+                font-size: 2.1rem;
+            }
+
+            .pricing-card.popular {
+                transform: scale(1);
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
+                Bimbel Prestasi
+            </a>
+            <ul class="nav-links">
+                <li><a href="#tentang">Tentang Kami</a></li>
+                <li><a href="#kegiatan">Kegiatan</a></li>
+                <li><a href="#harga">Paket & Biaya</a></li>
+                <li><a href="#pengajar">Pengurus</a></li>
+                <li><a href="#lokasi">Lokasi</a></li>
+                <li><a href="#kontak" class="btn btn-primary" style="color: white;">Daftar Sekarang</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container hero-grid">
+            <div class="hero-text">
+                <h1>Raih Nilai Terbaik & Sekolah Impian Bersama <span>Bimbel Prestasi</span></h1>
+                <p>Bimbingan belajar tatap muka yang interaktif, menyenangkan, dan menggunakan metode belajar cepat untuk jenjang SD, SMP, hingga SMA.</p>
+                <div class="hero-cta">
+                    <a href="https://wa.me/6281234567890" target="_blank" class="btn btn-wa">💬 Hubungi via WhatsApp</a>
+                    <a href="#harga" class="btn btn-outline">Lihat Paket Belajar</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <!-- SVG Illustration Placeholder -->
+                <svg viewBox="0 0 500 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="500" height="380" rx="12" fill="#E0F2FE"/>
+                    <path d="M150 250C180 200 320 200 350 250" stroke="#0284C7" stroke-width="8" stroke-linecap="round"/>
+                    <circle cx="250" cy="140" r="50" fill="#0284C7"/>
+                    <rect x="180" y="270" width="140" height="60" rx="8" fill="#0369A1"/>
+                    <text x="250" y="305" fill="white" font-family="Inter" font-size="16" font-weight="bold" text-anchor="middle">Foto Suasana Belajar</text>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- TENTANG KAMI -->
+    <section id="tentang" class="section">
+        <div class="container about-grid">
+            <div>
+                <!-- SVG Image Placeholder -->
+                <svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="400" height="300" rx="12" fill="#F1F5F9"/>
+                    <circle cx="200" cy="130" r="40" fill="#cbd5e1"/>
+                    <text x="200" y="200" fill="#64748b" font-family="Inter" font-size="16" text-anchor="middle">Gambar Ruang Kelas</text>
+                </svg>
+            </div>
+            <div>
+                <div class="section-title" style="text-align: left; margin-bottom: 20px;">
+                    <h2>Mengapa Memilih Bimbel Prestasi?</h2>
+                </div>
+                <p>Kami hadir membantu siswa memahami konsep pelajaran secara mendalam, bukan sekadar menghafal. Berdiri sejak 2018, kami telah mendampingi ratusan siswa meraih prestasi akademik terbaik.</p>
+                
+                <div class="about-features">
+                    <div class="feature-item"><span class="feature-icon">✓</span> Pengajar Berpengalaman</div>
+                    <div class="feature-item"><span class="feature-icon">✓</span> Kelompok Kecil (Max 8 Siswa)</div>
+                    <div class="feature-item"><span class="feature-icon">✓</span> Ruangan Ber-AC & Nyaman</div>
+                    <div class="feature-item"><span class="feature-icon">✓</span> Modul Belajar Lengkap</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KEGIATAN & FASILITAS -->
+    <section id="kegiatan" class="section section-bg">
+        <div class="container">
+            <div class="section-title">
+                <h2>Galeri Kegiatan & Fasilitas</h2>
+                <p>Dokumentasi aktivitas pembelajaran rutin dan fasilitas pendukung belajar.</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-card">
+                    <svg viewBox="0 0 400 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="400" height="250" fill="#BAE6FD"/>
+                        <text x="200" y="130" fill="#0369A1" font-family="Inter" font-size="16" text-anchor="middle">Foto Belajar Interaktif</text>
+                    </svg>
+                    <div class="gallery-info">
+                        <h3>Kuis & Diskusi Kelompok</h3>
+                        <p>Siswa diajak aktif berdiskusi untuk melatih pemahaman materi.</p>
+                    </div>
+                </div>
+                <div class="gallery-card">
+                    <svg viewBox="0 0 400 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="400" height="250" fill="#BAE6FD"/>
+                        <text x="200" y="130" fill="#0369A1" font-family="Inter" font-size="16" text-anchor="middle">Foto Bimbingan Privat</text>
+                    </svg>
+                    <div class="gallery-info">
+                        <h3>Sesi Konsultasi PR</h3>
+                        <p>Pendampingan pribadi untuk membantu menyelesaikan tugas sekolah.</p>
+                    </div>
+                </div>
+                <div class="gallery-card">
+                    <svg viewBox="0 0 400 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="400" height="250" fill="#BAE6FD"/>
+                        <text x="200" y="130" fill="#0369A1" font-family="Inter" font-size="16" text-anchor="middle">Foto Try Out Ujian</text>
+                    </svg>
+                    <div class="gallery-info">
+                        <h3>Try Out Rutin</h3>
+                        <p>Simulasi ujian berkala untuk mengukur kesiapan tes sekolah.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PAKET & BIAYA -->
+    <section id="harga" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Pilihan Paket & Biaya</h2>
+                <p>Investasi pendidikan terjangkau dengan kualitas bimbingan maksimal.</p>
+            </div>
+            <div class="pricing-grid">
+                <!-- Paket SD -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Jenjang SD</h3>
+                        <div class="price">Rp 250rb <span>/ bulan</span></div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><span>✓</span> Semua Mata Pelajaran Utam</li>
+                        <li><span>✓</span> 3x Pertemuan per Minggu</li>
+                        <li><span>✓</span> Maksimal 8 Siswa / Kelas</li>
+                        <li><span>✓</span> Modul & Latihan Soal Gratis</li>
+                    </ul>
+                    <a href="https://wa.me/6281234567890?text=Halo,%20saya%20mau%20tanya%20paket%20SD" class="btn btn-outline">Pilih Paket</a>
+                </div>
+                <!-- Paket SMP -->
+                <div class="pricing-card popular">
+                    <div class="badge">PALING FAVORIT</div>
+                    <div class="pricing-header">
+                        <h3>Jenjang SMP</h3>
+                        <div class="price">Rp 350rb <span>/ bulan</span></div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><span>✓</span> Matematika, IPA, Eng, Indo</li>
+                        <li><span>✓</span> 3x Pertemuan per Minggu</li>
+                        <li><span>✓</span> Persiapan Ujian Sekolah & ASAS</li>
+                        <li><span>✓</span> Konsultasi Tugas Bebas Jam</li>
+                    </ul>
+                    <a href="https://wa.me/6281234567890?text=Halo,%20saya%20mau%20tanya%20paket%20SMP" class="btn btn-primary">Pilih Paket</a>
+                </div>
+                <!-- Paket SMA -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Jenjang SMA</h3>
+                        <div class="price">Rp 450rb <span>/ bulan</span></div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><span>✓</span> Fokus IPA / IPS / SNBT</li>
+                        <li><span>✓</span> 4x Pertemuan per Minggu</li>
+                        <li><span>✓</span> Bedah Soal Ujian & PTN</li>
+                        <li><span>✓</span> Try Out SNBT Berkala</li>
+                    </ul>
+                    <a href="https://wa.me/6281234567890?text=Halo,%20saya%20mau%20tanya%20paket%20SMA" class="btn btn-outline">Pilih Paket</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PENGURUS & PENGAJAR -->
+    <section id="pengajar" class="section section-bg">
+        <div class="container">
+            <div class="section-title">
+                <h2>Pengurus & Pengajar</h2>
+                <p>Dikelola oleh tenaga profesional dan lulusan perguruan tinggi ternama.</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-card">
+                    <svg viewBox="0 0 300 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="300" height="260" fill="#E2E8F0"/>
+                        <circle cx="150" cy="110" r="50" fill="#94A3B8"/>
+                        <path d="M80 230C80 180 220 180 220 230" fill="#94A3B8"/>
+                    </svg>
+                    <div class="team-info">
+                        <h3>Bpk. Budi Santoso, M.Pd</h3>
+                        <div class="role">Pemilik & Pendiri Bimbel</div>
+                        <p>Pengalaman 12+ tahun di bidang manajemen pendidikan.</p>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <svg viewBox="0 0 300 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="300" height="260" fill="#E2E8F0"/>
+                        <circle cx="150" cy="110" r="50" fill="#94A3B8"/>
+                        <path d="M80 230C80 180 220 180 220 230" fill="#94A3B8"/>
+                    </svg>
+                    <div class="team-info">
+                        <h3>Ibu Ani Wijaya, S.Si</h3>
+                        <div class="role">Tutor Matematika & IPA</div>
+                        <p>Lulusan Matematika ITB, ramah dan sabar mengajar.</p>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <svg viewBox="0 0 300 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="300" height="260" fill="#E2E8F0"/>
+                        <circle cx="150" cy="110" r="50" fill="#94A3B8"/>
+                        <path d="M80 230C80 180 220 180 220 230" fill="#94A3B8"/>
+                    </svg>
+                    <div class="team-info">
+                        <h3>Kak Dimas Pratama, S.Pd</h3>
+                        <div class="role">Tutor Bahasa Inggris</div>
+                        <p>Spesialis persiapan TOEFL dan percakapan interaktif.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ALAMAT & PETA -->
+    <section id="lokasi" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Lokasi & Alamat Kami</h2>
+                <p>Kunjungi cabang utama kami untuk konsultasi langsung.</p>
+            </div>
+            <div class="location-grid">
+                <div class="location-info">
+                    <h3>Gedung Bimbel Prestasi</h3>
+                    <div class="info-item">
+                        <strong>📍 Alamat Lengkap:</strong>
+                        <p>Jl. Pendidikan No. 45, RT 02/RW 05, Kel. Sukamaju, Kec. Cerdas, Kota Jakarta Selatan, 12345</p>
+                    </div>
+                    <div class="info-item">
+                        <strong>🕒 Jam Operasional:</strong>
+                        <p>Senin - Sabtu: 13.00 - 20.00 WIB<br>Minggu: Libur</p>
+                    </div>
+                    <div class="info-item">
+                        <strong>📞 Kontak:</strong>
+                        <p>WhatsApp: 0812-3456-7890<br>Email: info@bimbelprestasi.com</p>
+                    </div>
+                </div>
+                <div class="map-wrapper">
+                    <!-- Placeholder Visual Gambar Maps -->
+                    <a href="https://maps.google.com" target="_blank" title="Klik untuk buka Google Maps">
+                        <svg viewBox="0 0 500 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="500" height="300" fill="#CBD5E1"/>
+                            <path d="M0 100H500M0 200H500M150 0V300M350 0V300" stroke="#94A3B8" stroke-width="4"/>
+                            <circle cx="250" cy="150" r="18" fill="#EF4444"/>
+                            <circle cx="250" cy="150" r="6" fill="white"/>
+                            <rect x="150" y="210" width="200" height="40" rx="8" fill="#1E293B" opacity="0.8"/>
+                            <text x="250" y="235" fill="white" font-family="Inter" font-size="14" text-anchor="middle">📌 Klik Untuk Buka Google Maps</text>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KONTAK & PENDAFTARAN -->
+    <section id="kontak" class="section section-bg">
+        <div class="container">
+            <div class="section-title">
+                <h2>Hubungi Kami / Pendaftaran</h2>
+                <p>Isi formulir di bawah ini atau chat langsung via WhatsApp.</p>
+            </div>
+            <div class="contact-grid">
+                <div>
+                    <h3>Tanyakan Sesuatu</h3>
+                    <p style="margin-bottom: 20px; color: var(--text-muted);">Punya pertanyaan mengenai jadwal, kelas privat, atau mau konsultasi gratis? Silahkan isi form ini.</p>
+                    
+                    <form onsubmit="event.preventDefault(); alert('Terima kasih! Pesan Anda telah terkirim.');">
+                        <div class="form-group">
+                            <label>Nama Lengkap Orang Tua / Siswa</label>
+                            <input type="text" class="form-control" placeholder="Contoh: Budi" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Nomor WhatsApp</label>
+                            <input type="tel" class="form-control" placeholder="0812xxxxxxx" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Jenjang Kelas</label>
+                            <select class="form-control">
+                                <option>SD (Kelas 1-6)</option>
+                                <option>SMP (Kelas 7-9)</option>
+                                <option>SMA (Kelas 10-12)</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Kirim Pesan</button>
+                    </form>
+                </div>
+
+                <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; background: white; padding: 40px; border-radius: var(--radius); box-shadow: var(--shadow); text-align: center;">
+                    <svg width="60" height="60" viewBox="0 0 24 24" fill="#25D366" style="margin-bottom: 20px;"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.205 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                    <h3>Respon Lebih Cepat via WhatsApp</h3>
+                    <p style="color: var(--text-muted); margin: 15px 0 25px;">Klik tombol di bawah ini untuk terhubung langsung dengan Admin pendaftaran kami.</p>
+                    <a href="https://wa.me/6281234567890" target="_blank" class="btn btn-wa" style="width: 100%;">Chat WhatsApp Admin</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="#" class="logo" style="color: white;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
+                        Bimbel Prestasi
+                    </a>
+                    <p>Mendampingi putra-putri Anda mencapai potensi terbaik dalam belajar dengan metode yang menyenangkan.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Navigasi</h4>
+                    <ul class="footer-links">
+                        <li><a href="#tentang">Tentang Kami</a></li>
+                        <li><a href="#harga">Paket Belajar</a></li>
+                        <li><a href="#pengajar">Pengurus</a></li>
+                        <li><a href="#lokasi">Lokasi Kami</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Media Sosial</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">YouTube</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2026 Bimbel Prestasi. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
