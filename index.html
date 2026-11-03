@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bimbel Prestasi - Bimbingan Belajar Terpercaya</title>
+    <title>Bimbelz - Bimbingan Belajar Terpercaya & Berprestasi</title>
     <!-- Google Fonts Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -154,7 +154,7 @@
         }
 
         .logo {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             font-weight: 800;
             color: var(--primary);
             display: flex;
@@ -214,10 +214,11 @@
             flex-wrap: wrap;
         }
 
-        .hero-image svg {
+        .hero-image img {
             width: 100%;
             height: auto;
             border-radius: var(--radius);
+            box-shadow: var(--shadow-lg);
         }
 
         /* --- TENTANG KAMI --- */
@@ -254,7 +255,7 @@
             font-size: 0.8rem;
         }
 
-        /* --- KEGIATAN & FASILITAS (GALERI) --- */
+        /* --- KEGIATAN & FASILITAS --- */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -271,6 +272,12 @@
 
         .gallery-card:hover {
             transform: translateY(-5px);
+        }
+
+        .gallery-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
         }
 
         .gallery-info {
@@ -350,7 +357,7 @@
 
         .pricing-features li {
             padding: 8px 0;
-            border-bottom: 1px border-bottom: 1px solid #f1f5f9;
+            border-bottom: 1px solid #f1f5f9;
             color: var(--text-muted);
             display: flex;
             align-items: center;
@@ -370,6 +377,12 @@
             overflow: hidden;
             box-shadow: var(--shadow);
             text-align: center;
+        }
+
+        .team-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
         }
 
         .team-info {
@@ -421,6 +434,13 @@
             overflow: hidden;
             box-shadow: var(--shadow);
             border: 2px solid #e2e8f0;
+            height: 320px;
+        }
+
+        .map-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
         }
 
         /* --- KONTAK & FORM --- */
@@ -506,7 +526,7 @@
             }
 
             .nav-links {
-                display: none; /* Disederhanakan untuk contoh preview */
+                display: none;
             }
 
             .hero-text h1 {
@@ -530,7 +550,7 @@
         <div class="container nav-container">
             <a href="#" class="logo">
                 <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
-                Bimbel Prestasi
+                Bimbelz
             </a>
             <ul class="nav-links">
                 <li><a href="#tentang">Tentang Kami</a></li>
@@ -547,22 +567,15 @@
     <section class="hero">
         <div class="container hero-grid">
             <div class="hero-text">
-                <h1>Raih Nilai Terbaik & Sekolah Impian Bersama <span>Bimbel Prestasi</span></h1>
-                <p>Bimbingan belajar tatap muka yang interaktif, menyenangkan, dan menggunakan metode belajar cepat untuk jenjang SD, SMP, hingga SMA.</p>
+                <h1>Raih Nilai Terbaik & Sekolah Impian Bersama <span>Bimbelz</span></h1>
+                <p>Bimbingan belajar tatap muka & online yang interaktif, menyenangkan, dan menggunakan metode belajar cepat untuk jenjang SD, SMP, hingga SMA.</p>
                 <div class="hero-cta">
-                    <a href="https://wa.me/6281234567890" target="_blank" class="btn btn-wa">💬 Hubungi via WhatsApp</a>
+                    <a href="https://wa.me/6281234567890?text=Halo%20Admin%20Bimbelz,%20saya%20ingin%20tanya%20mengenai%20pendaftaran" target="_blank" class="btn btn-wa">💬 Hubungi via WhatsApp</a>
                     <a href="#harga" class="btn btn-outline">Lihat Paket Belajar</a>
                 </div>
             </div>
             <div class="hero-image">
-                <!-- SVG Illustration Placeholder -->
-                <svg viewBox="0 0 500 380" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="500" height="380" rx="12" fill="#E0F2FE"/>
-                    <path d="M150 250C180 200 320 200 350 250" stroke="#0284C7" stroke-width="8" stroke-linecap="round"/>
-                    <circle cx="250" cy="140" r="50" fill="#0284C7"/>
-                    <rect x="180" y="270" width="140" height="60" rx="8" fill="#0369A1"/>
-                    <text x="250" y="305" fill="white" font-family="Inter" font-size="16" font-weight="bold" text-anchor="middle">Foto Suasana Belajar</text>
-                </svg>
+                <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80" alt="Suasana Belajar Bimbelz">
             </div>
         </div>
     </section>
@@ -571,18 +584,13 @@
     <section id="tentang" class="section">
         <div class="container about-grid">
             <div>
-                <!-- SVG Image Placeholder -->
-                <svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="400" height="300" rx="12" fill="#F1F5F9"/>
-                    <circle cx="200" cy="130" r="40" fill="#cbd5e1"/>
-                    <text x="200" y="200" fill="#64748b" font-family="Inter" font-size="16" text-anchor="middle">Gambar Ruang Kelas</text>
-                </svg>
+                <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=800&q=80" alt="Ruang Kelas Bimbelz" style="border-radius: var(--radius); box-shadow: var(--shadow);">
             </div>
             <div>
                 <div class="section-title" style="text-align: left; margin-bottom: 20px;">
-                    <h2>Mengapa Memilih Bimbel Prestasi?</h2>
+                    <h2>Mengapa Memilih Bimbelz?</h2>
                 </div>
-                <p>Kami hadir membantu siswa memahami konsep pelajaran secara mendalam, bukan sekadar menghafal. Berdiri sejak 2018, kami telah mendampingi ratusan siswa meraih prestasi akademik terbaik.</p>
+                <p>Kami hadir membantu siswa memahami konsep pelajaran secara mendalam, bukan sekadar menghafal. Berdiri sejak 2018, Bimbelz telah mendampingi ratusan siswa meraih prestasi akademik terbaik.</p>
                 
                 <div class="about-features">
                     <div class="feature-item"><span class="feature-icon">✓</span> Pengajar Berpengalaman</div>
@@ -599,37 +607,28 @@
         <div class="container">
             <div class="section-title">
                 <h2>Galeri Kegiatan & Fasilitas</h2>
-                <p>Dokumentasi aktivitas pembelajaran rutin dan fasilitas pendukung belajar.</p>
+                <p>Dokumentasi aktivitas pembelajaran rutin dan fasilitas pendukung belajar di Bimbelz.</p>
             </div>
             <div class="gallery-grid">
                 <div class="gallery-card">
-                    <svg viewBox="0 0 400 250" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="400" height="250" fill="#BAE6FD"/>
-                        <text x="200" y="130" fill="#0369A1" font-family="Inter" font-size="16" text-anchor="middle">Foto Belajar Interaktif</text>
-                    </svg>
+                    <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=600&q=80" alt="Belajar Interaktif">
                     <div class="gallery-info">
                         <h3>Kuis & Diskusi Kelompok</h3>
-                        <p>Siswa diajak aktif berdiskusi untuk melatih pemahaman materi.</p>
+                        <p>Siswa diajak aktif berdiskusi untuk melatih pemahaman materi secara kolaboratif.</p>
                     </div>
                 </div>
                 <div class="gallery-card">
-                    <svg viewBox="0 0 400 250" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="400" height="250" fill="#BAE6FD"/>
-                        <text x="200" y="130" fill="#0369A1" font-family="Inter" font-size="16" text-anchor="middle">Foto Bimbingan Privat</text>
-                    </svg>
+                    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=600&q=80" alt="Bimbingan Privat">
                     <div class="gallery-info">
                         <h3>Sesi Konsultasi PR</h3>
-                        <p>Pendampingan pribadi untuk membantu menyelesaikan tugas sekolah.</p>
+                        <p>Pendampingan pribadi untuk membantu menyelesaikan tugas sekolah kapan saja.</p>
                     </div>
                 </div>
                 <div class="gallery-card">
-                    <svg viewBox="0 0 400 250" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="400" height="250" fill="#BAE6FD"/>
-                        <text x="200" y="130" fill="#0369A1" font-family="Inter" font-size="16" text-anchor="middle">Foto Try Out Ujian</text>
-                    </svg>
+                    <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=600&q=80" alt="Try Out Ujian">
                     <div class="gallery-info">
                         <h3>Try Out Rutin</h3>
-                        <p>Simulasi ujian berkala untuk mengukur kesiapan tes sekolah.</p>
+                        <p>Simulasi ujian berkala untuk mengukur kesiapan ujian sekolah dan SNBT.</p>
                     </div>
                 </div>
             </div>
@@ -651,12 +650,12 @@
                         <div class="price">Rp 250rb <span>/ bulan</span></div>
                     </div>
                     <ul class="pricing-features">
-                        <li><span>✓</span> Semua Mata Pelajaran Utam</li>
+                        <li><span>✓</span> Semua Mata Pelajaran Utama</li>
                         <li><span>✓</span> 3x Pertemuan per Minggu</li>
                         <li><span>✓</span> Maksimal 8 Siswa / Kelas</li>
                         <li><span>✓</span> Modul & Latihan Soal Gratis</li>
                     </ul>
-                    <a href="https://wa.me/6281234567890?text=Halo,%20saya%20mau%20tanya%20paket%20SD" class="btn btn-outline">Pilih Paket</a>
+                    <a href="https://wa.me/6281234567890?text=Halo%20Admin%20Bimbelz,%20saya%20mau%20tanya%20Paket%20SD" class="btn btn-outline">Pilih Paket</a>
                 </div>
                 <!-- Paket SMP -->
                 <div class="pricing-card popular">
@@ -671,7 +670,7 @@
                         <li><span>✓</span> Persiapan Ujian Sekolah & ASAS</li>
                         <li><span>✓</span> Konsultasi Tugas Bebas Jam</li>
                     </ul>
-                    <a href="https://wa.me/6281234567890?text=Halo,%20saya%20mau%20tanya%20paket%20SMP" class="btn btn-primary">Pilih Paket</a>
+                    <a href="https://wa.me/6281234567890?text=Halo%20Admin%20Bimbelz,%20saya%20mau%20tanya%20Paket%20SMP" class="btn btn-primary">Pilih Paket</a>
                 </div>
                 <!-- Paket SMA -->
                 <div class="pricing-card">
@@ -685,7 +684,7 @@
                         <li><span>✓</span> Bedah Soal Ujian & PTN</li>
                         <li><span>✓</span> Try Out SNBT Berkala</li>
                     </ul>
-                    <a href="https://wa.me/6281234567890?text=Halo,%20saya%20mau%20tanya%20paket%20SMA" class="btn btn-outline">Pilih Paket</a>
+                    <a href="https://wa.me/6281234567890?text=Halo%20Admin%20Bimbelz,%20saya%20mau%20tanya%20Paket%20SMA" class="btn btn-outline">Pilih Paket</a>
                 </div>
             </div>
         </div>
@@ -695,44 +694,32 @@
     <section id="pengajar" class="section section-bg">
         <div class="container">
             <div class="section-title">
-                <h2>Pengurus & Pengajar</h2>
+                <h2>Pengurus & Pengajar Bimbelz</h2>
                 <p>Dikelola oleh tenaga profesional dan lulusan perguruan tinggi ternama.</p>
             </div>
             <div class="team-grid">
                 <div class="team-card">
-                    <svg viewBox="0 0 300 260" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="300" height="260" fill="#E2E8F0"/>
-                        <circle cx="150" cy="110" r="50" fill="#94A3B8"/>
-                        <path d="M80 230C80 180 220 180 220 230" fill="#94A3B8"/>
-                    </svg>
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80" alt="Bpk. Budi Santoso">
                     <div class="team-info">
                         <h3>Bpk. Budi Santoso, M.Pd</h3>
-                        <div class="role">Pemilik & Pendiri Bimbel</div>
-                        <p>Pengalaman 12+ tahun di bidang manajemen pendidikan.</p>
+                        <div class="role">Pendiri & Head Master</div>
+                        <p>Pengalaman 12+ tahun di bidang manajemen pendidikan nasional.</p>
                     </div>
                 </div>
                 <div class="team-card">
-                    <svg viewBox="0 0 300 260" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="300" height="260" fill="#E2E8F0"/>
-                        <circle cx="150" cy="110" r="50" fill="#94A3B8"/>
-                        <path d="M80 230C80 180 220 180 220 230" fill="#94A3B8"/>
-                    </svg>
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80" alt="Ibu Ani Wijaya">
                     <div class="team-info">
                         <h3>Ibu Ani Wijaya, S.Si</h3>
-                        <div class="role">Tutor Matematika & IPA</div>
-                        <p>Lulusan Matematika ITB, ramah dan sabar mengajar.</p>
+                        <div class="role">Tutor Matematika & Sains</div>
+                        <p>Lulusan Matematika ITB, ahli metode belajar cepat dan mudah.</p>
                     </div>
                 </div>
                 <div class="team-card">
-                    <svg viewBox="0 0 300 260" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="300" height="260" fill="#E2E8F0"/>
-                        <circle cx="150" cy="110" r="50" fill="#94A3B8"/>
-                        <path d="M80 230C80 180 220 180 220 230" fill="#94A3B8"/>
-                    </svg>
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80" alt="Kak Dimas Pratama">
                     <div class="team-info">
                         <h3>Kak Dimas Pratama, S.Pd</h3>
                         <div class="role">Tutor Bahasa Inggris</div>
-                        <p>Spesialis persiapan TOEFL dan percakapan interaktif.</p>
+                        <p>Spesialis persiapan TOEFL dan metode komunikasi interaktif.</p>
                     </div>
                 </div>
             </div>
@@ -744,36 +731,32 @@
         <div class="container">
             <div class="section-title">
                 <h2>Lokasi & Alamat Kami</h2>
-                <p>Kunjungi cabang utama kami untuk konsultasi langsung.</p>
+                <p>Kunjungi cabang utama Bimbelz untuk konsultasi langsung.</p>
             </div>
             <div class="location-grid">
                 <div class="location-info">
-                    <h3>Gedung Bimbel Prestasi</h3>
+                    <h3>Gedung Bimbelz Utama</h3>
                     <div class="info-item">
                         <strong>📍 Alamat Lengkap:</strong>
-                        <p>Jl. Pendidikan No. 45, RT 02/RW 05, Kel. Sukamaju, Kec. Cerdas, Kota Jakarta Selatan, 12345</p>
+                        <p>Jl. Pendidikan No. 45, RT 02/RW 05, Kel. Sukamaju, Kec. Cerdas, Jakarta Selatan, 12345</p>
                     </div>
                     <div class="info-item">
                         <strong>🕒 Jam Operasional:</strong>
                         <p>Senin - Sabtu: 13.00 - 20.00 WIB<br>Minggu: Libur</p>
                     </div>
                     <div class="info-item">
-                        <strong>📞 Kontak:</strong>
-                        <p>WhatsApp: 0812-3456-7890<br>Email: info@bimbelprestasi.com</p>
+                        <strong>📞 Kontak & Email:</strong>
+                        <p>WhatsApp: 0812-3456-7890<br>Email: info@bimbelz.com</p>
                     </div>
                 </div>
                 <div class="map-wrapper">
-                    <!-- Placeholder Visual Gambar Maps -->
-                    <a href="https://maps.google.com" target="_blank" title="Klik untuk buka Google Maps">
-                        <svg viewBox="0 0 500 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="500" height="300" fill="#CBD5E1"/>
-                            <path d="M0 100H500M0 200H500M150 0V300M350 0V300" stroke="#94A3B8" stroke-width="4"/>
-                            <circle cx="250" cy="150" r="18" fill="#EF4444"/>
-                            <circle cx="250" cy="150" r="6" fill="white"/>
-                            <rect x="150" y="210" width="200" height="40" rx="8" fill="#1E293B" opacity="0.8"/>
-                            <text x="250" y="235" fill="white" font-family="Inter" font-size="14" text-anchor="middle">📌 Klik Untuk Buka Google Maps</text>
-                        </svg>
-                    </a>
+                    <!-- Google Maps Embed Interaktif -->
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126920.28257007212!2d106.7583689!3d-6.2297465!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e945e34b9d%3A0x5371bf0fdad786a2!2sJakarta%20South%2C%20South%20Jakarta%20City%2C%20Jakarta!5e0!3m2!1sen!2sid!4v1700000000000!5m2!1sen!2sid" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
                 </div>
             </div>
         </div>
@@ -788,10 +771,10 @@
             </div>
             <div class="contact-grid">
                 <div>
-                    <h3>Tanyakan Sesuatu</h3>
-                    <p style="margin-bottom: 20px; color: var(--text-muted);">Punya pertanyaan mengenai jadwal, kelas privat, atau mau konsultasi gratis? Silahkan isi form ini.</p>
+                    <h3>Formulir Konsultasi</h3>
+                    <p style="margin-bottom: 20px; color: var(--text-muted);">Punya pertanyaan mengenai jadwal, kelas privat, atau mau trial gratis? Silakan isi form berikut.</p>
                     
-                    <form onsubmit="event.preventDefault(); alert('Terima kasih! Pesan Anda telah terkirim.');">
+                    <form onsubmit="event.preventDefault(); alert('Terima kasih! Pesan Anda telah terkirim ke Admin Bimbelz.');">
                         <div class="form-group">
                             <label>Nama Lengkap Orang Tua / Siswa</label>
                             <input type="text" class="form-control" placeholder="Contoh: Budi" required>
@@ -814,9 +797,9 @@
 
                 <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; background: white; padding: 40px; border-radius: var(--radius); box-shadow: var(--shadow); text-align: center;">
                     <svg width="60" height="60" viewBox="0 0 24 24" fill="#25D366" style="margin-bottom: 20px;"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.205 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-                    <h3>Respon Lebih Cepat via WhatsApp</h3>
-                    <p style="color: var(--text-muted); margin: 15px 0 25px;">Klik tombol di bawah ini untuk terhubung langsung dengan Admin pendaftaran kami.</p>
-                    <a href="https://wa.me/6281234567890" target="_blank" class="btn btn-wa" style="width: 100%;">Chat WhatsApp Admin</a>
+                    <h3>Respon Cepat via WhatsApp</h3>
+                    <p style="color: var(--text-muted); margin: 15px 0 25px;">Klik tombol di bawah ini untuk terhubung langsung dengan Admin pendaftaran Bimbelz.</p>
+                    <a href="https://wa.me/6281234567890?text=Halo%20Admin%20Bimbelz,%20saya%20ingin%20tanya%20informasi%20pendaftaran" target="_blank" class="btn btn-wa" style="width: 100%;">Chat WhatsApp Admin</a>
                 </div>
             </div>
         </div>
@@ -829,9 +812,9 @@
                 <div class="footer-col">
                     <a href="#" class="logo" style="color: white;">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
-                        Bimbel Prestasi
+                        Bimbelz
                     </a>
-                    <p>Mendampingi putra-putri Anda mencapai potensi terbaik dalam belajar dengan metode yang menyenangkan.</p>
+                    <p>Mendampingi putra-putri Anda mencapai potensi akademik terbaik dengan metode belajar terstruktur dan menyenangkan.</p>
                 </div>
                 <div class="footer-col">
                     <h4>Navigasi</h4>
@@ -852,7 +835,7 @@
                 </div>
             </div>
             <div class="copyright">
-                &copy; 2026 Bimbel Prestasi. All Rights Reserved.
+                &copy; 2026 Bimbelz. All Rights Reserved.
             </div>
         </div>
     </footer>
