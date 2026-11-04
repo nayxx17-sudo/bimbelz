@@ -3,842 +3,998 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bimbelz - Bimbingan Belajar Terpercaya & Berprestasi</title>
-    <!-- Google Fonts Inter -->
+    <title>SFE Bimbingan Belajar – Lembaga Pendidikan & Pengelolaan Tutor Profesional</title>
+    <meta name="description" content="SFE Bimbingan Belajar adalah lembaga penyedia layanan pendidikan: les privat, pendampingan anak berkebutuhan khusus, guru pendamping, ekstrakurikuler, dan pengelolaan tutor profesional.">
+    <meta name="theme-color" content="#082248">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="id_ID">
+    <meta property="og:title" content="SFE Bimbingan Belajar – Memberdayakan Setiap Peserta Didik">
+    <meta property="og:description" content="Pendampingan belajar terarah dan pengelolaan tutor profesional melalui seleksi, pencocokan, penempatan, dan evaluasi.">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23082248'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='26' font-weight='700' text-anchor='middle' fill='%23C9A44C'%3ESFE%3C/text%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
     <style>
-        /* --- RESET & VARIABLES --- */
+        /* =========================================================
+           SFE – Modern Academic Institutional
+           Navy #082248 · Gold #C9A44C · White · Light Grey #F1F4F7
+           Heading: Playfair Display · Body: Inter
+           ========================================================= */
         :root {
-            --primary: #0284c7;
-            --primary-dark: #0369a1;
-            --primary-light: #e0f2fe;
-            --accent: #f59e0b;
-            --text-main: #1e293b;
-            --text-muted: #64748b;
-            --bg-light: #f8fafc;
+            --navy: #082248;
+            --navy-2: #0f3366;
+            --gold: #C9A44C;
+            --gold-text: #8a6a1c;      /* emas lebih gelap agar terbaca di latar putih */
+            --gold-soft: #f6eed8;
+            --grey: #F1F4F7;
             --white: #ffffff;
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --text: #1e293b;
+            --muted: #475569;
+            --line: #dfe5ec;
             --radius: 12px;
+            --shadow: 0 2px 8px rgba(8, 34, 72, .06);
+            --shadow-lg: 0 14px 32px -10px rgba(8, 34, 72, .22);
+            --header-h: 76px;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + 12px); }
         body {
-            font-family: 'Inter', sans-serif;
-            color: var(--text-main);
-            background-color: var(--white);
-            line-height: 1.6;
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+            color: var(--text);
+            background: var(--white);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
         }
+        h1, h2, h3, .serif { font-family: 'Playfair Display', Georgia, serif; }
+        a { color: inherit; text-decoration: none; }
+        ul, ol { list-style: none; }
+        [hidden] { display: none !important; }
+        img, svg { max-width: 100%; display: block; }
+        :focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; border-radius: 4px; }
 
-        a {
-            text-decoration: none;
-            color: inherit;
+        .skip-link {
+            position: absolute; left: 16px; top: -60px; z-index: 3000;
+            background: var(--navy); color: #fff; padding: 10px 18px; border-radius: 6px;
         }
+        .skip-link:focus { top: 12px; }
 
-        ul {
-            list-style: none;
+        .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        .section { padding: 88px 0; }
+        .section-grey { background: var(--grey); }
+
+        .eyebrow {
+            display: block; font-size: .8rem; font-weight: 700; letter-spacing: .14em;
+            text-transform: uppercase; color: var(--gold-text); margin-bottom: 10px;
         }
+        .on-dark .eyebrow, .eyebrow.light { color: var(--gold); }
 
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
+        .section-head { text-align: center; max-width: 720px; margin: 0 auto 52px; }
+        .section-head h2 {
+            font-size: clamp(1.9rem, 3.4vw, 2.5rem); line-height: 1.2; color: var(--navy); margin-bottom: 14px;
         }
-
-        /* --- LAYOUT CONTAINER --- */
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
+        .section-head h2::after {
+            content: ""; display: block; width: 56px; height: 3px; background: var(--gold);
+            margin: 18px auto 0; border-radius: 2px;
         }
+        .section-head p { color: var(--muted); font-size: 1.04rem; }
+        .on-dark .section-head h2 { color: #fff; }
+        .on-dark .section-head p { color: #b7c3d6; }
 
-        .section {
-            padding: 80px 0;
-        }
-
-        .section-bg {
-            background-color: var(--bg-light);
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-title h2 {
-            font-size: 2.2rem;
-            color: var(--primary-dark);
-            font-weight: 800;
-            margin-bottom: 10px;
-        }
-
-        .section-title p {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* --- BUTTONS --- */
+        /* ---------- Buttons ---------- */
         .btn {
-            display: inline-block;
-            padding: 12px 28px;
-            font-weight: 600;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: none;
-            font-size: 1rem;
-        }
-
-        .btn-primary {
-            background-color: var(--primary);
-            color: var(--white);
-        }
-
-        .btn-primary:hover {
-            background-color: var(--primary-dark);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow);
-        }
-
-        .btn-wa {
-            background-color: #25D366;
-            color: var(--white);
-        }
-
-        .btn-wa:hover {
-            background-color: #1eb956;
-            transform: translateY(-2px);
-            box-shadow: var(--shadow);
-        }
-
-        .btn-outline {
-            border: 2px solid var(--primary);
-            color: var(--primary);
-            background: transparent;
-        }
-
-        .btn-outline:hover {
-            background-color: var(--primary-light);
-        }
-
-        /* --- NAVBAR --- */
-        .navbar {
-            position: sticky;
-            top: 0;
-            background-color: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(5px);
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            padding: 15px 0;
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.6rem;
-            font-weight: 800;
-            color: var(--primary);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 25px;
-            align-items: center;
-        }
-
-        .nav-links a {
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-
-        /* --- HERO SECTION --- */
-        .hero {
-            padding: 80px 0;
-            background: linear-gradient(135deg, var(--primary-light) 0%, #ffffff 100%);
-        }
-
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-        }
-
-        .hero-text h1 {
-            font-size: 2.8rem;
-            line-height: 1.2;
-            margin-bottom: 20px;
-            color: var(--text-main);
-            font-weight: 800;
-        }
-
-        .hero-text h1 span {
-            color: var(--primary);
-        }
-
-        .hero-text p {
-            font-size: 1.15rem;
-            color: var(--text-muted);
-            margin-bottom: 30px;
-        }
-
-        .hero-cta {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .hero-image img {
-            width: 100%;
-            height: auto;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow-lg);
-        }
-
-        /* --- TENTANG KAMI --- */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-        }
-
-        .about-features {
-            margin-top: 25px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-        }
-
-        .feature-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 600;
-        }
-
-        .feature-icon {
-            width: 24px;
-            height: 24px;
-            background-color: var(--primary-light);
-            color: var(--primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.8rem;
-        }
-
-        /* --- KEGIATAN & FASILITAS --- */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
-
-        .gallery-card {
-            background-color: var(--white);
-            border-radius: var(--radius);
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: transform 0.3s;
-        }
-
-        .gallery-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .gallery-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .gallery-info {
-            padding: 20px;
-        }
-
-        .gallery-info h3 {
-            font-size: 1.2rem;
-            margin-bottom: 8px;
-        }
-
-        .gallery-info p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        /* --- PAKET & BIAYA --- */
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .pricing-card {
-            background-color: var(--white);
-            border-radius: var(--radius);
-            padding: 35px 25px;
-            box-shadow: var(--shadow);
-            border: 1px solid #e2e8f0;
-            text-align: center;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .pricing-card.popular {
-            border: 2px solid var(--primary);
-            transform: scale(1.03);
-        }
-
-        .badge {
-            position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: var(--accent);
-            color: var(--white);
-            padding: 4px 16px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 700;
-        }
-
-        .pricing-header h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-        }
-
-        .price {
-            font-size: 2.2rem;
-            font-weight: 800;
-            color: var(--primary-dark);
-            margin-bottom: 20px;
-        }
-
-        .price span {
-            font-size: 1rem;
-            font-weight: 400;
-            color: var(--text-muted);
-        }
-
-        .pricing-features {
-            margin-bottom: 30px;
-            text-align: left;
-        }
-
-        .pricing-features li {
-            padding: 8px 0;
-            border-bottom: 1px solid #f1f5f9;
-            color: var(--text-muted);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        /* --- PENGURUS & PENGAJAR --- */
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 30px;
-        }
-
-        .team-card {
-            background-color: var(--white);
-            border-radius: var(--radius);
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            text-align: center;
-        }
-
-        .team-card img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-        }
-
-        .team-info {
-            padding: 20px;
-        }
-
-        .team-info h3 {
-            font-size: 1.2rem;
-            margin-bottom: 5px;
-        }
-
-        .team-info .role {
-            color: var(--primary);
-            font-weight: 600;
-            font-size: 0.9rem;
-            margin-bottom: 10px;
-        }
-
-        .team-info p {
-            color: var(--text-muted);
-            font-size: 0.85rem;
-        }
-
-        /* --- ALAMAT & PETA --- */
-        .location-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-        }
-
-        .location-info h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-        }
-
-        .info-item {
-            margin-bottom: 20px;
-        }
-
-        .info-item strong {
-            display: block;
-            margin-bottom: 5px;
-            color: var(--primary-dark);
-        }
-
-        .map-wrapper {
-            border-radius: var(--radius);
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            border: 2px solid #e2e8f0;
-            height: 320px;
-        }
-
-        .map-wrapper iframe {
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-
-        /* --- KONTAK & FORM --- */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #cbd5e1;
-            border-radius: 8px;
-            font-family: inherit;
-            font-size: 1rem;
-        }
-
-        .form-control:focus {
-            outline: none;
-            border-color: var(--primary);
-        }
-
-        /* --- FOOTER --- */
-        footer {
-            background-color: #0f172a;
-            color: var(--white);
-            padding: 40px 0 20px;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 40px;
-            margin-bottom: 30px;
-        }
-
-        .footer-col p {
-            color: #94a3b8;
-            margin-top: 15px;
-        }
-
-        .footer-col h4 {
-            font-size: 1.1rem;
-            margin-bottom: 20px;
-        }
-
-        .footer-links li {
-            margin-bottom: 10px;
-        }
-
-        .footer-links a {
-            color: #94a3b8;
-            transition: color 0.3s;
-        }
-
-        .footer-links a:hover {
-            color: var(--white);
-        }
-
-        .copyright {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid #334155;
-            color: #94a3b8;
-            font-size: 0.9rem;
-        }
-
-        /* --- RESPONSIVE MOBILE --- */
-        @media (max-width: 768px) {
-            .hero-grid, .about-grid, .location-grid, .contact-grid {
-                grid-template-columns: 1fr;
-            }
-
+            display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+            padding: 13px 26px; border-radius: 8px; border: 2px solid transparent;
+            font: 600 .92rem/1.2 'Inter', sans-serif; letter-spacing: .02em; cursor: pointer;
+            transition: transform .2s, background-color .2s, color .2s, border-color .2s, box-shadow .2s;
+        }
+        .btn:hover { transform: translateY(-2px); }
+        .btn-navy { background: var(--navy); color: #fff; }
+        .btn-navy:hover { background: var(--navy-2); box-shadow: var(--shadow-lg); }
+        .btn-outline { border-color: var(--navy); color: var(--navy); background: transparent; }
+        .btn-outline:hover { background: var(--navy); color: #fff; }
+        .btn-gold { background: var(--gold); color: var(--navy); }
+        .btn-gold:hover { background: #d8b45c; box-shadow: var(--shadow-lg); }
+        .btn-wa { background: #1fa855; color: #fff; }
+        .btn-wa:hover { background: #178a45; }
+        .btn-block { width: 100%; }
+
+        /* ---------- Top bar ---------- */
+        .topbar {
+            background: var(--navy); color: rgba(255,255,255,.88);
+            font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; padding: 9px 0;
+        }
+        .topbar .container { display: flex; gap: 10px; align-items: center; }
+        .topbar .sep { opacity: .5; }
+
+        /* ---------- Header ---------- */
+        .site-header {
+            position: sticky; top: 0; z-index: 1000; background: rgba(255,255,255,.97);
+            backdrop-filter: blur(8px); border-bottom: 1px solid var(--line);
+            box-shadow: 0 1px 0 var(--gold), 0 6px 18px rgba(8,34,72,.05);
+        }
+        .site-header .container { max-width: 1360px; }
+        .nav { height: var(--header-h); display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+        .logo { display: flex; align-items: baseline; gap: 10px; white-space: nowrap; }
+        .logo b { font: 800 1.9rem/1 'Playfair Display', serif; color: var(--navy); }
+        .logo small { font-size: .74rem; font-weight: 700; letter-spacing: .12em; color: var(--navy); }
+        .nav-links { display: flex; align-items: center; gap: 4px; }
+        .nav-links a:not(.btn) {
+            position: relative; padding: 8px 12px; font-size: .93rem; font-weight: 500;
+            color: var(--navy); white-space: nowrap;
+        }
+        .nav-links a:not(.btn)::after {
+            content: ""; position: absolute; left: 12px; right: 12px; bottom: 2px; height: 2px;
+            background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform .25s;
+        }
+        .nav-links a:not(.btn):hover::after,
+        .nav-links a.active::after { transform: scaleX(1); }
+        .nav-links .btn { margin-left: 10px; padding: 10px 22px; font-size: .9rem; }
+        .has-sub { position: relative; }
+        .sub-toggle { background: none; border: 0; cursor: pointer; font: 500 .93rem 'Inter', sans-serif; color: var(--navy); padding: 8px 12px; display: inline-flex; align-items: center; gap: 7px; }
+        .sub-toggle i { width: 7px; height: 7px; border-right: 2px solid var(--gold); border-bottom: 2px solid var(--gold); transform: rotate(45deg) translateY(-2px); transition: transform .2s; }
+        .sub-toggle:hover { color: var(--gold-text); }
+        .sub { position: absolute; top: calc(100% + 10px); right: 0; min-width: 220px; background: #fff; border: 1px solid var(--line); border-top: 3px solid var(--gold);
+               border-radius: 8px; box-shadow: var(--shadow-lg); padding: 8px; opacity: 0; visibility: hidden; transform: translateY(6px); transition: opacity .2s, transform .2s, visibility .2s; }
+        .sub::before { content: ""; position: absolute; left: 0; right: 0; top: -14px; height: 14px; }
+        .nav-links .sub a:not(.btn) { display: block; padding: 11px 14px; border-radius: 6px; }
+        .nav-links .sub a:not(.btn)::after { display: none; }
+        .nav-links .sub a:hover { background: var(--grey); }
+        .has-sub:hover .sub, .has-sub.open .sub, .has-sub:focus-within .sub { opacity: 1; visibility: visible; transform: none; }
+        .has-sub.open .sub-toggle i { transform: rotate(225deg); }
+
+        .menu-toggle {
+            display: none; width: 46px; height: 46px; border: 1px solid var(--line); border-radius: 8px;
+            background: #fff; cursor: pointer; align-items: center; justify-content: center;
+        }
+        .menu-toggle span, .menu-toggle span::before, .menu-toggle span::after {
+            content: ""; display: block; width: 22px; height: 2px; background: var(--navy);
+            position: relative; transition: transform .25s, background .25s;
+        }
+        .menu-toggle span::before { position: absolute; top: -7px; }
+        .menu-toggle span::after { position: absolute; top: 7px; }
+        .menu-toggle[aria-expanded="true"] span { background: transparent; }
+        .menu-toggle[aria-expanded="true"] span::before { top: 0; transform: rotate(45deg); }
+        .menu-toggle[aria-expanded="true"] span::after { top: 0; transform: rotate(-45deg); }
+
+        /* ---------- Hero ---------- */
+        .hero { padding: 84px 0 110px; background: linear-gradient(135deg, var(--grey) 0%, #fff 70%); }
+        .hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 56px; align-items: center; }
+        .hero h1 {
+            font-size: clamp(2.2rem, 4.4vw, 3.3rem); line-height: 1.16; color: var(--navy);
+            font-weight: 800; margin-bottom: 22px;
+        }
+        .hero p.lead { font-size: 1.08rem; color: var(--muted); margin-bottom: 32px; max-width: 580px; }
+        .hero-cta { display: flex; flex-wrap: wrap; gap: 14px; }
+
+        /* Area foto: ganti dengan foto asli SFE (lihat komentar di HTML) */
+        .photo-frame {
+            position: relative; aspect-ratio: 5 / 4; border-radius: var(--radius); overflow: hidden;
+            background: #d9e1ea; box-shadow: var(--shadow-lg); border: 4px solid #fff;
+        }
+        .photo-frame img { width: 100%; height: 100%; object-fit: cover; }
+        .photo-frame .placeholder { position: absolute; inset: 0; }
+        .photo-frame .photo-note {
+            position: absolute; left: 0; right: 0; bottom: 0; padding: 12px 16px; text-align: center;
+            background: rgba(8,34,72,.82); color: #fff; font-size: .72rem; font-weight: 600;
+            letter-spacing: .1em; text-transform: uppercase;
+        }
+        .photo-frame::before {  /* garis aksen emas */
+            content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 5px; background: var(--gold); z-index: 2;
+        }
+
+        /* ---------- Pilar ---------- */
+        .pillars { margin-top: -62px; position: relative; z-index: 5; }
+        .pillars-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+        .pillar {
+            background: #fff; border: 1px solid var(--line); border-top: 4px solid var(--gold);
+            border-radius: var(--radius); padding: 34px 32px; box-shadow: var(--shadow-lg);
+        }
+        .pillar .num { font-size: .78rem; font-weight: 700; letter-spacing: .14em; color: var(--gold-text); text-transform: uppercase; }
+        .pillar h3 { font-size: 1.5rem; color: var(--navy); margin: 6px 0 10px; }
+        .pillar p { color: var(--muted); font-size: .96rem; }
+
+        /* ---------- Tentang ---------- */
+        .about-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+        .about-intro h2 { font-size: clamp(1.9rem, 3.2vw, 2.4rem); color: var(--navy); line-height: 1.2; margin-bottom: 16px; }
+        .about-intro p { color: var(--muted); margin-bottom: 14px; }
+        .check-list { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 18px; margin-top: 22px; }
+        .check-list li { display: flex; gap: 10px; align-items: center; font-weight: 600; color: var(--navy); font-size: .93rem; }
+        .check-list li::before {
+            content: "✓"; flex: none; width: 24px; height: 24px; border-radius: 50%;
+            background: var(--gold-soft); color: var(--gold-text); font-weight: 800; font-size: .8rem;
+            display: grid; place-items: center;
+        }
+        .about-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 64px; }
+        .info-card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 30px; box-shadow: var(--shadow); }
+        .info-card.wide { grid-column: 1 / -1; }
+        .info-card h3 { font-size: 1.35rem; color: var(--navy); margin-bottom: 12px; display: flex; align-items: center; gap: 12px; }
+        .info-card h3::before { content: ""; width: 4px; height: 24px; background: var(--gold); border-radius: 2px; }
+        .info-card p { color: var(--muted); }
+        .info-card ul.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 0 36px; }
+        @media (max-width: 760px) { .info-card ul.two-col { grid-template-columns: 1fr; } }
+        .info-card ul li { position: relative; padding: 6px 0 6px 22px; color: var(--muted); }
+        .info-card ul li::before { content: ""; position: absolute; left: 0; top: 15px; width: 8px; height: 8px; border-radius: 50%; background: var(--gold); }
+
+        /* ---------- Cara kerja ---------- */
+        .how-steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; counter-reset: how; }
+        .how-step {
+            background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 24px 20px;
+            counter-increment: how; position: relative; box-shadow: var(--shadow);
+        }
+        .how-step::before {
+            content: counter(how); font: 700 1.9rem/1 'Playfair Display', serif; color: var(--gold); display: block; margin-bottom: 10px;
+        }
+        .how-step strong { display: block; color: var(--navy); font-size: .98rem; margin-bottom: 4px; }
+        .how-step span { color: var(--muted); font-size: .86rem; display: block; line-height: 1.5; }
+        .cta-strip {
+            margin-top: 48px; background: var(--navy); color: #fff; border-radius: var(--radius);
+            padding: 34px 38px; display: flex; flex-wrap: wrap; gap: 20px; align-items: center; justify-content: space-between;
+            border-left: 5px solid var(--gold);
+        }
+        .cta-strip p { max-width: 720px; font-size: 1.05rem; color: #e2e8f0; }
+
+        /* ---------- Layanan ---------- */
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+        .service {
+            background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 30px 28px;
+            display: flex; flex-direction: column; transition: transform .25s, box-shadow .25s, border-color .25s;
+        }
+        .service:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); border-color: var(--gold); }
+        .service .icon {
+            width: 54px; height: 54px; border-radius: 10px; background: var(--grey); color: var(--navy);
+            display: grid; place-items: center; margin-bottom: 20px;
+        }
+        .service .icon svg { width: 28px; height: 28px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+        .service h3 { font-size: 1.22rem; color: var(--navy); margin-bottom: 10px; line-height: 1.3; }
+        .service p { color: var(--muted); font-size: .93rem; flex: 1; }
+        .service .more { margin-top: 18px; font-weight: 600; font-size: .86rem; color: var(--navy); letter-spacing: .03em; }
+        .service .more::after { content: " →"; color: var(--gold-text); transition: margin .2s; }
+        .service:hover .more::after { margin-left: 4px; }
+
+        /* ---------- Pengelolaan tutor ---------- */
+        .tutor { background: var(--navy); color: #fff; }
+        .timeline { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; position: relative; margin-bottom: 44px; }
+        .timeline::before {
+            content: ""; position: absolute; left: 6%; right: 6%; top: 41px; height: 2px;
+            background: repeating-linear-gradient(90deg, var(--gold) 0 8px, transparent 8px 14px); opacity: .55;
+        }
+        .t-step {
+            position: relative; background: #0f2c58; border: 1px solid rgba(255,255,255,.16);
+            border-radius: var(--radius); padding: 22px 18px; transition: background .25s, border-color .25s, transform .25s;
+        }
+        .t-step:hover { background: #143565; border-color: var(--gold); transform: translateY(-4px); }
+        .t-num {
+            width: 40px; height: 40px; border-radius: 50%; background: var(--gold); color: var(--navy);
+            font-weight: 800; font-size: .92rem; display: grid; place-items: center; margin-bottom: 16px;
+            box-shadow: 0 0 0 5px var(--navy);
+        }
+        .t-step h3 { font: 700 .95rem/1.35 'Inter', sans-serif; color: #fff; margin-bottom: 8px; }
+        .t-step p { color: #c3cedd; font-size: .84rem; line-height: 1.55; }
+
+        .standards { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+        .std-box { border: 1px solid rgba(201,164,76,.55); background: rgba(201,164,76,.08); border-radius: var(--radius); padding: 30px; }
+        .std-box h3 { color: var(--gold); font-size: 1.25rem; margin-bottom: 14px; }
+        .std-box .pill-row { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 18px; }
+        .std-box .pill {
+            padding: 6px 14px; border-radius: 999px; border: 1px solid var(--gold); color: #fff;
+            font-size: .78rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase;
+        }
+        .std-box li { position: relative; padding: 7px 0 7px 24px; color: #dbe3ee; font-size: .93rem; }
+        .std-box li::before { content: "✓"; position: absolute; left: 0; color: var(--gold); font-weight: 800; }
+        .std-box.note p { color: #dbe3ee; font-size: .93rem; }
+        .std-box.note .tag { display: inline-block; font-size: .72rem; letter-spacing: .12em; font-weight: 700; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+
+        /* ---------- Tim ---------- */
+        .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; }
+        .team-card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; text-align: center; box-shadow: var(--shadow); }
+        .avatar {
+            height: 170px; background: linear-gradient(160deg, #e4eaf1, #cfd9e5); display: grid; place-items: center;
+            border-bottom: 3px solid var(--gold);
+        }
+        .avatar svg { width: 76px; height: 76px; fill: var(--navy); opacity: .85; }
+        .team-card .body { padding: 22px 20px 26px; }
+        .team-card h3 { font-size: 1.12rem; color: var(--navy); margin-bottom: 4px; }
+        .team-card .role { color: var(--gold-text); font-weight: 700; font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 10px; }
+        .team-card p { color: var(--muted); font-size: .88rem; }
+        .profile-fields {
+            margin-top: 40px; background: #fff; border: 1px dashed #b9c4d3; border-radius: var(--radius);
+            padding: 24px 28px; text-align: center; color: var(--muted); font-size: .92rem;
+        }
+        .profile-fields strong { color: var(--navy); }
+
+        /* ---------- Kemitraan ---------- */
+        .partnership {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 100%); color: #fff;
+            border-radius: var(--radius); border: 1px solid var(--gold); padding: 60px 44px; text-align: center;
+        }
+        .partnership h2 { font-size: clamp(1.7rem, 3vw, 2.2rem); margin-bottom: 14px; }
+        .partnership p { max-width: 760px; margin: 0 auto 18px; color: #cbd5e5; }
+        .partner-tags { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin: 22px auto 32px; max-width: 760px; }
+        .partner-tags span { border: 1px solid rgba(255,255,255,.3); border-radius: 999px; padding: 6px 14px; font-size: .8rem; color: #e2e8f0; }
+
+        /* ---------- Berita ---------- */
+        .news-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+        .news-card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+        .news-card .thumb { aspect-ratio: 16 / 9; background: linear-gradient(135deg, #e4eaf1, #d2dce8); display: grid; place-items: center; color: var(--navy); }
+        .news-card .thumb svg { width: 44px; height: 44px; fill: none; stroke: currentColor; stroke-width: 1.5; opacity: .6; stroke-linecap: round; stroke-linejoin: round; }
+        .news-card .body { padding: 22px; }
+        .news-card .tag { font-size: .72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--gold-text); }
+        .news-card h3 { font-size: 1.12rem; color: var(--navy); margin: 6px 0 8px; line-height: 1.35; }
+        .news-card p { font-size: .9rem; color: var(--muted); }
+        .news-note { text-align: center; margin-top: 30px; color: var(--muted); font-size: .9rem; }
+
+        /* ---------- Kontak ---------- */
+        .contact-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 40px; align-items: start; }
+        .form-card, .side-card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 34px; box-shadow: var(--shadow); }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0 18px; }
+        .field { margin-bottom: 18px; }
+        .field label { display: block; font-weight: 600; font-size: .86rem; color: var(--navy); margin-bottom: 6px; }
+        .field label .req { color: #b42318; }
+        .control {
+            width: 100%; padding: 12px 14px; border: 1px solid #c6d0dc; border-radius: 8px; background: #fff;
+            font: inherit; font-size: .94rem; color: var(--text); transition: border-color .2s, box-shadow .2s;
+        }
+        .control:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(201,164,76,.25); }
+        textarea.control { resize: vertical; min-height: 96px; }
+        .form-hint { font-size: .8rem; color: var(--muted); margin-top: 12px; }
+        .form-hint a { color: var(--navy); text-decoration: underline; cursor: pointer; font-weight: 600; }
+        .form-status { margin-top: 14px; padding: 12px 14px; border-radius: 8px; font-size: .9rem; display: none; }
+        .form-status.show { display: block; }
+        .form-status.ok { background: #e8f6ee; color: #14532d; border: 1px solid #b7e3c6; }
+        .form-status.warn { background: #fff7e0; color: #6b4e00; border: 1px solid #f0d98a; }
+        .side-card h3 { font-size: 1.3rem; color: var(--navy); margin-bottom: 14px; }
+        .side-card p { color: var(--muted); font-size: .94rem; margin-bottom: 16px; }
+        .contact-list li { display: flex; gap: 12px; padding: 12px 0; border-top: 1px solid var(--line); font-size: .93rem; }
+        .contact-list svg { flex: none; width: 20px; height: 20px; margin-top: 3px; fill: none; stroke: var(--gold-text); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+        .contact-list strong { display: block; color: var(--navy); font-size: .86rem; }
+        .contact-list span { color: var(--muted); }
+        .side-card .btn { margin-top: 18px; }
+
+        /* ---------- Footer ---------- */
+        footer { background: var(--navy); color: #fff; border-top: 3px solid var(--gold); padding: 56px 0 22px; }
+        .footer-grid { display: grid; grid-template-columns: 1.8fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+        footer .logo b, footer .logo small { color: #fff; }
+        footer .logo small { color: var(--gold); }
+        .footer-grid p { color: #a9b6c9; font-size: .9rem; margin-top: 16px; max-width: 420px; }
+        .footer-grid h4 { font: 700 .82rem/1 'Inter', sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); margin-bottom: 18px; }
+        .footer-grid li { margin-bottom: 10px; }
+        .footer-grid li a, .footer-grid li button { color: #a9b6c9; font-size: .9rem; transition: color .2s; background: none; border: 0; cursor: pointer; font-family: inherit; text-align: left; padding: 0; }
+        .footer-grid li a:hover, .footer-grid li button:hover { color: #fff; }
+        .copyright { border-top: 1px solid rgba(255,255,255,.12); padding-top: 22px; text-align: center; color: #8d9bb1; font-size: .84rem; }
+
+        /* ---------- Dialog privasi ---------- */
+        dialog { border: 0; border-radius: var(--radius); max-width: 620px; width: calc(100% - 32px); padding: 0; box-shadow: 0 30px 80px rgba(8,34,72,.4); margin: auto; }
+        dialog::backdrop { background: rgba(8,34,72,.6); }
+        .dlg-head { background: var(--navy); color: #fff; padding: 20px 26px; display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid var(--gold); }
+        .dlg-head h3 { font-size: 1.25rem; }
+        .dlg-close { background: none; border: 0; color: #fff; font-size: 1.8rem; line-height: 1; cursor: pointer; }
+        .dlg-body { padding: 26px; max-height: 60vh; overflow: auto; color: var(--muted); font-size: .94rem; }
+        .dlg-body h4 { color: var(--navy); margin: 14px 0 4px; }
+        .dlg-body h4:first-child { margin-top: 0; }
+
+        /* ---------- Reveal ---------- */
+        .reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+        .reveal.in { opacity: 1; transform: none; }
+        .no-js .reveal { opacity: 1; transform: none; }
+
+        /* ---------- Responsive ---------- */
+        @media (max-width: 1100px) {
+            .menu-toggle { display: inline-flex; }
             .nav-links {
-                display: none;
+                position: absolute; top: 100%; left: 0; right: 0; background: #fff; flex-direction: column; align-items: stretch;
+                padding: 12px 24px 24px; gap: 0; border-bottom: 3px solid var(--gold); box-shadow: 0 18px 30px rgba(8,34,72,.12);
+                max-height: 0; overflow: hidden; opacity: 0; visibility: hidden; transition: max-height .3s, opacity .25s, visibility .3s;
             }
+            .nav-links.open { max-height: 80vh; opacity: 1; visibility: visible; overflow-y: auto; }
+            .nav-links a:not(.btn) { padding: 14px 4px; border-bottom: 1px solid var(--line); font-size: 1rem; }
+            .nav-links a:not(.btn)::after { display: none; }
+            .nav-links a.active { color: var(--gold-text); }
+            .nav-links .btn { margin: 16px 0 0; padding: 14px; }
+            .sub-toggle { display: none; }
+            .sub { position: static; opacity: 1; visibility: visible; transform: none; border: 0; box-shadow: none; padding: 0; min-width: 0; }
+            .sub::before { display: none; }
+            .nav-links .sub a:not(.btn) { padding: 14px 4px; border-bottom: 1px solid var(--line); border-radius: 0; font-size: 1rem; }
+        }
+        @media (max-width: 1024px) {
+            .timeline { grid-template-columns: repeat(3, 1fr); }
+            .timeline::before { display: none; }
+            .how-steps { grid-template-columns: repeat(3, 1fr); }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 860px) {
+            .section { padding: 64px 0; }
+            .hero { padding: 48px 0 90px; }
+            .hero-grid, .about-intro, .pillars-grid, .contact-grid, .standards { grid-template-columns: 1fr; gap: 28px; }
+            .hero-grid { gap: 36px; }
+            .pillars { margin-top: -50px; }
+            .about-intro .photo-frame { order: -1; }
+        }
+        @media (max-width: 640px) {
+            :root { --header-h: 66px; }
+            .container { padding: 0 16px; }
+            .topbar { font-size: .66rem; letter-spacing: .04em; }
+            .logo b { font-size: 1.6rem; }
+            .logo small { font-size: .62rem; }
+            .hero-cta .btn { width: 100%; }
+            .check-list, .form-row { grid-template-columns: 1fr; }
+            .how-steps { grid-template-columns: 1fr; }
+            .cta-strip { padding: 26px 22px; }
+            .cta-strip .btn { width: 100%; }
+            .form-card, .side-card { padding: 24px 20px; }
+            .partnership { padding: 40px 22px; }
+            .footer-grid { grid-template-columns: 1fr; gap: 30px; }
 
-            .hero-text h1 {
-                font-size: 2.1rem;
+            /* Timeline vertikal di ponsel */
+            .timeline { grid-template-columns: 1fr; gap: 0; padding-left: 8px; }
+            .timeline::before {
+                display: block; left: 27px; right: auto; top: 20px; bottom: 20px; width: 2px; height: auto;
+                background: repeating-linear-gradient(180deg, var(--gold) 0 8px, transparent 8px 14px);
             }
-
-            .pricing-card.popular {
-                transform: scale(1);
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-            }
+            .t-step { margin: 0 0 14px 46px; padding: 18px; }
+            .t-step:hover { transform: none; }
+            .t-num { position: absolute; left: -46px; top: 14px; margin: 0; width: 38px; height: 38px; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            *, *::before, *::after { transition: none !important; animation: none !important; }
+            .reveal { opacity: 1; transform: none; }
         }
     </style>
 </head>
-<body>
+<body class="no-js">
+    <a href="#beranda" class="skip-link">Lewati ke konten utama</a>
 
-    <!-- NAVBAR -->
-    <nav class="navbar">
-        <div class="container nav-container">
-            <a href="#" class="logo">
-                <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
-                Bimbelz
+    <!-- 01. BILAH INFORMASI (hanya informasi yang sudah pasti; kontak resmi diisi lewat SFE_CONFIG di bawah) -->
+    <div class="topbar">
+        <div class="container">
+            <span>SFE Bimbingan Belajar</span><span class="sep">|</span><span>Education &amp; Professional Tutor Management</span>
+        </div>
+    </div>
+
+    <!-- 02. BAGIAN KEPALA WEBSITE -->
+    <header class="site-header">
+        <nav class="container nav" aria-label="Navigasi utama">
+            <a href="#beranda" class="logo" aria-label="SFE Bimbingan Belajar – beranda">
+                <b>SFE</b><small>BIMBINGAN BELAJAR</small>
             </a>
-            <ul class="nav-links">
-                <li><a href="#tentang">Tentang Kami</a></li>
-                <li><a href="#kegiatan">Kegiatan</a></li>
-                <li><a href="#harga">Paket & Biaya</a></li>
-                <li><a href="#pengajar">Pengurus</a></li>
-                <li><a href="#lokasi">Lokasi</a></li>
-                <li><a href="#kontak" class="btn btn-primary" style="color: white;">Daftar Sekarang</a></li>
-            </ul>
-        </div>
-    </nav>
+            <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Buka menu"><span></span></button>
+            <div class="nav-links" id="navLinks">
+                <a href="#beranda">Beranda</a>
+                <a href="#tentang">Tentang SFE</a>
+                <a href="#layanan">Layanan Pendidikan</a>
+                <a href="#pengelolaan-tutor">Pengelolaan Tutor</a>
+                <a href="#tim">Tim Profesional Kami</a>
+                <div class="has-sub" id="subWrap">
+                    <button type="button" class="sub-toggle" id="subToggle" aria-expanded="false" aria-haspopup="true">Lainnya <i aria-hidden="true"></i></button>
+                    <div class="sub">
+                        <a href="#kemitraan">Kemitraan</a>
+                        <a href="#berita">Berita &amp; Kegiatan</a>
+                    </div>
+                </div>
+                <a href="#kontak" class="btn btn-navy">Konsultasi</a>
+            </div>
+        </nav>
+    </header>
 
-    <!-- HERO SECTION -->
-    <section class="hero">
-        <div class="container hero-grid">
-            <div class="hero-text">
-                <h1>Raih Nilai Terbaik & Sekolah Impian Bersama <span>Bimbelz</span></h1>
-                <p>Bimbingan belajar tatap muka & online yang interaktif, menyenangkan, dan menggunakan metode belajar cepat untuk jenjang SD, SMP, hingga SMA.</p>
-                <div class="hero-cta">
-                    <a href="https://wa.me/6281234567890?text=Halo%20Admin%20Bimbelz,%20saya%20ingin%20tanya%20mengenai%20pendaftaran" target="_blank" class="btn btn-wa">💬 Hubungi via WhatsApp</a>
-                    <a href="#harga" class="btn btn-outline">Lihat Paket Belajar</a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80" alt="Suasana Belajar Bimbelz">
-            </div>
-        </div>
-    </section>
-
-    <!-- TENTANG KAMI -->
-    <section id="tentang" class="section">
-        <div class="container about-grid">
-            <div>
-                <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=800&q=80" alt="Ruang Kelas Bimbelz" style="border-radius: var(--radius); box-shadow: var(--shadow);">
-            </div>
-            <div>
-                <div class="section-title" style="text-align: left; margin-bottom: 20px;">
-                    <h2>Mengapa Memilih Bimbelz?</h2>
-                </div>
-                <p>Kami hadir membantu siswa memahami konsep pelajaran secara mendalam, bukan sekadar menghafal. Berdiri sejak 2018, Bimbelz telah mendampingi ratusan siswa meraih prestasi akademik terbaik.</p>
-                
-                <div class="about-features">
-                    <div class="feature-item"><span class="feature-icon">✓</span> Pengajar Berpengalaman</div>
-                    <div class="feature-item"><span class="feature-icon">✓</span> Kelompok Kecil (Max 8 Siswa)</div>
-                    <div class="feature-item"><span class="feature-icon">✓</span> Ruangan Ber-AC & Nyaman</div>
-                    <div class="feature-item"><span class="feature-icon">✓</span> Modul Belajar Lengkap</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- KEGIATAN & FASILITAS -->
-    <section id="kegiatan" class="section section-bg">
-        <div class="container">
-            <div class="section-title">
-                <h2>Galeri Kegiatan & Fasilitas</h2>
-                <p>Dokumentasi aktivitas pembelajaran rutin dan fasilitas pendukung belajar di Bimbelz.</p>
-            </div>
-            <div class="gallery-grid">
-                <div class="gallery-card">
-                    <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=600&q=80" alt="Belajar Interaktif">
-                    <div class="gallery-info">
-                        <h3>Kuis & Diskusi Kelompok</h3>
-                        <p>Siswa diajak aktif berdiskusi untuk melatih pemahaman materi secara kolaboratif.</p>
-                    </div>
-                </div>
-                <div class="gallery-card">
-                    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=600&q=80" alt="Bimbingan Privat">
-                    <div class="gallery-info">
-                        <h3>Sesi Konsultasi PR</h3>
-                        <p>Pendampingan pribadi untuk membantu menyelesaikan tugas sekolah kapan saja.</p>
-                    </div>
-                </div>
-                <div class="gallery-card">
-                    <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=600&q=80" alt="Try Out Ujian">
-                    <div class="gallery-info">
-                        <h3>Try Out Rutin</h3>
-                        <p>Simulasi ujian berkala untuk mengukur kesiapan ujian sekolah dan SNBT.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PAKET & BIAYA -->
-    <section id="harga" class="section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Pilihan Paket & Biaya</h2>
-                <p>Investasi pendidikan terjangkau dengan kualitas bimbingan maksimal.</p>
-            </div>
-            <div class="pricing-grid">
-                <!-- Paket SD -->
-                <div class="pricing-card">
-                    <div class="pricing-header">
-                        <h3>Jenjang SD</h3>
-                        <div class="price">Rp 250rb <span>/ bulan</span></div>
-                    </div>
-                    <ul class="pricing-features">
-                        <li><span>✓</span> Semua Mata Pelajaran Utama</li>
-                        <li><span>✓</span> 3x Pertemuan per Minggu</li>
-                        <li><span>✓</span> Maksimal 8 Siswa / Kelas</li>
-                        <li><span>✓</span> Modul & Latihan Soal Gratis</li>
-                    </ul>
-                    <a href="https://wa.me/6281234567890?text=Halo%20Admin%20Bimbelz,%20saya%20mau%20tanya%20Paket%20SD" class="btn btn-outline">Pilih Paket</a>
-                </div>
-                <!-- Paket SMP -->
-                <div class="pricing-card popular">
-                    <div class="badge">PALING FAVORIT</div>
-                    <div class="pricing-header">
-                        <h3>Jenjang SMP</h3>
-                        <div class="price">Rp 350rb <span>/ bulan</span></div>
-                    </div>
-                    <ul class="pricing-features">
-                        <li><span>✓</span> Matematika, IPA, Eng, Indo</li>
-                        <li><span>✓</span> 3x Pertemuan per Minggu</li>
-                        <li><span>✓</span> Persiapan Ujian Sekolah & ASAS</li>
-                        <li><span>✓</span> Konsultasi Tugas Bebas Jam</li>
-                    </ul>
-                    <a href="https://wa.me/6281234567890?text=Halo%20Admin%20Bimbelz,%20saya%20mau%20tanya%20Paket%20SMP" class="btn btn-primary">Pilih Paket</a>
-                </div>
-                <!-- Paket SMA -->
-                <div class="pricing-card">
-                    <div class="pricing-header">
-                        <h3>Jenjang SMA</h3>
-                        <div class="price">Rp 450rb <span>/ bulan</span></div>
-                    </div>
-                    <ul class="pricing-features">
-                        <li><span>✓</span> Fokus IPA / IPS / SNBT</li>
-                        <li><span>✓</span> 4x Pertemuan per Minggu</li>
-                        <li><span>✓</span> Bedah Soal Ujian & PTN</li>
-                        <li><span>✓</span> Try Out SNBT Berkala</li>
-                    </ul>
-                    <a href="https://wa.me/6281234567890?text=Halo%20Admin%20Bimbelz,%20saya%20mau%20tanya%20Paket%20SMA" class="btn btn-outline">Pilih Paket</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PENGURUS & PENGAJAR -->
-    <section id="pengajar" class="section section-bg">
-        <div class="container">
-            <div class="section-title">
-                <h2>Pengurus & Pengajar Bimbelz</h2>
-                <p>Dikelola oleh tenaga profesional dan lulusan perguruan tinggi ternama.</p>
-            </div>
-            <div class="team-grid">
-                <div class="team-card">
-                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80" alt="Bpk. Budi Santoso">
-                    <div class="team-info">
-                        <h3>Bpk. Budi Santoso, M.Pd</h3>
-                        <div class="role">Pendiri & Head Master</div>
-                        <p>Pengalaman 12+ tahun di bidang manajemen pendidikan nasional.</p>
-                    </div>
-                </div>
-                <div class="team-card">
-                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80" alt="Ibu Ani Wijaya">
-                    <div class="team-info">
-                        <h3>Ibu Ani Wijaya, S.Si</h3>
-                        <div class="role">Tutor Matematika & Sains</div>
-                        <p>Lulusan Matematika ITB, ahli metode belajar cepat dan mudah.</p>
-                    </div>
-                </div>
-                <div class="team-card">
-                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80" alt="Kak Dimas Pratama">
-                    <div class="team-info">
-                        <h3>Kak Dimas Pratama, S.Pd</h3>
-                        <div class="role">Tutor Bahasa Inggris</div>
-                        <p>Spesialis persiapan TOEFL dan metode komunikasi interaktif.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ALAMAT & PETA -->
-    <section id="lokasi" class="section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Lokasi & Alamat Kami</h2>
-                <p>Kunjungi cabang utama Bimbelz untuk konsultasi langsung.</p>
-            </div>
-            <div class="location-grid">
-                <div class="location-info">
-                    <h3>Gedung Bimbelz Utama</h3>
-                    <div class="info-item">
-                        <strong>📍 Alamat Lengkap:</strong>
-                        <p>Jl. Pendidikan No. 45, RT 02/RW 05, Kel. Sukamaju, Kec. Cerdas, Jakarta Selatan, 12345</p>
-                    </div>
-                    <div class="info-item">
-                        <strong>🕒 Jam Operasional:</strong>
-                        <p>Senin - Sabtu: 13.00 - 20.00 WIB<br>Minggu: Libur</p>
-                    </div>
-                    <div class="info-item">
-                        <strong>📞 Kontak & Email:</strong>
-                        <p>WhatsApp: 0812-3456-7890<br>Email: info@bimbelz.com</p>
-                    </div>
-                </div>
-                <div class="map-wrapper">
-                    <!-- Google Maps Embed Interaktif -->
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126920.28257007212!2d106.7583689!3d-6.2297465!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e945e34b9d%3A0x5371bf0fdad786a2!2sJakarta%20South%2C%20South%20Jakarta%20City%2C%20Jakarta!5e0!3m2!1sen!2sid!4v1700000000000!5m2!1sen!2sid" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- KONTAK & PENDAFTARAN -->
-    <section id="kontak" class="section section-bg">
-        <div class="container">
-            <div class="section-title">
-                <h2>Hubungi Kami / Pendaftaran</h2>
-                <p>Isi formulir di bawah ini atau chat langsung via WhatsApp.</p>
-            </div>
-            <div class="contact-grid">
+    <main id="beranda">
+        <!-- 03. BANNER UTAMA -->
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="container hero-grid">
                 <div>
-                    <h3>Formulir Konsultasi</h3>
-                    <p style="margin-bottom: 20px; color: var(--text-muted);">Punya pertanyaan mengenai jadwal, kelas privat, atau mau trial gratis? Silakan isi form berikut.</p>
-                    
-                    <form onsubmit="event.preventDefault(); alert('Terima kasih! Pesan Anda telah terkirim ke Admin Bimbelz.');">
-                        <div class="form-group">
-                            <label>Nama Lengkap Orang Tua / Siswa</label>
-                            <input type="text" class="form-control" placeholder="Contoh: Budi" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Nomor WhatsApp</label>
-                            <input type="tel" class="form-control" placeholder="0812xxxxxxx" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Jenjang Kelas</label>
-                            <select class="form-control">
-                                <option>SD (Kelas 1-6)</option>
-                                <option>SMP (Kelas 7-9)</option>
-                                <option>SMA (Kelas 10-12)</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">Kirim Pesan</button>
-                    </form>
+                    <span class="eyebrow">SFE Bimbingan Belajar</span>
+                    <h1 id="hero-title">Memberdayakan Setiap Peserta Didik, Membangun Masa Depan Gemilang.</h1>
+                    <p class="lead">SFE adalah lembaga penyedia layanan pendidikan yang berkomitmen menghadirkan pendampingan belajar terarah dan menghubungkan peserta didik dengan tenaga pendidik yang sesuai. Melalui pengelolaan tutor profesional dan pendekatan pembelajaran individual, SFE mendukung perkembangan akademik dan proses belajar sepanjang hayat.</p>
+                    <div class="hero-cta">
+                        <a href="#layanan" class="btn btn-navy">Lihat Layanan Kami</a>
+                        <a href="#pengelolaan-tutor" class="btn btn-outline">Pelajari Proses Seleksi Tutor</a>
+                    </div>
                 </div>
-
-                <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; background: white; padding: 40px; border-radius: var(--radius); box-shadow: var(--shadow); text-align: center;">
-                    <svg width="60" height="60" viewBox="0 0 24 24" fill="#25D366" style="margin-bottom: 20px;"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.205 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-                    <h3>Respon Cepat via WhatsApp</h3>
-                    <p style="color: var(--text-muted); margin: 15px 0 25px;">Klik tombol di bawah ini untuk terhubung langsung dengan Admin pendaftaran Bimbelz.</p>
-                    <a href="https://wa.me/6281234567890?text=Halo%20Admin%20Bimbelz,%20saya%20ingin%20tanya%20informasi%20pendaftaran" target="_blank" class="btn btn-wa" style="width: 100%;">Chat WhatsApp Admin</a>
+                <!--
+                    FOTO HERO: ganti blok .placeholder di bawah dengan foto asli kegiatan belajar SFE (izin publikasi wajib,
+                    termasuk izin orang tua/wali bila ada anak). Contoh:
+                    <img src="images/hero-sfe.jpg" alt="Kegiatan belajar di SFE Bimbingan Belajar" width="1000" height="800">
+                    Lalu hapus .placeholder dan .photo-note.
+                -->
+                <div class="photo-frame" role="img" aria-label="Ilustrasi kegiatan belajar bersama tutor">
+                    <svg class="placeholder" viewBox="0 0 500 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                        <rect width="500" height="400" fill="#d9e1ea"/>
+                        <rect y="250" width="500" height="150" fill="#c3cedb"/>
+                        <g fill="#082248">
+                            <circle cx="150" cy="150" r="30" fill="#b48a6e"/><rect x="108" y="190" width="84" height="120" rx="22"/>
+                            <circle cx="260" cy="115" r="32" fill="#8d6b58"/><rect x="214" y="158" width="92" height="140" rx="24"/>
+                            <circle cx="372" cy="160" r="30" fill="#c49a7a"/><rect x="330" y="200" width="84" height="116" rx="22"/>
+                        </g>
+                        <rect x="0" y="0" width="500" height="6" fill="#C9A44C" opacity="0"/>
+                    </svg>
+                    <div class="photo-note">Area foto – gunakan foto asli kegiatan SFE</div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- FOOTER -->
+        <!-- 05. DUA PILAR UTAMA -->
+        <section class="pillars" aria-label="Dua pilar utama SFE">
+            <div class="container pillars-grid">
+                <article class="pillar reveal">
+                    <span class="num">Pilar 1</span>
+                    <h3>Educational Institution</h3>
+                    <p>Profil lembaga, visi-misi, filosofi pendidikan, layanan, program, dan kemitraan, dengan layanan pendidikan yang terarah, inklusif, dan berorientasi pada kebutuhan peserta didik.</p>
+                </article>
+                <article class="pillar reveal">
+                    <span class="num">Pilar 2</span>
+                    <h3>Professional Tutor Management</h3>
+                    <p>Rekrutmen, seleksi, asesmen, pencocokan tutor, rekomendasi, penempatan, koordinasi, dan evaluasi, melalui screening, interview, serta microteaching atau asesmen kompetensi.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- 04. PENGENALAN LEMBAGA + 2. TENTANG SFE -->
+        <section id="tentang" class="section" aria-labelledby="tentang-title">
+            <div class="container">
+                <div class="about-intro">
+                    <div class="reveal">
+                        <span class="eyebrow">Profil Lembaga</span>
+                        <h2 id="tentang-title">Tentang SFE</h2>
+                        <p>SFE Bimbingan Belajar adalah lembaga penyedia layanan pendidikan yang berfokus pada pembelajaran akademik, pendampingan pendidikan inklusif, pengembangan keterampilan, dan pengembangan tenaga pendidik. SFE mengutamakan kesesuaian antara kebutuhan peserta didik, karakteristik program, dan kompetensi tenaga pengajar.</p>
+                        <p>Kami menghubungkan keluarga dan institusi pendidikan dengan tutor serta tenaga pendidik melalui proses identifikasi kebutuhan, seleksi, pencocokan kualifikasi, dan koordinasi layanan.</p>
+                        <ul class="check-list">
+                            <li>Pembelajaran Terarah</li>
+                            <li>Seleksi Tutor Terstruktur</li>
+                            <li>Pendekatan Inklusif</li>
+                            <li>Evaluasi Berkala</li>
+                        </ul>
+                    </div>
+                    <!-- FOTO: ganti dengan foto ruang/kegiatan belajar asli SFE -->
+                    <div class="photo-frame reveal" role="img" aria-label="Ilustrasi ruang belajar">
+                        <svg class="placeholder" viewBox="0 0 500 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                            <rect width="500" height="400" fill="#e4eaf1"/>
+                            <rect x="40" y="50" width="420" height="150" rx="8" fill="#fff" stroke="#c3cedb" stroke-width="3"/>
+                            <g stroke="#082248" stroke-width="5" stroke-linecap="round" opacity=".55"><path d="M80 90h200M80 120h280M80 150h160"/></g>
+                            <circle cx="400" cy="125" r="26" fill="none" stroke="#C9A44C" stroke-width="6"/>
+                            <rect y="290" width="500" height="110" fill="#c3cedb"/>
+                            <rect x="70" y="250" width="150" height="14" rx="4" fill="#082248"/><rect x="90" y="264" width="10" height="70" fill="#082248"/><rect x="190" y="264" width="10" height="70" fill="#082248"/>
+                            <rect x="280" y="250" width="150" height="14" rx="4" fill="#082248"/><rect x="300" y="264" width="10" height="70" fill="#082248"/><rect x="400" y="264" width="10" height="70" fill="#082248"/>
+                        </svg>
+                        <div class="photo-note">Area foto – gunakan foto asli SFE</div>
+                    </div>
+                </div>
+
+                <div class="about-cards">
+                    <article class="info-card reveal">
+                        <h3>Our Background</h3>
+                        <p>Kebutuhan pendidikan yang semakin beragam menuntut layanan pembelajaran yang fleksibel, berkualitas, dan mampu menyesuaikan diri dengan karakteristik peserta didik. SFE hadir untuk menghubungkan kebutuhan belajar dengan tenaga pendidik yang sesuai melalui pengelolaan layanan yang terarah dan proses seleksi tutor.</p>
+                    </article>
+                    <article class="info-card reveal">
+                        <h3>Filosofi Pendidikan</h3>
+                        <p>Setiap peserta didik berhak mendapatkan pendekatan belajar yang tepat. SFE percaya bahwa pembelajaran efektif dimulai dari pemahaman kebutuhan individu, tujuan belajar yang jelas, dan pendidik yang sesuai.</p>
+                    </article>
+                    <article class="info-card reveal">
+                        <h3>Visi</h3>
+                        <p>Menjadi lembaga penyedia layanan pendidikan yang profesional, inovatif, dan terpercaya dengan jangkauan nasional.</p>
+                    </article>
+                    <article class="info-card wide reveal">
+                        <h3>Misi</h3>
+                        <ul class="two-col">
+                            <li>Menyediakan layanan pendidikan sesuai kebutuhan dan tujuan belajar peserta didik.</li>
+                            <li>Mengembangkan seleksi dan rekomendasi tutor berdasarkan kualifikasi, kompetensi, dan pengalaman.</li>
+                            <li>Mendorong pembelajaran inklusif yang menghargai perbedaan kebutuhan belajar.</li>
+                            <li>Membangun koordinasi antara peserta didik, orang tua, tutor, dan mitra pendidikan.</li>
+                            <li>Melakukan evaluasi layanan secara berkala untuk mendukung peningkatan kualitas.</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- CARA KERJA SFE -->
+        <section class="section section-grey" aria-labelledby="cara-title">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="eyebrow">Alur Layanan</span>
+                    <h2 id="cara-title">Cara Kerja SFE</h2>
+                    <p>Lima langkah sederhana dari memahami kebutuhan hingga memantau perkembangan belajar.</p>
+                </div>
+                <ol class="how-steps">
+                    <li class="how-step reveal"><strong>Understand</strong><span>Memahami kebutuhan belajar peserta didik.</span></li>
+                    <li class="how-step reveal"><strong>Identify</strong><span>Menentukan program dan profil tutor yang tepat.</span></li>
+                    <li class="how-step reveal"><strong>Screen &amp; Assess</strong><span>Menyaring dan menilai tenaga pendidik yang sesuai.</span></li>
+                    <li class="how-step reveal"><strong>Recommend &amp; Coordinate</strong><span>Merekomendasikan dan mengoordinasikan penempatan tutor.</span></li>
+                    <li class="how-step reveal"><strong>Monitor</strong><span>Memantau perkembangan belajar dan umpan balik.</span></li>
+                </ol>
+                <div class="cta-strip reveal">
+                    <p>Sampaikan kebutuhan belajar Anda. Tim kami akan membantu menentukan program dan tenaga pendidik yang sesuai.</p>
+                    <a href="#kontak" class="btn btn-gold">Konsultasi Sekarang</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 06. LAYANAN PENDIDIKAN -->
+        <section id="layanan" class="section" aria-labelledby="layanan-title">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="eyebrow">Program Belajar</span>
+                    <h2 id="layanan-title">Layanan Pendidikan SFE</h2>
+                    <p>Layanan pendidikan terstruktur yang dirancang berdasarkan kebutuhan peserta didik. Hubungi kami untuk menentukan program yang paling sesuai.</p>
+                </div>
+                <div class="services-grid">
+                    <a href="#kontak" class="service reveal" data-service="Les Privat">
+                        <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H11v15H5.5A1.5 1.5 0 0 0 4 20.5z"/><path d="M20 5.5A1.5 1.5 0 0 0 18.5 4H13v15h5.5a1.5 1.5 0 0 1 1.5 1.5z"/></svg></div>
+                        <h3>Les Privat</h3>
+                        <p>Layanan pembelajaran individual untuk berbagai jenjang dan mata pelajaran, termasuk program akademik, bahasa, persiapan ujian, serta kurikulum nasional dan internasional. Tersedia online atau home visit sesuai lokasi dan ketersediaan tutor.</p>
+                        <span class="more">Tanyakan layanan ini</span>
+                    </a>
+                    <a href="#kontak" class="service reveal" data-service="Pendampingan Anak Berkebutuhan Khusus">
+                        <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21c-5-3.6-8-6.6-8-10.2A4.3 4.3 0 0 1 8.3 6.5c1.6 0 2.9.8 3.7 2 .8-1.2 2.1-2 3.7-2A4.3 4.3 0 0 1 20 10.8C20 14.4 17 17.400 12 21z"/></svg></div>
+                        <h3>Pendampingan Belajar Anak Berkebutuhan Khusus</h3>
+                        <p>Pendampingan pembelajaran individual bagi anak berkebutuhan khusus, termasuk calistung, dukungan akademik, keterampilan dasar, dan program belajar yang disesuaikan dengan kebutuhan anak.</p>
+                        <span class="more">Tanyakan layanan ini</span>
+                    </a>
+                    <a href="#kontak" class="service reveal" data-service="Guru Pendamping (Shadow Teacher)">
+                        <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.300 2.700-5.500 6-5.500s6 2.200 6 5.500"/><circle cx="17.500" cy="9.500" r="2.400"/><path d="M17.500 14.200c2.200 0 3.800 1.600 3.800 4"/></svg></div>
+                        <h3>Guru Pendamping (Shadow Teacher)</h3>
+                        <p>Pendampingan peserta didik di lingkungan sekolah untuk membantu keterlibatan dalam kegiatan belajar, mengikuti instruksi, interaksi sosial, dan pengembangan kemandirian sesuai kebutuhan.</p>
+                        <span class="more">Tanyakan layanan ini</span>
+                    </a>
+                    <a href="#kontak" class="service reveal" data-service="Ekstrakurikuler & Pengembangan Keterampilan">
+                        <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v10H9l-5 4z"/><path d="M8 9h8M8 12h5"/></svg></div>
+                        <h3>Ekstrakurikuler &amp; Pengembangan Keterampilan</h3>
+                        <p>Program pengembangan minat dan keterampilan seperti public speaking, English conversation, musik, seni, tari, dan kegiatan lain berdasarkan ketersediaan instruktur.</p>
+                        <span class="more">Tanyakan layanan ini</span>
+                    </a>
+                    <a href="#kontak" class="service reveal" data-service="Pelatihan Pendidikan">
+                        <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.500 9 12 4.500 21.500 9 12 13.500z"/><path d="M6.500 11.200V16c0 1.300 2.500 2.500 5.500 2.500s5.500-1.200 5.500-2.500v-4.800"/><path d="M21.500 9v6"/></svg></div>
+                        <h3>Pelatihan Pendidikan</h3>
+                        <p>Pelatihan dan pengembangan kompetensi tutor serta tenaga pendidik, termasuk pengenalan shadow teaching, keterampilan mengajar, komunikasi pendidikan, dan English for Teaching.</p>
+                        <span class="more">Tanyakan layanan ini</span>
+                    </a>
+                </div>
+                <!-- CATATAN KONTEN: layanan terapi sengaja TIDAK ditampilkan. Tampilkan hanya bila tersedia tenaga profesional
+                     berkualifikasi, dan hindari klaim diagnosis atau kesembuhan. -->
+            </div>
+        </section>
+
+        <!-- 07. PROSES PENGELOLAAN TUTOR -->
+        <section id="pengelolaan-tutor" class="section tutor on-dark" aria-labelledby="tutor-title">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="eyebrow">Pembeda Utama SFE</span>
+                    <h2 id="tutor-title">Pengelolaan Tutor Profesional</h2>
+                    <p>SFE menerapkan proses pengelolaan tutor untuk membantu memastikan kesesuaian antara kebutuhan pembelajaran dan profil tenaga pendidik. Proses dapat meliputi pemeriksaan dokumen, wawancara, microteaching atau asesmen kompetensi, pencocokan kebutuhan, rekomendasi, penempatan, serta evaluasi layanan.</p>
+                </div>
+
+                <ol class="timeline">
+                    <li class="t-step reveal"><span class="t-num">01</span><h3>Pendaftaran &amp; Seleksi Dokumen</h3><p>Pemeriksaan CV, latar belakang pendidikan, pengalaman, bidang keahlian, dokumen pendukung, dan informasi ketersediaan.</p></li>
+                    <li class="t-step reveal"><span class="t-num">02</span><h3>Wawancara</h3><p>Memahami pengalaman mengajar, komunikasi, motivasi, kesiapan, dan pemahaman terhadap kebutuhan peserta didik.</p></li>
+                    <li class="t-step reveal"><span class="t-num">03</span><h3>Praktik Mengajar / Penilaian Kompetensi</h3><p>Penilaian praktik mengajar, penguasaan materi, cara menjelaskan, interaksi, dan kemampuan menyesuaikan metode pembelajaran.</p></li>
+                    <li class="t-step reveal"><span class="t-num">04</span><h3>Peninjauan Kualifikasi &amp; Kesesuaian</h3><p>Kesesuaian kompetensi dengan jenjang, mata pelajaran, kurikulum, karakteristik peserta didik, lokasi, dan jadwal.</p></li>
+                    <li class="t-step reveal"><span class="t-num">05</span><h3>Rekomendasi &amp; Penempatan Tutor</h3><p>Rekomendasi tutor kepada klien berdasarkan kebutuhan dan ketersediaan. Penempatan dilakukan setelah kesepakatan layanan.</p></li>
+                    <li class="t-step reveal"><span class="t-num">06</span><h3>Koordinasi &amp; Evaluasi Layanan</h3><p>Koordinasi pelaksanaan, penerimaan laporan atau umpan balik, dan tindak lanjut bila diperlukan penyesuaian.</p></li>
+                </ol>
+
+                <div class="standards">
+                    <div class="std-box reveal">
+                        <h3>Standar Tutor SFE Bimbingan Belajar</h3>
+                        <div class="pill-row">
+                            <span class="pill">Competence</span><span class="pill">Communication</span><span class="pill">Professionalism</span><span class="pill">Learner Suitability</span>
+                        </div>
+                        <ul>
+                            <li>Kesesuaian pendidikan atau pengalaman dengan bidang yang diajarkan.</li>
+                            <li>Penguasaan materi dan kemampuan menyampaikan pembelajaran.</li>
+                            <li>Komunikasi yang baik dan sikap profesional.</li>
+                            <li>Kesiapan mengikuti ketentuan layanan dan koordinasi SFE.</li>
+                            <li>Kesediaan memberikan laporan atau umpan balik sesuai kebutuhan program.</li>
+                        </ul>
+                    </div>
+                    <div class="std-box note reveal">
+                        <span class="tag">Catatan Transparansi</span>
+                        <h3>Proses Menyesuaikan Kebutuhan</h3>
+                        <p>Proses seleksi dapat berbeda sesuai posisi dan kebutuhan program. Tahapan yang dijalani setiap tutor disesuaikan dengan jenis layanan, jenjang, dan kebutuhan peserta didik.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 08. PIMPINAN & TENAGA PROFESIONAL -->
+        <section id="tim" class="section" aria-labelledby="tim-title">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="eyebrow">Tenaga Pendidik</span>
+                    <h2 id="tim-title">Tim Profesional Kami</h2>
+                    <p>Pimpinan, tim pengelola, dan tenaga pendidik SFE. Profil ditampilkan secara faktual setelah data dan foto disetujui yang bersangkutan.</p>
+                </div>
+                <!-- Ganti .avatar dengan <img src="images/nama.jpg" alt="Nama"> berukuran & pencahayaan seragam bila foto sudah disetujui. -->
+                <div class="team-grid">
+                    <article class="team-card reveal"><div class="avatar"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.400 3.600-7 8-7s8 2.600 8 7z"/></svg></div><div class="body"><h3>Pendiri &amp; Direktur</h3><div class="role">Founder &amp; Director</div><p>Profil pimpinan SFE akan ditampilkan setelah data resmi dikonfirmasi.</p></div></article>
+                    <article class="team-card reveal"><div class="avatar"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.400 3.600-7 8-7s8 2.600 8 7z"/></svg></div><div class="body"><h3>Manajemen &amp; Administrasi</h3><div class="role">Tim Pengelola</div><p>Mengelola koordinasi layanan, administrasi, dan komunikasi dengan klien.</p></div></article>
+                    <article class="team-card reveal"><div class="avatar"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.400 3.600-7 8-7s8 2.600 8 7z"/></svg></div><div class="body"><h3>Tutor Akademik</h3><div class="role">Mata Pelajaran</div><p>Tutor untuk berbagai jenjang dan mata pelajaran yang telah disetujui.</p></div></article>
+                    <article class="team-card reveal"><div class="avatar"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.400 3.600-7 8-7s8 2.600 8 7z"/></svg></div><div class="body"><h3>Tutor Bahasa</h3><div class="role">Language Tutor</div><p>Pengajar bahasa untuk kebutuhan akademik, percakapan, dan persiapan ujian.</p></div></article>
+                    <article class="team-card reveal"><div class="avatar"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.400 3.600-7 8-7s8 2.600 8 7z"/></svg></div><div class="body"><h3>Guru Pendamping</h3><div class="role">Special Needs Educator / Shadow Teacher</div><p>Tenaga pendidik untuk pendampingan anak berkebutuhan khusus dan shadow teaching.</p></div></article>
+                    <article class="team-card reveal"><div class="avatar"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.400 3.600-7 8-7s8 2.600 8 7z"/></svg></div><div class="body"><h3>Instruktur &amp; Pelatih</h3><div class="role">Ekstrakurikuler &amp; Pelatihan</div><p>Instruktur public speaking, English conversation, musik, seni, dan pelatihan pendidik.</p></div></article>
+                </div>
+                <div class="profile-fields reveal">
+                    <strong>Format profil:</strong> nama · pendidikan &amp; universitas · bidang keahlian · pengalaman relevan · jenjang yang dikuasai · sertifikasi/pelatihan (bila ada) · foto yang telah disetujui.
+                </div>
+            </div>
+        </section>
+
+        <!-- 09. BANNER KEMITRAAN -->
+        <section id="kemitraan" class="section section-grey" aria-labelledby="mitra-title">
+            <div class="container">
+                <div class="partnership reveal">
+                    <span class="eyebrow light">Kolaborasi</span>
+                    <h2 id="mitra-title">Kemitraan Lembaga &amp; Sekolah</h2>
+                    <p>SFE membuka peluang kolaborasi dengan sekolah, yayasan, lembaga pendidikan, komunitas, dan mitra lain untuk mengembangkan program pembelajaran, dukungan pendidikan inklusif, penyediaan tutor, kegiatan ekstrakurikuler, serta pelatihan tenaga pendidik.</p>
+                    <div class="partner-tags">
+                        <span>Program pembelajaran</span><span>Pendidikan inklusif</span><span>Penyediaan tutor</span><span>Ekstrakurikuler</span><span>Pelatihan tenaga pendidik</span>
+                    </div>
+                    <a href="#kontak" class="btn btn-gold" data-service="Kemitraan Sekolah / Lembaga">Diskusikan Kerja Sama</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. BERITA & KEGIATAN -->
+        <section id="berita" class="section" aria-labelledby="berita-title">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="eyebrow">Informasi Terbaru</span>
+                    <h2 id="berita-title">Berita &amp; Kegiatan</h2>
+                    <p>Artikel edukasi, informasi program, pengumuman rekrutmen, kegiatan pelatihan, dan dokumentasi aktivitas pembelajaran.</p>
+                </div>
+                <div class="news-grid">
+                    <article class="news-card reveal"><div class="thumb"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h11l3 3v13H5z"/><path d="M8 11h8M8 14h8M8 17h5"/></svg></div><div class="body"><span class="tag">Artikel Edukasi</span><h3>Tips pembelajaran untuk orang tua</h3><p>Artikel edukasi akan segera dipublikasikan.</p></div></article>
+                    <article class="news-card reveal"><div class="thumb"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11v3l12 5V6z"/><path d="M15 9.500a3 3 0 0 1 0 5"/></svg></div><div class="body"><span class="tag">Pengumuman</span><h3>Informasi program &amp; rekrutmen tutor</h3><p>Pengumuman resmi SFE akan tampil di sini.</p></div></article>
+                    <article class="news-card reveal"><div class="thumb"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3.500"/></svg></div><div class="body"><span class="tag">Dokumentasi</span><h3>Kegiatan pembelajaran &amp; pelatihan</h3><p>Dokumentasi menggunakan foto asli dengan izin publikasi.</p></div></article>
+                </div>
+                <p class="news-note reveal">Konten berita sedang disiapkan.</p>
+            </div>
+        </section>
+
+        <!-- 8. KONTAK -->
+        <section id="kontak" class="section section-grey" aria-labelledby="kontak-title">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="eyebrow">Konsultasi</span>
+                    <h2 id="kontak-title">Formulir Permintaan Layanan</h2>
+                    <p>Sampaikan kebutuhan pembelajaran Anda kepada tim SFE. Kami akan membantu mengidentifikasi program dan profil tutor yang sesuai berdasarkan kebutuhan, lokasi, jadwal, serta ketersediaan tenaga pengajar.</p>
+                </div>
+                <div class="contact-grid">
+                    <div class="form-card reveal">
+                        <form id="requestForm" novalidate>
+                            <div class="form-row">
+                                <div class="field"><label for="f-nama">Nama <span class="req">*</span></label><input id="f-nama" name="nama" class="control" type="text" autocomplete="name" placeholder="Nama orang tua / peserta didik" required></div>
+                                <div class="field"><label for="f-wa">Nomor WhatsApp <span class="req">*</span></label><input id="f-wa" name="wa" class="control" type="tel" inputmode="tel" autocomplete="tel" placeholder="08xxxxxxxxxx" pattern="[0-9+\s\-]{9,16}" required></div>
+                            </div>
+                            <div class="form-row">
+                                <div class="field"><label for="f-kota">Kota / Lokasi <span class="req">*</span></label><input id="f-kota" name="kota" class="control" type="text" autocomplete="address-level2" placeholder="Contoh: Jakarta Selatan" required></div>
+                                <div class="field"><label for="f-layanan">Layanan yang Dibutuhkan <span class="req">*</span></label>
+                                    <select id="f-layanan" name="layanan" class="control" required>
+                                        <option value="" disabled selected>Pilih layanan</option>
+                                        <option>Les Privat</option>
+                                        <option>Pendampingan Anak Berkebutuhan Khusus</option>
+                                        <option>Guru Pendamping (Shadow Teacher)</option>
+                                        <option>Ekstrakurikuler &amp; Pengembangan Keterampilan</option>
+                                        <option>Pelatihan Pendidikan</option>
+                                        <option>Kemitraan Sekolah / Lembaga</option>
+                                        <option>Lainnya</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="field"><label for="f-jenjang">Jenjang / Usia</label><input id="f-jenjang" name="jenjang" class="control" type="text" placeholder="Contoh: SD kelas 4 / usia 7 tahun"></div>
+                                <div class="field"><label for="f-mapel">Mata Pelajaran / Kebutuhan</label><input id="f-mapel" name="mapel" class="control" type="text" placeholder="Contoh: Matematika, calistung"></div>
+                            </div>
+                            <div class="field"><label for="f-jadwal">Jadwal yang Diinginkan</label><input id="f-jadwal" name="jadwal" class="control" type="text" placeholder="Contoh: Senin &amp; Rabu sore"></div>
+                            <div class="field"><label for="f-pesan">Pesan Tambahan</label><textarea id="f-pesan" name="pesan" class="control" placeholder="Ceritakan kebutuhan belajar secara singkat"></textarea></div>
+                            <button type="submit" class="btn btn-navy btn-block">Kirim Permintaan Layanan</button>
+                            <p class="form-hint">Kami hanya meminta data yang diperlukan untuk menindaklanjuti permintaan Anda. Lihat <a role="button" tabindex="0" id="openPrivacy">Kebijakan Privasi</a>.</p>
+                            <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
+                        </form>
+                    </div>
+
+                    <aside class="side-card reveal">
+                        <h3>Kontak &amp; Wilayah Layanan</h3>
+                        <p>Layanan tersedia online atau home visit sesuai lokasi dan ketersediaan tutor.</p>
+                        <ul class="contact-list" id="contactList">
+                            <li>
+                                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-5.800 7-11a7 7 0 0 0-14 0c0 5.200 7 11 7 11z"/><circle cx="12" cy="10" r="2.500"/></svg>
+                                <div><strong>Wilayah Layanan</strong><span>Online &amp; home visit, disesuaikan dengan lokasi dan ketersediaan tutor.</span></div>
+                            </li>
+                        </ul>
+                        <a href="#" class="btn btn-wa btn-block" id="waButton" hidden target="_blank" rel="noopener">Konsultasi via WhatsApp</a>
+                    </aside>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 11. BAGIAN BAWAH WEBSITE -->
     <footer>
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-col">
-                    <a href="#" class="logo" style="color: white;">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
-                        Bimbelz
-                    </a>
-                    <p>Mendampingi putra-putri Anda mencapai potensi akademik terbaik dengan metode belajar terstruktur dan menyenangkan.</p>
+                <div>
+                    <a href="#beranda" class="logo"><b>SFE</b><small>BIMBINGAN BELAJAR</small></a>
+                    <p>SFE Bimbingan Belajar adalah lembaga penyedia layanan pendidikan yang berfokus pada pembelajaran personal, pengelolaan tutor profesional, dan pengembangan pendidikan. Kami menghubungkan peserta didik dengan tenaga pendidik yang sesuai melalui proses yang terstruktur dan berdasarkan kebutuhan.</p>
                 </div>
-                <div class="footer-col">
+                <div>
                     <h4>Navigasi</h4>
-                    <ul class="footer-links">
-                        <li><a href="#tentang">Tentang Kami</a></li>
-                        <li><a href="#harga">Paket Belajar</a></li>
-                        <li><a href="#pengajar">Pengurus</a></li>
-                        <li><a href="#lokasi">Lokasi Kami</a></li>
+                    <ul>
+                        <li><a href="#beranda">Beranda</a></li>
+                        <li><a href="#tentang">Tentang SFE</a></li>
+                        <li><a href="#pengelolaan-tutor">Pengelolaan Tutor</a></li>
+                        <li><a href="#tim">Tim Profesional Kami</a></li>
+                        <li><a href="#kemitraan">Kemitraan</a></li>
                     </ul>
                 </div>
-                <div class="footer-col">
-                    <h4>Media Sosial</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">Instagram</a></li>
-                        <li><a href="#">Facebook</a></li>
-                        <li><a href="#">YouTube</a></li>
+                <div>
+                    <h4>Layanan</h4>
+                    <ul>
+                        <li><a href="#layanan">Les Privat</a></li>
+                        <li><a href="#layanan">Pendampingan ABK</a></li>
+                        <li><a href="#layanan">Guru Pendamping</a></li>
+                        <li><a href="#layanan">Ekstrakurikuler</a></li>
+                        <li><a href="#layanan">Pelatihan Pendidikan</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Informasi</h4>
+                    <ul>
+                        <li><a href="#berita">Berita &amp; Kegiatan</a></li>
+                        <li><a href="#kontak">Kontak &amp; Formulir</a></li>
+                        <li><button type="button" id="openPrivacy2">Kebijakan Privasi</button></li>
                     </ul>
                 </div>
             </div>
-            <div class="copyright">
-                &copy; 2026 Bimbelz. All Rights Reserved.
-            </div>
+            <div class="copyright">&copy; <span id="year">2026</span> SFE Bimbingan Belajar. All Rights Reserved.</div>
         </div>
     </footer>
 
+    <!-- KEBIJAKAN PRIVASI (ringkas; sesuaikan dengan ketentuan resmi SFE) -->
+    <dialog id="privacyDialog" aria-labelledby="privacyTitle">
+        <div class="dlg-head"><h3 id="privacyTitle">Kebijakan Privasi</h3><button class="dlg-close" id="closePrivacy" aria-label="Tutup">&times;</button></div>
+        <div class="dlg-body">
+            <h4>Data yang kami minta</h4>
+            <p>Formulir hanya meminta data yang diperlukan untuk menindaklanjuti permintaan layanan: nama, nomor WhatsApp, lokasi, kebutuhan belajar, jenjang/usia, dan jadwal.</p>
+            <h4>Penggunaan data</h4>
+            <p>Data digunakan untuk menghubungi Anda, mengidentifikasi program dan profil tutor yang sesuai, serta mengoordinasikan layanan. Data tidak dijual kepada pihak lain.</p>
+            <h4>Data anak</h4>
+            <p>Informasi mengenai anak diberikan oleh orang tua/wali dan hanya digunakan untuk kebutuhan penyesuaian layanan. Foto anak tidak dipublikasikan tanpa izin orang tua/wali.</p>
+            <h4>Hak Anda</h4>
+            <p>Anda dapat meminta perubahan atau penghapusan data dengan menghubungi SFE melalui kontak resmi.</p>
+        </div>
+    </dialog>
+
+    <script>
+        /* =========================================================
+           KONFIGURASI KONTAK RESMI
+           Isi setelah data resmi dikonfirmasi (sesuai dokumen konsep):
+             whatsapp : format internasional tanpa +, contoh "6281234567890"
+             email    : contoh "info@domain-sfe.id"
+             alamat   : alamat kantor/sekretariat (kosongkan bila belum ada)
+             jam      : jam operasional (kosongkan bila belum ada)
+             instagram: URL akun resmi (kosongkan bila belum ada)
+           Item yang dikosongkan tidak akan ditampilkan.
+           ========================================================= */
+        const SFE_CONFIG = { whatsapp: "", email: "", alamat: "", jam: "", instagram: "" };
+
+        (function () {
+            document.body.classList.remove('no-js');
+            const $ = (s, c = document) => c.querySelector(s);
+            const $$ = (s, c = document) => [...c.querySelectorAll(s)];
+            const esc = s => String(s).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+
+            $('#year').textContent = new Date().getFullYear();
+
+            /* Menu mobile */
+            const toggle = $('#menuToggle'), links = $('#navLinks');
+            const setMenu = open => {
+                links.classList.toggle('open', open);
+                toggle.setAttribute('aria-expanded', open);
+                toggle.setAttribute('aria-label', open ? 'Tutup menu' : 'Buka menu');
+            };
+            toggle.addEventListener('click', () => setMenu(!links.classList.contains('open')));
+            $$('a', links).forEach(a => a.addEventListener('click', () => setMenu(false)));
+            document.addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
+
+            /* Dropdown "Lainnya" */
+            const wrap = $('#subWrap'), subBtn = $('#subToggle');
+            subBtn.addEventListener('click', e => { e.stopPropagation(); const o = wrap.classList.toggle('open'); subBtn.setAttribute('aria-expanded', o); });
+            document.addEventListener('click', () => { wrap.classList.remove('open'); subBtn.setAttribute('aria-expanded', false); });
+
+            /* Menu aktif sesuai bagian yang sedang dilihat */
+            const navMap = {};
+            $$('a:not(.btn)', links).forEach(a => navMap[a.getAttribute('href').slice(1)] = a);
+            const sections = Object.keys(navMap).map(id => document.getElementById(id)).filter(Boolean);
+            const setActive = () => {
+                const y = window.scrollY + 140;
+                let cur = sections[0];
+                sections.forEach(s => { if (s.offsetTop <= y) cur = s; });
+                $$('a', links).forEach(a => a.classList.remove('active'));
+                $('.sub-toggle').style.color = '';
+                if (cur) { navMap[cur.id].classList.add('active'); if (navMap[cur.id].closest('.sub')) $('.sub-toggle').style.color = 'var(--gold-text)'; }
+            };
+            window.addEventListener('scroll', setActive, { passive: true }); setActive();
+
+            /* Animasi muncul */
+            if ('IntersectionObserver' in window) {
+                const io = new IntersectionObserver(es => es.forEach(e => {
+                    if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+                }), { threshold: .12 });
+                $$('.reveal').forEach(el => io.observe(el));
+            } else { $$('.reveal').forEach(el => el.classList.add('in')); }
+
+            /* Kartu layanan -> pilih layanan di formulir */
+            const select = $('#f-layanan');
+            $$('[data-service]').forEach(el => el.addEventListener('click', () => {
+                const v = el.dataset.service;
+                const opt = [...select.options].find(o => o.textContent.trim() === v);
+                if (opt) select.value = opt.value || opt.textContent;
+            }));
+
+            /* Kontak resmi dari konfigurasi */
+            const list = $('#contactList');
+            const icons = {
+                pin: '<path d="M12 21s7-5.800 7-11a7 7 0 0 0-14 0c0 5.200 7 11 7 11z"/><circle cx="12" cy="10" r="2.500"/>',
+                clock: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+                phone: '<path d="M5 4h4l2 5-2.500 1.500a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/>',
+                mail: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>',
+                web: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/>'
+            };
+            const addItem = (icon, title, html) => list.insertAdjacentHTML('beforeend',
+                `<li><svg viewBox="0 0 24 24" aria-hidden="true">${icons[icon]}</svg><div><strong>${title}</strong><span>${html}</span></div></li>`);
+            const wa = (SFE_CONFIG.whatsapp || '').replace(/\D/g, '');
+            if (SFE_CONFIG.alamat) addItem('pin', 'Alamat', esc(SFE_CONFIG.alamat));
+            if (SFE_CONFIG.jam) addItem('clock', 'Jam Operasional', esc(SFE_CONFIG.jam));
+            if (wa) addItem('phone', 'WhatsApp', `<a href="https://wa.me/${wa}" target="_blank" rel="noopener">+${wa}</a>`);
+            if (SFE_CONFIG.email) addItem('mail', 'Email', `<a href="mailto:${esc(SFE_CONFIG.email)}">${esc(SFE_CONFIG.email)}</a>`);
+            if (SFE_CONFIG.instagram) addItem('web', 'Media Sosial', `<a href="${esc(SFE_CONFIG.instagram)}" target="_blank" rel="noopener">${esc(SFE_CONFIG.instagram.replace(/^https?:\/\//, ''))}</a>`);
+            const waBtn = $('#waButton');
+            if (wa) {
+                waBtn.hidden = false;
+                waBtn.href = `https://wa.me/${wa}?text=${encodeURIComponent('Halo Admin SFE, saya ingin konsultasi layanan pendidikan.')}`;
+            }
+
+            /* Formulir */
+            const form = $('#requestForm'), status = $('#formStatus');
+            const show = (msg, type) => { status.className = 'form-status show ' + type; status.textContent = msg; };
+            form.addEventListener('submit', e => {
+                e.preventDefault();
+                if (!form.checkValidity()) {
+                    form.reportValidity();
+                    show('Mohon lengkapi kolom yang bertanda * dengan benar.', 'warn');
+                    return;
+                }
+                const d = Object.fromEntries(new FormData(form));
+                const text = [
+                    'Halo Admin SFE, saya ingin mengajukan permintaan layanan:',
+                    `Nama: ${d.nama}`, `WhatsApp: ${d.wa}`, `Lokasi: ${d.kota}`, `Layanan: ${d.layanan}`,
+                    d.jenjang && `Jenjang/Usia: ${d.jenjang}`, d.mapel && `Mapel/Kebutuhan: ${d.mapel}`,
+                    d.jadwal && `Jadwal: ${d.jadwal}`, d.pesan && `Pesan: ${d.pesan}`
+                ].filter(Boolean).join('\n');
+                if (wa) {
+                    window.open(`https://wa.me/${wa}?text=${encodeURIComponent(text)}`, '_blank', 'noopener');
+                    show('Terima kasih. Rincian Anda telah disiapkan di WhatsApp, silakan tekan kirim di sana.', 'ok');
+                    form.reset();
+                } else if (SFE_CONFIG.email) {
+                    location.href = `mailto:${SFE_CONFIG.email}?subject=${encodeURIComponent('Permintaan Layanan SFE')}&body=${encodeURIComponent(text)}`;
+                    show('Terima kasih. Aplikasi email Anda akan terbuka dengan rincian permintaan.', 'ok');
+                } else {
+                    console.warn('SFE_CONFIG.whatsapp / email belum diisi, formulir belum terhubung ke saluran pengiriman.');
+                    show('Saluran kontak resmi kami sedang disiapkan. Silakan coba kembali dalam beberapa saat.', 'warn');
+                }
+            });
+
+            /* Dialog privasi */
+            const dlg = $('#privacyDialog');
+            const open = () => dlg.showModal ? dlg.showModal() : dlg.setAttribute('open', '');
+            ['#openPrivacy', '#openPrivacy2'].forEach(s => {
+                const el = $(s);
+                el.addEventListener('click', open);
+                el.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
+            });
+            $('#closePrivacy').addEventListener('click', () => dlg.close());
+            dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
+        })();
+    </script>
 </body>
 </html>
