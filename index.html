@@ -25,7 +25,7 @@
             --navy: #082248;
             --navy-2: #0f3366;
             --gold: #C9A44C;
-            --gold-text: #8a6a1c;      /* emas lebih gelap agar terbaca di latar putih */
+            --gold-text: #8a6a1c;
             --gold-soft: #f6eed8;
             --grey: #F1F4F7;
             --white: #ffffff;
@@ -168,7 +168,6 @@
         .hero p.lead { font-size: 1.08rem; color: var(--muted); margin-bottom: 32px; max-width: 580px; }
         .hero-cta { display: flex; flex-wrap: wrap; gap: 14px; }
 
-        /* Area foto: ganti dengan foto asli SFE (lihat komentar di HTML) */
         .photo-frame {
             position: relative; aspect-ratio: 5 / 4; border-radius: var(--radius); overflow: hidden;
             background: #d9e1ea; box-shadow: var(--shadow-lg); border: 4px solid #fff;
@@ -180,7 +179,7 @@
             background: rgba(8,34,72,.82); color: #fff; font-size: .72rem; font-weight: 600;
             letter-spacing: .1em; text-transform: uppercase;
         }
-        .photo-frame::before {  /* garis aksen emas */
+        .photo-frame::before {
             content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 5px; background: var(--gold); z-index: 2;
         }
 
@@ -325,32 +324,16 @@
         .news-card p { font-size: .9rem; color: var(--muted); }
         .news-note { text-align: center; margin-top: 30px; color: var(--muted); font-size: .9rem; }
 
-        /* ---------- Kontak ---------- */
-        .contact-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 40px; align-items: start; }
-        .form-card, .side-card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 34px; box-shadow: var(--shadow); }
-        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0 18px; }
-        .field { margin-bottom: 18px; }
-        .field label { display: block; font-weight: 600; font-size: .86rem; color: var(--navy); margin-bottom: 6px; }
-        .field label .req { color: #b42318; }
-        .control {
-            width: 100%; padding: 12px 14px; border: 1px solid #c6d0dc; border-radius: 8px; background: #fff;
-            font: inherit; font-size: .94rem; color: var(--text); transition: border-color .2s, box-shadow .2s;
-        }
-        .control:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(201,164,76,.25); }
-        textarea.control { resize: vertical; min-height: 96px; }
-        .form-hint { font-size: .8rem; color: var(--muted); margin-top: 12px; }
-        .form-hint a { color: var(--navy); text-decoration: underline; cursor: pointer; font-weight: 600; }
-        .form-status { margin-top: 14px; padding: 12px 14px; border-radius: 8px; font-size: .9rem; display: none; }
-        .form-status.show { display: block; }
-        .form-status.ok { background: #e8f6ee; color: #14532d; border: 1px solid #b7e3c6; }
-        .form-status.warn { background: #fff7e0; color: #6b4e00; border: 1px solid #f0d98a; }
+        /* ---------- Kontak (Layout Tengah) ---------- */
+        .contact-centered { max-width: 640px; margin: 0 auto; }
+        .side-card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 34px; box-shadow: var(--shadow); }
         .side-card h3 { font-size: 1.3rem; color: var(--navy); margin-bottom: 14px; }
         .side-card p { color: var(--muted); font-size: .94rem; margin-bottom: 16px; }
         .contact-list li { display: flex; gap: 12px; padding: 12px 0; border-top: 1px solid var(--line); font-size: .93rem; }
         .contact-list svg { flex: none; width: 20px; height: 20px; margin-top: 3px; fill: none; stroke: var(--gold-text); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
         .contact-list strong { display: block; color: var(--navy); font-size: .86rem; }
         .contact-list span { color: var(--muted); }
-        .side-card .btn { margin-top: 18px; }
+        .side-card .btn { margin-top: 24px; }
 
         /* ---------- Footer ---------- */
         footer { background: var(--navy); color: #fff; border-top: 3px solid var(--gold); padding: 56px 0 22px; }
@@ -363,16 +346,6 @@
         .footer-grid li a, .footer-grid li button { color: #a9b6c9; font-size: .9rem; transition: color .2s; background: none; border: 0; cursor: pointer; font-family: inherit; text-align: left; padding: 0; }
         .footer-grid li a:hover, .footer-grid li button:hover { color: #fff; }
         .copyright { border-top: 1px solid rgba(255,255,255,.12); padding-top: 22px; text-align: center; color: #8d9bb1; font-size: .84rem; }
-
-        /* ---------- Dialog privasi ---------- */
-        dialog { border: 0; border-radius: var(--radius); max-width: 620px; width: calc(100% - 32px); padding: 0; box-shadow: 0 30px 80px rgba(8,34,72,.4); margin: auto; }
-        dialog::backdrop { background: rgba(8,34,72,.6); }
-        .dlg-head { background: var(--navy); color: #fff; padding: 20px 26px; display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid var(--gold); }
-        .dlg-head h3 { font-size: 1.25rem; }
-        .dlg-close { background: none; border: 0; color: #fff; font-size: 1.8rem; line-height: 1; cursor: pointer; }
-        .dlg-body { padding: 26px; max-height: 60vh; overflow: auto; color: var(--muted); font-size: .94rem; }
-        .dlg-body h4 { color: var(--navy); margin: 14px 0 4px; }
-        .dlg-body h4:first-child { margin-top: 0; }
 
         /* ---------- Reveal ---------- */
         .reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
@@ -406,7 +379,7 @@
         @media (max-width: 860px) {
             .section { padding: 64px 0; }
             .hero { padding: 48px 0 90px; }
-            .hero-grid, .about-intro, .pillars-grid, .contact-grid, .standards { grid-template-columns: 1fr; gap: 28px; }
+            .hero-grid, .about-intro, .pillars-grid, .standards { grid-template-columns: 1fr; gap: 28px; }
             .hero-grid { gap: 36px; }
             .pillars { margin-top: -50px; }
             .about-intro .photo-frame { order: -1; }
@@ -418,11 +391,11 @@
             .logo b { font-size: 1.6rem; }
             .logo small { font-size: .62rem; }
             .hero-cta .btn { width: 100%; }
-            .check-list, .form-row { grid-template-columns: 1fr; }
+            .check-list { grid-template-columns: 1fr; }
             .how-steps { grid-template-columns: 1fr; }
             .cta-strip { padding: 26px 22px; }
             .cta-strip .btn { width: 100%; }
-            .form-card, .side-card { padding: 24px 20px; }
+            .side-card { padding: 24px 20px; }
             .partnership { padding: 40px 22px; }
             .footer-grid { grid-template-columns: 1fr; gap: 30px; }
 
@@ -446,7 +419,7 @@
 <body class="no-js">
     <a href="#beranda" class="skip-link">Lewati ke konten utama</a>
 
-    <!-- 01. BILAH INFORMASI (hanya informasi yang sudah pasti; kontak resmi diisi lewat SFE_CONFIG di bawah) -->
+    <!-- 01. BILAH INFORMASI -->
     <div class="topbar">
         <div class="container">
             <span>SFE Bimbingan Belajar</span><span class="sep">|</span><span>Education &amp; Professional Tutor Management</span>
@@ -473,7 +446,7 @@
                         <a href="#berita">Berita &amp; Kegiatan</a>
                     </div>
                 </div>
-                <a href="#kontak" class="btn btn-navy">Konsultasi</a>
+                <a href="#kontak" class="btn btn-navy" id="navConsultBtn">Konsultasi</a>
             </div>
         </nav>
     </header>
@@ -491,12 +464,6 @@
                         <a href="#pengelolaan-tutor" class="btn btn-outline">Pelajari Proses Seleksi Tutor</a>
                     </div>
                 </div>
-                <!--
-                    FOTO HERO: ganti blok .placeholder di bawah dengan foto asli kegiatan belajar SFE (izin publikasi wajib,
-                    termasuk izin orang tua/wali bila ada anak). Contoh:
-                    <img src="images/hero-sfe.jpg" alt="Kegiatan belajar di SFE Bimbingan Belajar" width="1000" height="800">
-                    Lalu hapus .placeholder dan .photo-note.
-                -->
                 <div class="photo-frame" role="img" aria-label="Ilustrasi kegiatan belajar bersama tutor">
                     <svg class="placeholder" viewBox="0 0 500 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
                         <rect width="500" height="400" fill="#d9e1ea"/>
@@ -529,7 +496,7 @@
             </div>
         </section>
 
-        <!-- 04. PENGENALAN LEMBAGA + 2. TENTANG SFE -->
+        <!-- 04. PENGENALAN LEMBAGA + TENTANG SFE -->
         <section id="tentang" class="section" aria-labelledby="tentang-title">
             <div class="container">
                 <div class="about-intro">
@@ -545,7 +512,6 @@
                             <li>Evaluasi Berkala</li>
                         </ul>
                     </div>
-                    <!-- FOTO: ganti dengan foto ruang/kegiatan belajar asli SFE -->
                     <div class="photo-frame reveal" role="img" aria-label="Ilustrasi ruang belajar">
                         <svg class="placeholder" viewBox="0 0 500 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
                             <rect width="500" height="400" fill="#e4eaf1"/>
@@ -649,8 +615,6 @@
                         <span class="more">Tanyakan layanan ini</span>
                     </a>
                 </div>
-                <!-- CATATAN KONTEN: layanan terapi sengaja TIDAK ditampilkan. Tampilkan hanya bila tersedia tenaga profesional
-                     berkualifikasi, dan hindari klaim diagnosis atau kesembuhan. -->
             </div>
         </section>
 
@@ -703,7 +667,6 @@
                     <h2 id="tim-title">Tim Profesional Kami</h2>
                     <p>Pimpinan, tim pengelola, dan tenaga pendidik SFE. Profil ditampilkan secara faktual setelah data dan foto disetujui yang bersangkutan.</p>
                 </div>
-                <!-- Ganti .avatar dengan <img src="images/nama.jpg" alt="Nama"> berukuran & pencahayaan seragam bila foto sudah disetujui. -->
                 <div class="team-grid">
                     <article class="team-card reveal"><div class="avatar"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.400 3.600-7 8-7s8 2.600 8 7z"/></svg></div><div class="body"><h3>Pendiri &amp; Direktur</h3><div class="role">Founder &amp; Director</div><p>Profil pimpinan SFE akan ditampilkan setelah data resmi dikonfirmasi.</p></div></article>
                     <article class="team-card reveal"><div class="avatar"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.400 3.600-7 8-7s8 2.600 8 7z"/></svg></div><div class="body"><h3>Manajemen &amp; Administrasi</h3><div class="role">Tim Pengelola</div><p>Mengelola koordinasi layanan, administrasi, dan komunikasi dengan klien.</p></div></article>
@@ -750,50 +713,17 @@
             </div>
         </section>
 
-        <!-- 8. KONTAK -->
+        <!-- 08. KONTAK -->
         <section id="kontak" class="section section-grey" aria-labelledby="kontak-title">
             <div class="container">
                 <div class="section-head reveal">
-                    <span class="eyebrow">Konsultasi</span>
-                    <h2 id="kontak-title">Formulir Permintaan Layanan</h2>
-                    <p>Sampaikan kebutuhan pembelajaran Anda kepada tim SFE. Kami akan membantu mengidentifikasi program dan profil tutor yang sesuai berdasarkan kebutuhan, lokasi, jadwal, serta ketersediaan tenaga pengajar.</p>
+                    <span class="eyebrow">Hubungi Kami</span>
+                    <h2 id="kontak-title">Kontak &amp; Wilayah Layanan</h2>
+                    <p>Sampaikan kebutuhan pembelajaran Anda secara langsung melalui saluran kontak kami di bawah ini.</p>
                 </div>
-                <div class="contact-grid">
-                    <div class="form-card reveal">
-                        <form id="requestForm" novalidate>
-                            <div class="form-row">
-                                <div class="field"><label for="f-nama">Nama <span class="req">*</span></label><input id="f-nama" name="nama" class="control" type="text" autocomplete="name" placeholder="Nama orang tua / peserta didik" required></div>
-                                <div class="field"><label for="f-wa">Nomor WhatsApp <span class="req">*</span></label><input id="f-wa" name="wa" class="control" type="tel" inputmode="tel" autocomplete="tel" placeholder="08xxxxxxxxxx" pattern="[0-9+\s\-]{9,16}" required></div>
-                            </div>
-                            <div class="form-row">
-                                <div class="field"><label for="f-kota">Kota / Lokasi <span class="req">*</span></label><input id="f-kota" name="kota" class="control" type="text" autocomplete="address-level2" placeholder="Contoh: Jakarta Selatan" required></div>
-                                <div class="field"><label for="f-layanan">Layanan yang Dibutuhkan <span class="req">*</span></label>
-                                    <select id="f-layanan" name="layanan" class="control" required>
-                                        <option value="" disabled selected>Pilih layanan</option>
-                                        <option>Les Privat</option>
-                                        <option>Pendampingan Anak Berkebutuhan Khusus</option>
-                                        <option>Guru Pendamping (Shadow Teacher)</option>
-                                        <option>Ekstrakurikuler &amp; Pengembangan Keterampilan</option>
-                                        <option>Pelatihan Pendidikan</option>
-                                        <option>Kemitraan Sekolah / Lembaga</option>
-                                        <option>Lainnya</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="field"><label for="f-jenjang">Jenjang / Usia</label><input id="f-jenjang" name="jenjang" class="control" type="text" placeholder="Contoh: SD kelas 4 / usia 7 tahun"></div>
-                                <div class="field"><label for="f-mapel">Mata Pelajaran / Kebutuhan</label><input id="f-mapel" name="mapel" class="control" type="text" placeholder="Contoh: Matematika, calistung"></div>
-                            </div>
-                            <div class="field"><label for="f-jadwal">Jadwal yang Diinginkan</label><input id="f-jadwal" name="jadwal" class="control" type="text" placeholder="Contoh: Senin &amp; Rabu sore"></div>
-                            <div class="field"><label for="f-pesan">Pesan Tambahan</label><textarea id="f-pesan" name="pesan" class="control" placeholder="Ceritakan kebutuhan belajar secara singkat"></textarea></div>
-                            <button type="submit" class="btn btn-navy btn-block">Kirim Permintaan Layanan</button>
-                            <p class="form-hint">Kami hanya meminta data yang diperlukan untuk menindaklanjuti permintaan Anda. Lihat <a role="button" tabindex="0" id="openPrivacy">Kebijakan Privasi</a>.</p>
-                            <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
-                        </form>
-                    </div>
-
+                <div class="contact-centered">
                     <aside class="side-card reveal">
-                        <h3>Kontak &amp; Wilayah Layanan</h3>
+                        <h3>Informasi Kontak</h3>
                         <p>Layanan tersedia online atau home visit sesuai lokasi dan ketersediaan tutor.</p>
                         <ul class="contact-list" id="contactList">
                             <li>
@@ -840,8 +770,7 @@
                     <h4>Informasi</h4>
                     <ul>
                         <li><a href="#berita">Berita &amp; Kegiatan</a></li>
-                        <li><a href="#kontak">Kontak &amp; Formulir</a></li>
-                        <li><button type="button" id="openPrivacy2">Kebijakan Privasi</button></li>
+                        <li><a href="#kontak">Kontak Resmi</a></li>
                     </ul>
                 </div>
             </div>
@@ -849,33 +778,17 @@
         </div>
     </footer>
 
-    <!-- KEBIJAKAN PRIVASI (ringkas; sesuaikan dengan ketentuan resmi SFE) -->
-    <dialog id="privacyDialog" aria-labelledby="privacyTitle">
-        <div class="dlg-head"><h3 id="privacyTitle">Kebijakan Privasi</h3><button class="dlg-close" id="closePrivacy" aria-label="Tutup">&times;</button></div>
-        <div class="dlg-body">
-            <h4>Data yang kami minta</h4>
-            <p>Formulir hanya meminta data yang diperlukan untuk menindaklanjuti permintaan layanan: nama, nomor WhatsApp, lokasi, kebutuhan belajar, jenjang/usia, dan jadwal.</p>
-            <h4>Penggunaan data</h4>
-            <p>Data digunakan untuk menghubungi Anda, mengidentifikasi program dan profil tutor yang sesuai, serta mengoordinasikan layanan. Data tidak dijual kepada pihak lain.</p>
-            <h4>Data anak</h4>
-            <p>Informasi mengenai anak diberikan oleh orang tua/wali dan hanya digunakan untuk kebutuhan penyesuaian layanan. Foto anak tidak dipublikasikan tanpa izin orang tua/wali.</p>
-            <h4>Hak Anda</h4>
-            <p>Anda dapat meminta perubahan atau penghapusan data dengan menghubungi SFE melalui kontak resmi.</p>
-        </div>
-    </dialog>
-
     <script>
         /* =========================================================
-           KONFIGURASI KONTAK RESMI
-           Isi setelah data resmi dikonfirmasi (sesuai dokumen konsep):
-             whatsapp : format internasional tanpa +, contoh "6281234567890"
-             email    : contoh "info@domain-sfe.id"
-             alamat   : alamat kantor/sekretariat (kosongkan bila belum ada)
-             jam      : jam operasional (kosongkan bila belum ada)
-             instagram: URL akun resmi (kosongkan bila belum ada)
-           Item yang dikosongkan tidak akan ditampilkan.
+           KONFIGURASI KONTAK RESMI SFE
            ========================================================= */
-        const SFE_CONFIG = { whatsapp: "", email: "", alamat: "", jam: "", instagram: "" };
+        const SFE_CONFIG = {
+            whatsapp: "6281234567890",
+            email: "info@sfe.id",
+            alamat: "Jl. Pendidikan No. 45, Jakarta Selatan, 12345",
+            jam: "Senin - Sabtu: 08.00 - 17.00 WIB",
+            instagram: "https://instagram.com/sfe_bimbels"
+        };
 
         (function () {
             document.body.classList.remove('no-js');
@@ -923,14 +836,6 @@
                 $$('.reveal').forEach(el => io.observe(el));
             } else { $$('.reveal').forEach(el => el.classList.add('in')); }
 
-            /* Kartu layanan -> pilih layanan di formulir */
-            const select = $('#f-layanan');
-            $$('[data-service]').forEach(el => el.addEventListener('click', () => {
-                const v = el.dataset.service;
-                const opt = [...select.options].find(o => o.textContent.trim() === v);
-                if (opt) select.value = opt.value || opt.textContent;
-            }));
-
             /* Kontak resmi dari konfigurasi */
             const list = $('#contactList');
             const icons = {
@@ -948,52 +853,29 @@
             if (wa) addItem('phone', 'WhatsApp', `<a href="https://wa.me/${wa}" target="_blank" rel="noopener">+${wa}</a>`);
             if (SFE_CONFIG.email) addItem('mail', 'Email', `<a href="mailto:${esc(SFE_CONFIG.email)}">${esc(SFE_CONFIG.email)}</a>`);
             if (SFE_CONFIG.instagram) addItem('web', 'Media Sosial', `<a href="${esc(SFE_CONFIG.instagram)}" target="_blank" rel="noopener">${esc(SFE_CONFIG.instagram.replace(/^https?:\/\//, ''))}</a>`);
+            
             const waBtn = $('#waButton');
+            const navConsultBtn = $('#navConsultBtn');
+
             if (wa) {
+                const waUrl = `https://wa.me/${wa}?text=${encodeURIComponent('Halo Admin SFE, saya ingin konsultasi layanan pendidikan.')}`;
                 waBtn.hidden = false;
-                waBtn.href = `https://wa.me/${wa}?text=${encodeURIComponent('Halo Admin SFE, saya ingin konsultasi layanan pendidikan.')}`;
+                waBtn.href = waUrl;
+                if (navConsultBtn) {
+                    navConsultBtn.href = waUrl;
+                    navConsultBtn.target = "_blank";
+                    navConsultBtn.rel = "noopener";
+                }
             }
 
-            /* Formulir */
-            const form = $('#requestForm'), status = $('#formStatus');
-            const show = (msg, type) => { status.className = 'form-status show ' + type; status.textContent = msg; };
-            form.addEventListener('submit', e => {
-                e.preventDefault();
-                if (!form.checkValidity()) {
-                    form.reportValidity();
-                    show('Mohon lengkapi kolom yang bertanda * dengan benar.', 'warn');
-                    return;
-                }
-                const d = Object.fromEntries(new FormData(form));
-                const text = [
-                    'Halo Admin SFE, saya ingin mengajukan permintaan layanan:',
-                    `Nama: ${d.nama}`, `WhatsApp: ${d.wa}`, `Lokasi: ${d.kota}`, `Layanan: ${d.layanan}`,
-                    d.jenjang && `Jenjang/Usia: ${d.jenjang}`, d.mapel && `Mapel/Kebutuhan: ${d.mapel}`,
-                    d.jadwal && `Jadwal: ${d.jadwal}`, d.pesan && `Pesan: ${d.pesan}`
-                ].filter(Boolean).join('\n');
+            /* Kartu layanan & tombol kemitraan langsung membuka WhatsApp dengan topik relevan */
+            $$('[data-service]').forEach(el => el.addEventListener('click', e => {
                 if (wa) {
-                    window.open(`https://wa.me/${wa}?text=${encodeURIComponent(text)}`, '_blank', 'noopener');
-                    show('Terima kasih. Rincian Anda telah disiapkan di WhatsApp, silakan tekan kirim di sana.', 'ok');
-                    form.reset();
-                } else if (SFE_CONFIG.email) {
-                    location.href = `mailto:${SFE_CONFIG.email}?subject=${encodeURIComponent('Permintaan Layanan SFE')}&body=${encodeURIComponent(text)}`;
-                    show('Terima kasih. Aplikasi email Anda akan terbuka dengan rincian permintaan.', 'ok');
-                } else {
-                    console.warn('SFE_CONFIG.whatsapp / email belum diisi, formulir belum terhubung ke saluran pengiriman.');
-                    show('Saluran kontak resmi kami sedang disiapkan. Silakan coba kembali dalam beberapa saat.', 'warn');
+                    e.preventDefault();
+                    const v = el.dataset.service;
+                    window.open(`https://wa.me/${wa}?text=${encodeURIComponent(`Halo Admin SFE, saya ingin bertanya mengenai layanan: ${v}`)}`, '_blank', 'noopener');
                 }
-            });
-
-            /* Dialog privasi */
-            const dlg = $('#privacyDialog');
-            const open = () => dlg.showModal ? dlg.showModal() : dlg.setAttribute('open', '');
-            ['#openPrivacy', '#openPrivacy2'].forEach(s => {
-                const el = $(s);
-                el.addEventListener('click', open);
-                el.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
-            });
-            $('#closePrivacy').addEventListener('click', () => dlg.close());
-            dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
+            }));
         })();
     </script>
 </body>
