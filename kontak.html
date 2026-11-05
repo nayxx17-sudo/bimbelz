@@ -9,6 +9,33 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body class="bg-slate-50 flex flex-col min-h-screen">
+    
+    <!-- TOPBAR -->
+    <div class="bg-slate-950 text-gray-300 text-xs py-2.5 px-4 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
+            <div class="flex items-center space-x-6">
+                <span class="flex items-center gap-2"><i class="fa-solid fa-envelope text-amber-400"></i> <span>info@sfebimbinganbelajar.com</span></span>
+                <span class="flex items-center gap-2"><i class="fa-solid fa-phone text-amber-400"></i> <span>0851-2378-6007</span></span>
+            </div>
+            <div class="flex items-center space-x-5">
+                <div class="flex items-center space-x-3 text-sm">
+                    <a href="#" class="hover:text-amber-400 transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="hover:text-amber-400 transition"><i class="fa-brands fa-threads"></i></a>
+                    <a href="#" class="hover:text-amber-400 transition"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" class="hover:text-amber-400 transition"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+                <div class="h-4 w-px bg-slate-700"></div>
+                <div class="relative flex items-center">
+                    <select id="lang-select" class="bg-slate-900 text-amber-400 text-xs font-semibold rounded px-2.5 py-1 border border-slate-700 focus:outline-none focus:ring-1 focus:ring-amber-400 cursor-pointer">
+                        <option value="id">ID - INDONESIA</option>
+                        <option value="en">EN - ENGLISH</option>
+                    </select>
+                </div>
+                <div id="google_translate_element"></div>
+            </div>
+        </div>
+    </div>
+
     <!-- MAIN NAVBAR -->
     <header class="bg-slate-900 sticky top-0 z-50 shadow-xl border-b border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -37,7 +64,7 @@
                     
                     <!-- DROPDOWN LAINNYA -->
                     <div class="relative group py-2">
-                        <button class="flex items-center gap-1.5 hover:text-amber-400 transition cursor-pointer">
+                        <button class="flex items-center gap-1.5 text-amber-400 transition cursor-pointer">
                             Lainnya <i class="fa-solid fa-chevron-down text-[10px]"></i>
                         </button>
                         <!-- Dropdown Menu Content -->
@@ -45,7 +72,7 @@
                             <a href="dokumentasi.html" class="block px-4 py-2 text-xs text-slate-300 hover:bg-amber-400 hover:text-slate-950 transition">Dokumentasi</a>
                             <a href="kemitraan.html" class="block px-4 py-2 text-xs text-slate-300 hover:bg-amber-400 hover:text-slate-950 transition">Kemitraan</a>
                             <a href="berita.html" class="block px-4 py-2 text-xs text-slate-300 hover:bg-amber-400 hover:text-slate-950 transition">Berita</a>
-                            <a href="kontak.html" class="block px-4 py-2 text-xs text-slate-300 hover:bg-amber-400 hover:text-slate-950 transition">Kontak</a>
+                            <a href="kontak.html" class="block px-4 py-2 text-xs text-amber-400 font-bold bg-slate-800 transition">Kontak</a>
                         </div>
                     </div>
 
@@ -77,10 +104,113 @@
                 <a href="dokumentasi.html" class="block text-gray-300 hover:text-amber-400 text-xs py-1">↳ Dokumentasi</a>
                 <a href="kemitraan.html" class="block text-gray-300 hover:text-amber-400 text-xs py-1">↳ Kemitraan</a>
                 <a href="berita.html" class="block text-gray-300 hover:text-amber-400 text-xs py-1">↳ Berita & Kegiatan</a>
-                <a href="kontak.html" class="block text-gray-300 hover:text-amber-400 text-xs py-1">↳ Kontak</a>
+                <a href="kontak.html" class="block text-amber-400 font-bold text-xs py-1">↳ Kontak</a>
             </div>
         </div>
     </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative bg-cover bg-center py-16 lg:py-24 overflow-hidden" style="background-image: url('images/background.jpg');">
+        <div class="absolute inset-0 bg-gradient-to-r from-[#0A192F] via-[#0A192F]/85 to-transparent lg:w-4/5"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
+            <div class="max-w-2xl space-y-5">
+                <span class="inline-block text-amber-400 text-xs font-bold uppercase tracking-widest bg-amber-400/10 border border-amber-400/20 px-3.5 py-1.5 rounded-full">
+                    LAYANAN PENGADUAN & INFORMASI
+                </span>
+                <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                    Hubungi SFE Bimbingan Belajar
+                </h1>
+                <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                    Pilih kategori kebutuhan Anda di bawah ini agar terhubung langsung dengan admin WhatsApp kami secara cepat dan terarah.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN CONTACT SECTION & INTERACTIVE WHATSAPP SELECTOR -->
+    <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+            
+            <!-- INFORMASI KONTAK INFO -->
+            <div class="space-y-6">
+                <div class="bg-white rounded-3xl p-8 shadow-xl border border-slate-200 space-y-6">
+                    <h3 class="text-xl font-bold text-slate-900">Informasi Resmi</h3>
+                    
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-bold text-slate-400 uppercase">Telepon / WhatsApp</h4>
+                            <p class="text-sm font-bold text-slate-800 mt-0.5">0851-2378-6007</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-bold text-slate-400 uppercase">Email Resmi</h4>
+                            <p class="text-sm font-bold text-slate-800 mt-0.5">info@sfebimbinganbelajar.com</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-bold text-slate-400 uppercase">Lokasi Kantor</h4>
+                            <p class="text-sm font-bold text-slate-800 mt-0.5">Jakarta, Indonesia</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-slate-900 to-slate-950 text-white rounded-3xl p-8 shadow-xl space-y-4">
+                    <h4 class="text-amber-400 font-bold text-base"><i class="fa-solid fa-clock mr-2"></i> Jam Operasional</h4>
+                    <p class="text-xs text-slate-300 leading-relaxed">Senin - Sabtu: 08.00 - 17.00 WIB.<br>Minggu / Hari Libur Nasional: Tutup (Chat WhatsApp tetap akan dibalas pada jam kerja berikutnya).</p>
+                </div>
+            </div>
+
+            <!-- INTERACTIVE WHATSAPP FORM -->
+            <div class="lg:col-span-2">
+                <div class="bg-white rounded-3xl p-8 sm:p-10 shadow-xl border border-slate-200">
+                    <div class="mb-6">
+                        <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider inline-flex items-center gap-1.5">
+                            <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp Direct Gateway
+                        </span>
+                        <h3 class="text-2xl font-bold text-slate-900 mt-3">Kirim Pesan Cepat ke Admin</h3>
+                        <p class="text-slate-600 text-xs sm:text-sm mt-1">Silakan pilih kategori pertanyaan Anda di bawah ini, tuliskan detail singkat, lalu klik tombol kirim.</p>
+                    </div>
+
+                    <form id="waForm" class="space-y-5" onsubmit="sendToWhatsApp(event)">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-2">1. Pilih Kategori Keperluan</label>
+                            <select id="waCategory" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-amber-500 font-medium cursor-pointer" required>
+                                <option value="" disabled selected>-- Pilih Topik Pertanyaan --</option>
+                                <option value="A">A. Tanya Program Belajar (Privat / Kelas / Bahasa)</option>
+                                <option value="B">B. Konsultasi Layanan Khusus (Shadow Teacher / ABK)</option>
+                                <option value="C">C. Kemitraan Sekolah & Institusi</option>
+                                <option value="D">D. Pendaftaran / Lowongan Tutor SFE</option>
+                                <option value="E">E. Pertanyaan Umum Lainnya</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-4 rounded-xl shadow-lg transition flex items-center justify-center gap-2 cursor-pointer text-sm">
+                            <i class="fa-brands fa-whatsapp text-lg"></i> Hubungkan ke WhatsApp Admin →
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a href="https://wa.me/6285123786007?text=Halo%20Admin%20SFE%20Bimbingan%20Belajar,%20saya%20ingin%20bertanya%20mengenai%20layanan%20bimbingan%20belajar." target="_blank" class="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition hover:scale-110">
+        <i class="fa-brands fa-whatsapp text-2xl"></i>
+    </a>
 
     <!-- FOOTER -->
     <footer class="bg-slate-950 text-gray-300 mt-auto border-t border-slate-800">
@@ -125,6 +255,31 @@
             </div>
         </div>
     </footer>
+
+    <!-- SCRIPT WHATSAPP REDIRECT GENERATOR -->
+    <script>
+        function sendToWhatsApp(e) {
+            e.preventDefault();
+            
+            const category = document.getElementById('waCategory').value;
+            const name = document.getElementById('waName').value;
+            const message = document.getElementById('waMessage').value;
+            
+            let categoryText = "";
+            switch(category) {
+                case 'A': categoryText = "Tanya Program Belajar"; break;
+                case 'B': categoryText = "Konsultasi Layanan Khusus (Shadow Teacher)"; break;
+                case 'C': categoryText = "Kemitraan Sekolah & Institusi"; break;
+                case 'D': categoryText = "Pendaftaran / Lowongan Tutor SFE"; break;
+                default: categoryText = "Pertanyaan Umum";
+            }
+            
+            const phone = "6285123786007";
+            const text = `Halo Admin SFE Bimbingan Belajar,%0A%0ASaya ingin berkonsultasi:%0A*Kategori:* ${categoryText}%0A*Nama:* ${name}%0A*Pesan:* ${message}%0A%0AMohon bantuannya, terima kasih!`;
+            
+            window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
+        }
+    </script>
 
     <!-- Main JavaScript & Google Translate Sync -->
     <script src="js/main.js"></script>
