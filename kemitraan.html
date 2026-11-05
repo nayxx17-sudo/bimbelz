@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kemitraan - SFE Bimbingan Belajar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-slate-50 flex flex-col min-h-screen">
+    <!-- MAIN NAVBAR -->
+    <header class="bg-slate-900 sticky top-0 z-50 shadow-xl border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center gap-3.5 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-500 to-amber-300 flex items-center justify-center shadow-lg group-hover:scale-105 transition">
+                        <i class="fa-solid fa-graduation-cap text-slate-950 text-xl"></i>
+                    </div>
+                    <span class="text-white font-serif font-extrabold text-2xl sm:text-3xl tracking-wider leading-none">SFE</span>
+                    <div class="h-8 w-[1.5px] bg-slate-500"></div>
+                    <div class="flex flex-col text-white font-semibold text-xs sm:text-sm tracking-wide leading-tight">
+                        <span>Bimbingan</span>
+                        <span>Belajar</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav Links -->
+                <nav class="hidden xl:flex items-center gap-4 text-sm font-semibold text-slate-300 ml-12">
+                    <a href="index.html" class="hover:text-amber-400 transition">Beranda</a>
+                    <a href="tentang.html" class="hover:text-amber-400 transition">Tentang SFE</a>
+                    <a href="program.html" class="hover:text-amber-400 transition">Program Pendidikan</a>
+                    <a href="layanan.html" class="hover:text-amber-400 transition">Layanan Kami</a>
+                    <a href="pengelolaan-tutor.html" class="hover:text-amber-400 transition">Pengelolaan Tutor</a>
+                    <a href="tim-manajemen.html" class="hover:text-amber-400 transition">Management Team</a>
+                    
+                    <!-- DROPDOWN LAINNYA -->
+                    <div class="relative group py-2">
+                        <button class="flex items-center gap-1.5 hover:text-amber-400 transition cursor-pointer">
+                            Lainnya <i class="fa-solid fa-chevron-down text-[10px]"></i>
+                        </button>
+                        <!-- Dropdown Menu Content -->
+                        <div class="absolute left-0 top-full w-44 bg-slate-900 border border-slate-800 rounded-xl shadow-2xl py-2 hidden group-hover:block transition-all z-50">
+                            <a href="dokumentasi.html" class="block px-4 py-2 text-xs text-slate-300 hover:bg-amber-400 hover:text-slate-950 transition">Dokumentasi</a>
+                            <a href="kemitraan.html" class="block px-4 py-2 text-xs text-slate-300 hover:bg-amber-400 hover:text-slate-950 transition">Kemitraan</a>
+                            <a href="berita.html" class="block px-4 py-2 text-xs text-slate-300 hover:bg-amber-400 hover:text-slate-950 transition">Berita</a>
+                            <a href="kontak.html" class="block px-4 py-2 text-xs text-slate-300 hover:bg-amber-400 hover:text-slate-950 transition">Kontak</a>
+                        </div>
+                    </div>
+
+                    <button class="text-white hover:text-amber-400 text-sm ml-2 cursor-pointer search-trigger"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <div class="lg:hidden flex items-center gap-3">
+                    <button class="search-trigger text-gray-300 hover:text-amber-400 p-2">
+                        <i class="fa-solid fa-magnifying-glass text-lg"></i>
+                    </button>
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-amber-400 focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-slate-900 border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="index.html" class="block text-gray-200 hover:text-amber-400 py-1">Beranda</a>
+            <a href="tentang.html" class="block text-gray-200 hover:text-amber-400 py-1">Tentang SFE</a>
+            <a href="program.html" class="block text-gray-200 hover:text-amber-400 py-1">Program Pendidikan</a>
+            <a href="layanan.html" class="block text-gray-200 hover:text-amber-400 py-1">Layanan Kami</a>
+            <a href="pengelolaan-tutor.html" class="block text-gray-200 hover:text-amber-400 py-1">Pengelolaan Tutor</a>
+            <a href="tim-manajemen.html" class="block text-gray-200 hover:text-amber-400 py-1">Management Team</a>
+            <!-- Sub-menu mobile -->
+            <div class="border-t border-slate-800 pt-2 space-y-2 pl-2">
+                <a href="dokumentasi.html" class="block text-gray-300 hover:text-amber-400 text-xs py-1">↳ Dokumentasi</a>
+                <a href="kemitraan.html" class="block text-gray-300 hover:text-amber-400 text-xs py-1">↳ Kemitraan</a>
+                <a href="berita.html" class="block text-gray-300 hover:text-amber-400 text-xs py-1">↳ Berita & Kegiatan</a>
+                <a href="kontak.html" class="block text-gray-300 hover:text-amber-400 text-xs py-1">↳ Kontak</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 text-gray-300 mt-auto border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-8 h-8 rounded-lg bg-amber-400 flex items-center justify-center">
+                            <i class="fa-solid fa-graduation-cap text-slate-950 text-base"></i>
+                        </div>
+                        <span class="text-lg font-bold text-white">SFE Bimbingan Belajar</span>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">Mendampingi setiap proses belajar dan mengembangkan potensi peserta didik secara maksimal dan penuh kepedulian.</p>
+                </div>
+                <div>
+                    <h4 class="text-amber-400 font-semibold text-sm mb-4">Navigasi Cepat</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="tentang.html" class="hover:text-amber-400 transition">Tentang Kami</a></li>
+                        <li><a href="program.html" class="hover:text-amber-400 transition">Program Pendidikan</a></li>
+                        <li><a href="layanan.html" class="hover:text-amber-400 transition">Layanan Utama</a></li>
+                        <li><a href="pengelolaan-tutor.html" class="hover:text-amber-400 transition">Alur Seleksi Tutor</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-amber-400 font-semibold text-sm mb-4">Informasi & Kemitraan</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="tim-manajemen.html" class="hover:text-amber-400 transition">Tim & Pengajar</a></li>
+                        <li><a href="kemitraan.html" class="hover:text-amber-400 transition">Kemitraan Sekolah</a></li>
+                        <li><a href="dokumentasi.html" class="hover:text-amber-400 transition">Dokumentasi</a></li>
+                        <li><a href="berita.html" class="hover:text-amber-400 transition">Berita Terkini</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-amber-400 font-semibold text-sm mb-4">Kontak Utama</h4>
+                    <p class="text-xs text-slate-400 mb-2"><i class="fa-solid fa-phone text-amber-400 mr-2"></i> 0851-2378-6007</p>
+                    <p class="text-xs text-slate-400 mb-2"><i class="fa-solid fa-envelope text-amber-400 mr-2"></i> info@sfebimbinganbelajar.com</p>
+                    <p class="text-xs text-slate-400"><i class="fa-solid fa-location-dot text-amber-400 mr-2"></i> Jakarta, Indonesia</p>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-6 text-center text-xs text-slate-500">
+                © 2026 SFE Bimbingan Belajar. Hak Cipta Dilindungi Undang-Undang.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JavaScript & Google Translate Sync -->
+    <script src="js/main.js"></script>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'id',
+                includedLanguages: 'id,en',
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const userLangSelect = document.getElementById('lang-select');
+            if (userLangSelect) {
+                const match = document.cookie.match(match = document.cookie.match('(^|;) ?googtrans=([^;]*)(;|$)'));
+                if (match && match[2]) {
+                    const currentLang = match[2].split('/')[2];
+                    if (currentLang) userLangSelect.value = currentLang;
+                }
+
+                userLangSelect.addEventListener('change', function() {
+                    const targetLang = this.value;
+                    const selectGoogle = document.querySelector('.goog-te-combo');
+                    if (selectGoogle) {
+                        selectGoogle.value = targetLang;
+                        selectGoogle.dispatchEvent(new Event('change'));
+                    } else {
+                        document.cookie = `googtrans=/id/${targetLang}`;
+                        location.reload();
+                    }
+                });
+            }
+        });
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>

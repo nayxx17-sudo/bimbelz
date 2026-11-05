@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tim Manajemen & Pengajar - SFE Bimbingan Belajar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @keyframes borderGlow {
+            0% { border-color: #f59e0b; box-shadow: 0 0 10px rgba(245, 158, 11, 0.3); }
+            50% { border-color: #3b82f6; box-shadow: 0 0 20px rgba(59, 130, 246, 0.5); }
+            100% { border-color: #f59e0b; box-shadow: 0 0 10px rgba(245, 158, 11, 0.3); }
+        }
+        .animated-border {
+            border: 3px solid #f59e0b;
+            animation: borderGlow 4s infinite ease-in-out;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .marquee-container {
+            display: flex;
+            width: max-content;
+            animation: marquee 40s linear infinite;
+        }
+        .marquee-container:hover {
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 flex flex-col min-h-screen">
+
+    <!-- TOPBAR -->
+    <div class="bg-slate-950 text-gray-300 text-xs py-2.5 px-4 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
+            <div class="flex items-center space-x-6">
+                <span class="flex items-center gap-2"><i class="fa-solid fa-envelope text-amber-400"></i> <span>info@sfebimbinganbelajar.com</span></span>
+                <span class="flex items-center gap-2"><i class="fa-solid fa-phone text-amber-400"></i> <span>0851-2378-6007</span></span>
+            </div>
+            <div class="flex items-center space-x-5">
+                <div class="flex items-center space-x-3 text-sm">
+                    <a href="#" class="hover:text-amber-400 transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="hover:text-amber-400 transition"><i class="fa-brands fa-threads"></i></a>
+                    <a href="#" class="hover:text-amber-400 transition"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" class="hover:text-amber-400 transition"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+                <div class="h-4 w-px bg-slate-700"></div>
+                
+                <div class="relative flex items-center">
+                    <select id="lang-select" class="bg-slate-900 text-amber-400 text-xs font-semibold rounded px-2.5 py-1 border border-slate-700 focus:outline-none focus:ring-1 focus:ring-amber-400 cursor-pointer">
+                        <option value="id">ID - INDONESIA</option>
+                        <option value="en">EN - ENGLISH</option>
+                    </select>
+                </div>
+                <div id="google_translate_element"></div>
+            </div>
+        </div>
+    </div>
+
+<!-- MAIN NAVBAR -->
+    <header class="bg-slate-900 sticky top-0 z-50 shadow-xl border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center gap-3.5 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-500 to-amber-300 flex items-center justify-center shadow-lg group-hover:scale-105 transition">
+                        <i class="fa-solid fa-graduation-cap text-slate-950 text-xl"></i>
+                    </div>
+                    <span class="text-white font-serif font-extrabold text-2xl sm:text-3xl tracking-wider leading-none">SFE</span>
+                    <div class="h-8 w-[1.5px] bg-slate-500"></div>
+                    <div class="flex flex-col text-white font-semibold text-xs sm:text-sm tracking-wide leading-tight">
+                        <span>Bimbingan</span>
+                        <span>Belajar</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav Links -->
+                <nav class="hidden xl:flex items-center gap-4 text-sm font-semibold text-slate-300 ml-12">
+                    <a href="index.html" class="hover:text-amber-400 transition">Beranda</a>
+                    <a href="tentang.html" class="hover:text-amber-400 transition">Tentang SFE</a>
+                    <a href="program.html" class="hover:text-amber-400 transition">Program Pendidikan</a>
+                    <a href="layanan.html" class="hover:text-amber-400 transition">Layanan Kami</a>
+                    <a href="pengelolaan-tutor.html" class="hover:text-amber-400 transition">Pengelolaan Tutor</a>
+                    <a href="tim-manajemen.html" class="hover:text-amber-400 transition">Management Team</a>
+                    
+                    <!-- DROPDOWN LAINNYA -->
+                    <div class="relative group py-2">
+                        <button class="flex items-center gap-1.5 hover:text-amber-400 transition cursor-pointer">
+                            Lainnya <i class="fa-solid fa-chevron-down text-[10px]"></i>
+                        </button>
+                        <!-- Dropdown Menu Content -->
+                        <div class="absolute left-0 top-full w-44 bg-slate-900 border border-slate-800 rounded-xl shadow-2xl py-2 hidden group-hover:block transition-all z-50">
+                            <a href="dokumentasi.html" class="block px-4 py-2 text-xs text-slate-300 hover:bg-amber-400 hover:text-slate-950 transition">Dokumentasi</a>
+                            <a href="kemitraan.html" class="block px-4 py-2 text-xs text-slate-300 hover:bg-amber-400 hover:text-slate-950 transition">Kemitraan</a>
+                            <a href="berita.html" class="block px-4 py-2 text-xs text-slate-300 hover:bg-amber-400 hover:text-slate-950 transition">Berita</a>
+                            <a href="kontak.html" class="block px-4 py-2 text-xs text-slate-300 hover:bg-amber-400 hover:text-slate-950 transition">Kontak</a>
+                        </div>
+                    </div>
+
+                    <button class="text-white hover:text-amber-400 text-sm ml-2 cursor-pointer search-trigger"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <div class="lg:hidden flex items-center gap-3">
+                    <button class="search-trigger text-gray-300 hover:text-amber-400 p-2">
+                        <i class="fa-solid fa-magnifying-glass text-lg"></i>
+                    </button>
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-amber-400 focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-slate-900 border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="index.html" class="block text-gray-200 hover:text-amber-400 py-1">Beranda</a>
+            <a href="tentang.html" class="block text-gray-200 hover:text-amber-400 py-1">Tentang SFE</a>
+            <a href="program.html" class="block text-gray-200 hover:text-amber-400 py-1">Program Pendidikan</a>
+            <a href="layanan.html" class="block text-gray-200 hover:text-amber-400 py-1">Layanan Kami</a>
+            <a href="pengelolaan-tutor.html" class="block text-gray-200 hover:text-amber-400 py-1">Pengelolaan Tutor</a>
+            <a href="tim-manajemen.html" class="block text-gray-200 hover:text-amber-400 py-1">Management Team</a>
+            <!-- Sub-menu mobile -->
+            <div class="border-t border-slate-800 pt-2 space-y-2 pl-2">
+                <a href="dokumentasi.html" class="block text-gray-300 hover:text-amber-400 text-xs py-1">↳ Dokumentasi</a>
+                <a href="kemitraan.html" class="block text-gray-300 hover:text-amber-400 text-xs py-1">↳ Kemitraan</a>
+                <a href="berita.html" class="block text-gray-300 hover:text-amber-400 text-xs py-1">↳ Berita & Kegiatan</a>
+                <a href="kontak.html" class="block text-gray-300 hover:text-amber-400 text-xs py-1">↳ Kontak</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative bg-cover bg-center py-16 lg:py-24 overflow-hidden" style="background-image: url('images/background.jpg');">
+        <div class="absolute inset-0 bg-gradient-to-r from-[#0A192F] via-[#0A192F]/85 to-transparent lg:w-4/5"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
+            <div class="max-w-2xl space-y-5">
+                <span class="inline-block text-amber-400 text-xs font-bold uppercase tracking-widest bg-amber-400/10 border border-amber-400/20 px-3.5 py-1.5 rounded-full">
+                    TIM MANAJEMEN & TENAGA PENDIDIK
+                </span>
+                <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                    Tim Manajemen & Pengajar Profesional
+                </h1>
+                <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                    Didukung oleh tim manajemen yang terorganisasi dan tenaga pendidik dari berbagai bidang keahlian[cite: 16].
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION FOUNDER & DIRECTOR -->
+    <section class="py-14 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <span class="bg-amber-100 text-amber-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">FOUNDER & DIRECTOR</span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mt-2 mb-8">Pimpinan Lembaga</h2>
+        
+        <div class="inline-block cursor-pointer group relative p-2 bg-white rounded-3xl shadow-xl animated-border transition transform hover:scale-105" onclick="openProfileModal('images/profil/Nuriza.jpg')">
+            <img src="images/profil/Nuriza.jpg" alt="Nuriza Furdaus" class="rounded-2xl w-full max-w-md h-auto object-contain">
+            <div class="absolute inset-2 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-slate-950/50 transition rounded-2xl text-white text-sm font-semibold gap-2">
+                <i class="fa-solid fa-magnifying-glass-plus"></i> Klik untuk Lihat Perbesar
+            </div>
+        </div>
+    </section>
+
+    <!-- MANAGEMENT TEAM SECTION -->
+    <section class="py-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-10">
+            <span class="bg-amber-100 text-amber-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">MANAGEMENT TEAM</span>
+            <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mt-2">Tim Manajemen Operasional</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center justify-center">
+            <!-- Naomi -->
+            <div class="text-center p-4 bg-white rounded-3xl shadow-lg animated-border cursor-pointer group transition transform hover:-translate-y-1" onclick="openProfileModal('images/profil/naomi.jpg')">
+                <div class="relative overflow-hidden rounded-2xl bg-slate-900 p-2">
+                    <img src="images/profil/naomi.jpg" alt="NAOMI" class="w-full h-auto object-contain rounded-xl group-hover:scale-102 transition duration-300">
+                    <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-slate-950/50 transition text-white font-semibold text-sm gap-2 rounded-2xl">
+                        <i class="fa-solid fa-eye"></i> Klik Perbesar Kartu
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vianney -->
+            <div class="text-center p-4 bg-white rounded-3xl shadow-lg animated-border cursor-pointer group transition transform hover:-translate-y-1" onclick="openProfileModal('images/profil/Vianney.jpg')">
+                <div class="relative overflow-hidden rounded-2xl bg-slate-900 p-2">
+                    <img src="images/profil/Vianney.jpg" alt="Vianney" class="w-full h-auto object-contain rounded-xl group-hover:scale-102 transition duration-300">
+                    <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-slate-950/50 transition text-white font-semibold text-sm gap-2 rounded-2xl">
+                        <i class="fa-solid fa-eye"></i> Klik Perbesar Kartu
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TEACHERS & EDUCATIONAL PROFESSIONALS (Slideshow Otomatis Utuh Tanpa Terpotong) -->
+    <section class="py-14 max-w-full overflow-hidden bg-slate-900/5 my-8">
+        <div class="text-center max-w-2xl mx-auto mb-10 px-4">
+            <span class="bg-amber-100 text-amber-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">TEACHERS & EDUCATIONAL PROFESSIONALS</span>
+            <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mt-2">Tim Pengajar & Profesional Edukasi</h2>
+            <p class="text-slate-600 text-xs mt-1">Sentuh atau sorot kursor untuk menghentikan guliran otomatis.</p>
+        </div>
+
+        <div class="relative w-full overflow-hidden py-4">
+            <div class="marquee-container gap-6 px-4 items-center">
+                
+                <!-- Array Kartu Pengajar -->
+                <!-- 1. Azizah -->
+                <div class="w-72 bg-white rounded-2xl p-3 shadow-lg border border-slate-200 cursor-pointer group shrink-0 text-center" onclick="openProfileModal('images/profil/azizah.jpg')">
+                    <div class="relative overflow-hidden rounded-xl bg-slate-900 p-1">
+                        <img src="images/profil/azizah.jpg" alt="Azizah Salmah" class="w-full h-auto object-contain rounded-lg group-hover:scale-102 transition">
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-slate-950/50 transition text-white text-xs font-semibold rounded-lg">
+                            <i class="fa-solid fa-eye mr-1"></i> Klik Perbesar
+                        </div>
+                    </div>
+                    <h4 class="font-bold text-slate-900 text-sm">Azizah</h4>
+                    <span class="text-[11px] text-amber-600 font-semibold block">Academic Tutor – Math & Science</span>
+                </div>
+
+                <!-- 2. Deswita -->
+                <div class="w-72 bg-white rounded-2xl p-3 shadow-lg border border-slate-200 cursor-pointer group shrink-0 text-center" onclick="openProfileModal('images/profil/deswita.jpg')">
+                    <div class="relative overflow-hidden rounded-xl bg-slate-900 p-1">
+                        <img src="images/profil/deswita.jpg" alt="Deswita" class="w-full h-auto object-contain rounded-lg group-hover:scale-102 transition">
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-slate-950/50 transition text-white text-xs font-semibold rounded-lg">
+                            <i class="fa-solid fa-eye mr-1"></i> Klik Perbesar
+                        </div>
+                    </div>
+                    <h4 class="font-bold text-slate-900 text-sm">Deswita</h4>
+                    <span class="text-[11px] text-amber-600 font-semibold block">Academic Tutor – Math & English</span>
+                </div>
+
+                <!-- 3. Nur Fella -->
+                <div class="w-72 bg-white rounded-2xl p-3 shadow-lg border border-slate-200 cursor-pointer group shrink-0 text-center" onclick="openProfileModal('images/profil/fella.jpg')">
+                    <div class="relative overflow-hidden rounded-xl bg-slate-900 p-1">
+                        <img src="images/profil/fella.jpg" alt="Nur Fella" class="w-full h-auto object-contain rounded-lg group-hover:scale-102 transition">
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-slate-950/50 transition text-white text-xs font-semibold rounded-lg">
+                            <i class="fa-solid fa-eye mr-1"></i> Klik Perbesar
+                        </div>
+                    </div>
+                    <h4 class="font-bold text-slate-900 text-sm">Nur Fella</h4>
+                    <span class="text-[11px] text-amber-600 font-semibold block">Shadow Teacher & Inclusive</span>
+                </div>
+
+                <!-- 4. Hesti Astuti -->
+                <div class="w-72 bg-white rounded-2xl p-3 shadow-lg border border-slate-200 cursor-pointer group shrink-0 text-center" onclick="openProfileModal('images/profil/hesti.jpg')">
+                    <div class="relative overflow-hidden rounded-xl bg-slate-900 p-1">
+                        <img src="images/profil/hesti.jpg" alt="Hesti Astuti" class="w-full h-auto object-contain rounded-lg group-hover:scale-102 transition">
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-slate-950/50 transition text-white text-xs font-semibold rounded-lg">
+                            <i class="fa-solid fa-eye mr-1"></i> Klik Perbesar
+                        </div>
+                    </div>
+                    <h4 class="font-bold text-slate-900 text-sm">Hesti Astuti</h4>
+                    <span class="text-[11px] text-amber-600 font-semibold block">Dance Instructor & Arts</span>
+                </div>
+
+                <!-- 5. Iswanto -->
+                <div class="w-72 bg-white rounded-2xl p-3 shadow-lg border border-slate-200 cursor-pointer group shrink-0 text-center" onclick="openProfileModal('images/profil/Iswanto.jpg')">
+                    <div class="relative overflow-hidden rounded-xl bg-slate-900 p-1">
+                        <img src="images/profil/Iswanto.jpg" alt="Iswanto" class="w-full h-auto object-contain rounded-lg group-hover:scale-102 transition">
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-slate-950/50 transition text-white text-xs font-semibold rounded-lg">
+                            <i class="fa-solid fa-eye mr-1"></i> Klik Perbesar
+                        </div>
+                    </div>
+                    <h4 class="font-bold text-slate-900 text-sm">Iswanto</h4>
+                    <span class="text-[11px] text-amber-600 font-semibold block">ICT & Technology Tutor</span>
+                </div>
+
+                <!-- 6. Kusuma Nugraha -->
+                <div class="w-72 bg-white rounded-2xl p-3 shadow-lg border border-slate-200 cursor-pointer group shrink-0 text-center" onclick="openProfileModal('images/profil/kusuma.jpg')">
+                    <div class="relative overflow-hidden rounded-xl bg-slate-900 p-1">
+                        <img src="images/profil/kusuma.jpg" alt="Kusuma" class="w-full h-auto object-contain rounded-lg group-hover:scale-102 transition">
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-slate-950/50 transition text-white text-xs font-semibold rounded-lg">
+                            <i class="fa-solid fa-eye mr-1"></i> Klik Perbesar
+                        </div>
+                    </div>
+                    <h4 class="font-bold text-slate-900 text-sm">Kusuma Nugraha</h4>
+                    <span class="text-[11px] text-amber-600 font-semibold block">Math, Physics & Science Tutor</span>
+                </div>
+
+                <!-- 7. Riski -->
+                <div class="w-72 bg-white rounded-2xl p-3 shadow-lg border border-slate-200 cursor-pointer group shrink-0 text-center" onclick="openProfileModal('images/profil/riski.jpg')">
+                    <div class="relative overflow-hidden rounded-xl bg-slate-900 p-1">
+                        <img src="images/profil/riski.jpg" alt="Riski" class="w-full h-auto object-contain rounded-lg group-hover:scale-102 transition">
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-slate-950/50 transition text-white text-xs font-semibold rounded-lg">
+                            <i class="fa-solid fa-eye mr-1"></i> Klik Perbesar
+                        </div>
+                    </div>
+                    <h4 class="font-bold text-slate-900 text-sm">Riski</h4>
+                    <span class="text-[11px] text-amber-600 font-semibold block">Student Support Assistant</span>
+                </div>
+
+                <!-- 8. Sabitha -->
+                <div class="w-72 bg-white rounded-2xl p-3 shadow-lg border border-slate-200 cursor-pointer group shrink-0 text-center" onclick="openProfileModal('images/profil/Sabitha.jpg')">
+                    <div class="relative overflow-hidden rounded-xl bg-slate-900 p-1">
+                        <img src="images/profil/Sabitha.jpg" alt="Sabitha" class="w-full h-auto object-contain rounded-lg group-hover:scale-102 transition">
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-slate-950/50 transition text-white text-xs font-semibold rounded-lg">
+                            <i class="fa-solid fa-eye mr-1"></i> Klik Perbesar
+                        </div>
+                    </div>
+                    <h4 class="font-bold text-slate-900 text-sm">Sabitha</h4>
+                    <span class="text-[11px] text-amber-600 font-semibold block">English Tutor</span>
+                </div>
+
+                <!-- 9. Yesaya Haria -->
+                <div class="w-72 bg-white rounded-2xl p-3 shadow-lg border border-slate-200 cursor-pointer group shrink-0 text-center" onclick="openProfileModal('images/profil/Yesaya.jpg')">
+                    <div class="relative overflow-hidden rounded-xl bg-slate-900 p-1">
+                        <img src="images/profil/Yesaya.jpg" alt="Yesaya" class="w-full h-auto object-contain rounded-lg group-hover:scale-102 transition">
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-slate-950/50 transition text-white text-xs font-semibold rounded-lg">
+                            <i class="fa-solid fa-eye mr-1"></i> Klik Perbesar
+                        </div>
+                    </div>
+                    <h4 class="font-bold text-slate-900 text-sm">Yesaya Haria</h4>
+                    <span class="text-[11px] text-amber-600 font-semibold block">Biology Tutor</span>
+                </div>
+
+                <!-- 10. Susi Sulisia -->
+                <div class="w-72 bg-white rounded-2xl p-3 shadow-lg border border-slate-200 cursor-pointer group shrink-0 text-center" onclick="openProfileModal('images/profil/susi.jpg')">
+                    <div class="relative overflow-hidden rounded-xl bg-slate-900 p-1">
+                        <img src="images/profil/susi.jpg" alt="Susi Sulisia" class="w-full h-auto object-contain rounded-lg group-hover:scale-102 transition">
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-slate-950/50 transition text-white text-xs font-semibold rounded-lg">
+                            <i class="fa-solid fa-eye mr-1"></i> Klik Perbesar
+                        </div>
+                    </div>
+                    <h4 class="font-bold text-slate-900 text-sm">Susi Sulisia</h4>
+                    <span class="text-[11px] text-amber-600 font-semibold block">Tutor Bahasa Jerman</span>
+                </div>
+
+                <!-- 11. Tiara Halim -->
+                <div class="w-72 bg-white rounded-2xl p-3 shadow-lg border border-slate-200 cursor-pointer group shrink-0 text-center" onclick="openProfileModal('images/profil/tiara.jpg')">
+                    <div class="relative overflow-hidden rounded-xl bg-slate-900 p-1">
+                        <img src="images/profil/tiara.jpg" alt="Tiara Halim" class="w-full h-auto object-contain rounded-lg group-hover:scale-102 transition">
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-slate-950/50 transition text-white text-xs font-semibold rounded-lg">
+                            <i class="fa-solid fa-eye mr-1"></i> Klik Perbesar
+                        </div>
+                    </div>
+                    <h4 class="font-bold text-slate-900 text-sm">Tiara Halim</h4>
+                    <span class="text-[11px] text-amber-600 font-semibold block">Tutor Bahasa Prancis</span>
+                </div>
+
+
+                <!-- DUPLIKASI KARTU UNTUK LOOPING MARQUEE MULUS -->
+                <div class="w-72 bg-white rounded-2xl p-3 shadow-lg border border-slate-200 cursor-pointer group shrink-0 text-center" onclick="openProfileModal('images/profil/azizah.jpg')">
+                    <div class="relative overflow-hidden rounded-xl bg-slate-900 p-1">
+                        <img src="images/profil/azizah.jpg" alt="Azizah Salmah" class="w-full h-auto object-contain rounded-lg group-hover:scale-102 transition">
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-slate-950/50 transition text-white text-xs font-semibold rounded-lg">
+                            <i class="fa-solid fa-eye mr-1"></i> Klik Perbesar
+                        </div>
+                    </div>
+                </div>
+                <div class="w-72 bg-white rounded-2xl p-3 shadow-lg border border-slate-200 cursor-pointer group shrink-0 text-center" onclick="openProfileModal('images/profil/deswita.jpg')">
+                    <div class="relative overflow-hidden rounded-xl bg-slate-900 p-1">
+                        <img src="images/profil/deswita.jpg" alt="Deswita" class="w-full h-auto object-contain rounded-lg group-hover:scale-102 transition">
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-slate-950/50 transition text-white text-xs font-semibold rounded-lg">
+                            <i class="fa-solid fa-eye mr-1"></i> Klik Perbesar
+                        </div>
+                    </div>
+                </div>
+                <div class="w-72 bg-white rounded-2xl p-3 shadow-lg border border-slate-200 cursor-pointer group shrink-0 text-center" onclick="openProfileModal('images/profil/fella.jpg')">
+                    <div class="relative overflow-hidden rounded-xl bg-slate-900 p-1">
+                        <img src="images/profil/fella.jpg" alt="Nur Fella" class="w-full h-auto object-contain rounded-lg group-hover:scale-102 transition">
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-slate-950/50 transition text-white text-xs font-semibold rounded-lg">
+                            <i class="fa-solid fa-eye mr-1"></i> Klik Perbesar
+                        </div>
+                    </div>
+                </div>
+                <div class="w-72 bg-white rounded-2xl p-3 shadow-lg border border-slate-200 cursor-pointer group shrink-0 text-center" onclick="openProfileModal('images/profil/hesti.jpg')">
+                    <div class="relative overflow-hidden rounded-xl bg-slate-900 p-1">
+                        <img src="images/profil/hesti.jpg" alt="Hesti Astuti" class="w-full h-auto object-contain rounded-lg group-hover:scale-102 transition">
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-slate-950/50 transition text-white text-xs font-semibold rounded-lg">
+                            <i class="fa-solid fa-eye mr-1"></i> Klik Perbesar
+                        </div>
+                    </div>
+                </div>
+                <div class="w-72 bg-white rounded-2xl p-3 shadow-lg border border-slate-200 cursor-pointer group shrink-0 text-center" onclick="openProfileModal('images/profil/Iswanto.jpg')">
+                    <div class="relative overflow-hidden rounded-xl bg-slate-900 p-1">
+                        <img src="images/profil/Iswanto.jpg" alt="Iswanto" class="w-full h-auto object-contain rounded-lg group-hover:scale-102 transition">
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-slate-950/50 transition text-white text-xs font-semibold rounded-lg">
+                            <i class="fa-solid fa-eye mr-1"></i> Klik Perbesar
+                        </div>
+                    </div>
+                </div>
+                <div class="w-72 bg-white rounded-2xl p-3 shadow-lg border border-slate-200 cursor-pointer group shrink-0 text-center" onclick="openProfileModal('images/profil/kusuma.jpg')">
+                    <div class="relative overflow-hidden rounded-xl bg-slate-900 p-1">
+                        <img src="images/profil/kusuma.jpg" alt="Kusuma" class="w-full h-auto object-contain rounded-lg group-hover:scale-102 transition">
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-slate-950/50 transition text-white text-xs font-semibold rounded-lg">
+                            <i class="fa-solid fa-eye mr-1"></i> Klik Perbesar
+                        </div>
+                    </div>
+                </div>
+                <div class="w-72 bg-white rounded-2xl p-3 shadow-lg border border-slate-200 cursor-pointer group shrink-0 text-center" onclick="openProfileModal('images/profil/riski.jpg')">
+                    <div class="relative overflow-hidden rounded-xl bg-slate-900 p-1">
+                        <img src="images/profil/riski.jpg" alt="Riski" class="w-full h-auto object-contain rounded-lg group-hover:scale-102 transition">
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-slate-950/50 transition text-white text-xs font-semibold rounded-lg">
+                            <i class="fa-solid fa-eye mr-1"></i> Klik Perbesar
+                        </div>
+                    </div>
+                </div>
+                <div class="w-72 bg-white rounded-2xl p-3 shadow-lg border border-slate-200 cursor-pointer group shrink-0 text-center" onclick="openProfileModal('images/profil/Sabitha.jpg')">
+                    <div class="relative overflow-hidden rounded-xl bg-slate-900 p-1">
+                        <img src="images/profil/Sabitha.jpg" alt="Sabitha" class="w-full h-auto object-contain rounded-lg group-hover:scale-102 transition">
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-slate-950/50 transition text-white text-xs font-semibold rounded-lg">
+                            <i class="fa-solid fa-eye mr-1"></i> Klik Perbesar
+                        </div>
+                    </div>
+                </div>
+                <div class="w-72 bg-white rounded-2xl p-3 shadow-lg border border-slate-200 cursor-pointer group shrink-0 text-center" onclick="openProfileModal('images/profil/Yesaya.jpg')">
+                    <div class="relative overflow-hidden rounded-xl bg-slate-900 p-1">
+                        <img src="images/profil/Yesaya.jpg" alt="Yesaya" class="w-full h-auto object-contain rounded-lg group-hover:scale-102 transition">
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-slate-950/50 transition text-white text-xs font-semibold rounded-lg">
+                            <i class="fa-solid fa-eye mr-1"></i> Klik Perbesar
+                        </div>
+                    </div>
+                </div>
+                <div class="w-72 bg-white rounded-2xl p-3 shadow-lg border border-slate-200 cursor-pointer group shrink-0 text-center" onclick="openProfileModal('images/profil/susi.jpg')">
+                    <div class="relative overflow-hidden rounded-xl bg-slate-900 p-1">
+                        <img src="images/profil/susi.jpg" alt="Susi Sulisia" class="w-full h-auto object-contain rounded-lg group-hover:scale-102 transition">
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-slate-950/50 transition text-white text-xs font-semibold rounded-lg">
+                            <i class="fa-solid fa-eye mr-1"></i> Klik Perbesar
+                        </div>
+                    </div>
+                </div>
+                <div class="w-72 bg-white rounded-2xl p-3 shadow-lg border border-slate-200 cursor-pointer group shrink-0 text-center" onclick="openProfileModal('images/profil/tiara.jpg')">
+                    <div class="relative overflow-hidden rounded-xl bg-slate-900 p-1">
+                        <img src="images/profil/tiara.jpg" alt="Tiara Halim" class="w-full h-auto object-contain rounded-lg group-hover:scale-102 transition">
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-slate-950/50 transition text-white text-xs font-semibold rounded-lg">
+                            <i class="fa-solid fa-eye mr-1"></i> Klik Perbesar
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- MODAL POPUP PREVIEW PROFILE (Blur Background) -->
+    <div id="profileModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-950/70 backdrop-blur-sm p-4 transition-all">
+        <div class="relative bg-white rounded-2xl shadow-2xl max-w-lg w-full overflow-hidden border border-slate-200 transform scale-95 transition-transform duration-300" id="modalContainer">
+            <button onclick="closeProfileModal()" class="absolute top-3 right-3 z-10 w-9 h-9 bg-slate-900/80 hover:bg-slate-900 text-white rounded-full flex items-center justify-center text-sm shadow-md transition cursor-pointer">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="p-2 bg-slate-900 flex justify-center items-center max-h-[85vh] overflow-y-auto">
+                <img id="modalImage" src="" alt="Full Profile" class="w-full h-auto rounded-lg object-contain shadow-inner">
+            </div>
+            <div class="p-3 bg-slate-950 text-center text-xs text-slate-400 flex justify-between items-center px-5">
+                <span>SFE Bimbingan Belajar - Profil Resmi</span>
+                <button onclick="closeProfileModal()" class="text-amber-400 font-semibold hover:underline cursor-pointer">Tutup</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA JOIN NETWORK -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+        <div class="bg-amber-400 text-slate-950 rounded-3xl p-8 lg:p-10 shadow-xl flex flex-col md:flex-row justify-between items-center gap-6">
+            <div>
+                <h3 class="text-2xl font-extrabold">Bergabung dengan Jaringan Pengajar SFE</h3>
+                <p class="text-sm font-medium mt-1">Jadilah bagian dari tim pendidik profesional SFE dan berkontribusi dalam mendukung perkembangan peserta didik di seluruh Indonesia[cite: 16].</p>
+            </div>
+            <a href="kontak.html" class="bg-slate-950 text-amber-400 px-6 py-3.5 rounded-xl font-bold shadow-lg hover:bg-slate-900 transition shrink-0 flex items-center gap-2">
+                <i class="fa-solid fa-pen-to-square"></i> Daftar sebagai Tutor →
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 text-gray-300 mt-auto border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-8 h-8 rounded-lg bg-amber-400 flex items-center justify-center">
+                            <i class="fa-solid fa-graduation-cap text-slate-950 text-base"></i>
+                        </div>
+                        <span class="text-lg font-bold text-white">SFE Bimbingan Belajar</span>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">Mendampingi setiap proses belajar dan mengembangkan potensi peserta didik secara maksimal dan penuh kepedulian.</p>
+                </div>
+                <div>
+                    <h4 class="text-amber-400 font-semibold text-sm mb-4">Navigasi Cepat</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="tentang.html" class="hover:text-amber-400 transition">Tentang Kami</a></li>
+                        <li><a href="program.html" class="hover:text-amber-400 transition">Program Pendidikan</a></li>
+                        <li><a href="layanan.html" class="hover:text-amber-400 transition">Layanan Utama</a></li>
+                        <li><a href="pengelolaan-tutor.html" class="hover:text-amber-400 transition">Alur Seleksi Tutor</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-amber-400 font-semibold text-sm mb-4">Informasi & Kemitraan</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="tim-manajemen.html" class="hover:text-amber-400 transition">Tim & Pengajar</a></li>
+                        <li><a href="kemitraan.html" class="hover:text-amber-400 transition">Kemitraan Sekolah</a></li>
+                        <li><a href="dokumentasi.html" class="hover:text-amber-400 transition">Dokumentasi</a></li>
+                        <li><a href="berita.html" class="hover:text-amber-400 transition">Berita Terkini</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-amber-400 font-semibold text-sm mb-4">Kontak Utama</h4>
+                    <p class="text-xs text-slate-400 mb-2"><i class="fa-solid fa-phone text-amber-400 mr-2"></i> 0851-2378-6007</p>
+                    <p class="text-xs text-slate-400 mb-2"><i class="fa-solid fa-envelope text-amber-400 mr-2"></i> info@sfebimbinganbelajar.com</p>
+                    <p class="text-xs text-slate-400"><i class="fa-solid fa-location-dot text-amber-400 mr-2"></i> Jakarta, Indonesia</p>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-6 text-center text-xs text-slate-500">
+                © 2026 SFE Bimbingan Belajar. Hak Cipta Dilindungi Undang-Undang.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script Modal Popup -->
+    <script>
+        function openProfileModal(imageSrc) {
+            const modal = document.getElementById('profileModal');
+            const modalImg = document.getElementById('modalImage');
+            const modalContainer = document.getElementById('modalContainer');
+            
+            modalImg.src = imageSrc;
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            
+            setTimeout(() => {
+                modalContainer.classList.remove('scale-95');
+                modalContainer.classList.add('scale-100');
+            }, 10);
+        }
+
+        function closeProfileModal() {
+            const modal = document.getElementById('profileModal');
+            const modalContainer = document.getElementById('modalContainer');
+            
+            modalContainer.classList.remove('scale-100');
+            modalContainer.classList.add('scale-95');
+            
+            setTimeout(() => {
+                modal.classList.remove('flex');
+                modal.classList.add('hidden');
+            }, 200);
+        }
+
+        window.addEventListener('click', function(e) {
+            const modal = document.getElementById('profileModal');
+            if (e.target === modal) {
+                closeProfileModal();
+            }
+        });
+    </script>
+
+    <script src="js/main.js"></script>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'id',
+                includedLanguages: 'id,en',
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const userLangSelect = document.getElementById('lang-select');
+            if (userLangSelect) {
+                const match = document.cookie.match(match = document.cookie.match('(^|;) ?googtrans=([^;]*)(;|$)'));
+                if (match && match[2]) {
+                    const currentLang = match[2].split('/')[2];
+                    if (currentLang) userLangSelect.value = currentLang;
+                }
+
+                userLangSelect.addEventListener('change', function() {
+                    const targetLang = this.value;
+                    const selectGoogle = document.querySelector('.goog-te-combo');
+                    if (selectGoogle) {
+                        selectGoogle.value = targetLang;
+                        selectGoogle.dispatchEvent(new Event('change'));
+                    } else {
+                        document.cookie = `googtrans=/id/${targetLang}`;
+                        location.reload();
+                    }
+                });
+            }
+        });
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>
