@@ -39,58 +39,79 @@
         </div>
     </div>
 
-    <!-- MAIN NAVBAR -->
-    <header class="sticky top-0 z-40 bg-[#0F172A] shadow-md border-b border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-8 py-3.5 flex justify-between items-center">
-            <!-- Logo SFE -->
-            <a href="index.html" class="flex items-center gap-3.5 group shrink-0">
-                <div class="w-9 h-9 rounded-xl bg-amber-400 flex items-center justify-center text-slate-950 font-bold shadow-md">
-                    <i class="fa-solid fa-graduation-cap text-lg"></i>
-                </div>
-                <span class="text-white font-serif font-extrabold text-2xl sm:text-3xl tracking-wider leading-none">SFE</span>
-                <div class="h-8 w-[1.5px] bg-slate-500"></div>
-                <div class="flex flex-col text-white font-semibold text-xs sm:text-sm tracking-wide leading-tight">
-                    <span>Bimbingan</span>
-                    <span>Belajar</span>
-                </div>
-            </a>
+<!-- MAIN NAVBAR -->
+    <header class="bg-slate-900 sticky top-0 z-50 shadow-xl border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center gap-3.5 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-500 to-amber-300 flex items-center justify-center shadow-lg group-hover:scale-105 transition">
+                        <i class="fa-solid fa-graduation-cap text-slate-950 text-xl"></i>
+                    </div>
+                    <span class="text-white font-serif font-extrabold text-2xl sm:text-3xl tracking-wider leading-none">SFE</span>
+                    <div class="h-8 w-[1.5px] bg-slate-500"></div>
+                    <div class="flex flex-col text-white font-semibold text-xs sm:text-sm tracking-wide leading-tight">
+                        <span>Bimbingan</span>
+                        <span>Belajar</span>
+                    </div>
+                </a>
 
-            <!-- Desktop Nav Links -->
-            <nav class="hidden xl:flex items-center gap-6 text-xs font-semibold text-slate-300 ml-12">
-                <a href="index.html" class="hover:text-amber-400 transition">Beranda</a>
-                <a href="tentang.html" class="text-amber-400 pb-1 border-b-2 border-amber-400 font-bold">Tentang SFE</a>
-                <a href="program.html" class="hover:text-amber-400 transition">Program Pendidikan</a>
-                <a href="layanan.html" class="hover:text-amber-400 transition">Layanan Kami</a>
-                <a href="pengelolaan-tutor.html" class="hover:text-amber-400 transition">Pengelolaan Tutor</a>
-                <a href="tim-manajemen.html" class="hover:text-amber-400 transition">Management Team</a>
-                <a href="dokumentasi.html" class="hover:text-amber-400 transition">Dokumentasi</a>
-                <a href="kemitraan.html" class="hover:text-amber-400 transition">Kemitraan</a>
-                <a href="berita.html" class="hover:text-amber-400 transition">Berita</a>
-                <a href="kontak.html" class="hover:text-amber-400 transition">Kontak</a>
-                <button class="text-white hover:text-amber-400 text-sm ml-2 cursor-pointer search-trigger"><i class="fa-solid fa-magnifying-glass"></i></button>
-            </nav>
+                <!-- Desktop Nav Links -->
+                <nav class="hidden xl:flex items-center gap-4 text-sm font-semibold text-slate-300 ml-12">
+                    <a href="index.html" class="hover:text-amber-400 transition">Beranda</a>
+                    <a href="tentang.html" class="hover:text-amber-400 transition">Tentang SFE</a>
+                    <a href="program.html" class="hover:text-amber-400 transition">Program Pendidikan</a>
+                    <a href="layanan.html" class="hover:text-amber-400 transition">Layanan Kami</a>
+                    <a href="pengelolaan-tutor.html" class="hover:text-amber-400 transition">Pengelolaan Tutor</a>
+                    <a href="tim-manajemen.html" class="hover:text-amber-400 transition">Management Team</a>
+                    
+                    <!-- DROPDOWN LAINNYA -->
+                    <div class="relative group py-2">
+                        <button class="flex items-center gap-1.5 hover:text-amber-400 transition cursor-pointer">
+                            Lainnya <i class="fa-solid fa-chevron-down text-[10px]"></i>
+                        </button>
+                        <!-- Dropdown Menu Content -->
+                        <div class="absolute left-0 top-full w-44 bg-slate-900 border border-slate-800 rounded-xl shadow-2xl py-2 hidden group-hover:block transition-all z-50">
+                            <a href="dokumentasi.html" class="block px-4 py-2 text-xs text-slate-300 hover:bg-amber-400 hover:text-slate-950 transition">Dokumentasi</a>
+                            <a href="kemitraan.html" class="block px-4 py-2 text-xs text-slate-300 hover:bg-amber-400 hover:text-slate-950 transition">Kemitraan</a>
+                            <a href="berita.html" class="block px-4 py-2 text-xs text-slate-300 hover:bg-amber-400 hover:text-slate-950 transition">Berita</a>
+                            <a href="kontak.html" class="block px-4 py-2 text-xs text-slate-300 hover:bg-amber-400 hover:text-slate-950 transition">Kontak</a>
+                        </div>
+                    </div>
 
-            <!-- Mobile Menu Button -->
-            <button id="mobileMenuBtn" class="xl:hidden text-white text-xl focus:outline-none cursor-pointer">
-                <i class="fa-solid fa-bars"></i>
-            </button>
+                    <button class="text-white hover:text-amber-400 text-sm ml-2 cursor-pointer search-trigger"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <div class="lg:hidden flex items-center gap-3">
+                    <button class="search-trigger text-gray-300 hover:text-amber-400 p-2">
+                        <i class="fa-solid fa-magnifying-glass text-lg"></i>
+                    </button>
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-amber-400 focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
         </div>
 
-        <!-- Mobile Nav Menu -->
-        <div id="mobileMenu" class="hidden xl:hidden bg-[#0A192F] border-t border-slate-800 px-4 py-3 space-y-2 text-sm">
-            <a href="index.html" class="block text-slate-300 hover:text-amber-400 py-1">Beranda</a>
-            <a href="tentang.html" class="block text-amber-400 font-bold py-1">Tentang SFE</a>
-            <a href="program.html" class="block text-slate-300 hover:text-amber-400 py-1">Program Pendidikan</a>
-            <a href="layanan.html" class="block text-slate-300 hover:text-amber-400 py-1">Layanan Kami</a>
-            <a href="pengelolaan-tutor.html" class="block text-slate-300 hover:text-amber-400 py-1">Pengelolaan Tutor</a>
-            <a href="tim-manajemen.html" class="block text-slate-300 hover:text-amber-400 py-1">Management Team</a>
-            <a href="dokumentasi.html" class="block text-slate-300 hover:text-amber-400 py-1">Dokumentasi</a>
-            <a href="kemitraan.html" class="block text-slate-300 hover:text-amber-400 py-1">Kemitraan</a>
-            <a href="berita.html" class="block text-slate-300 hover:text-amber-400 py-1">Berita & Kegiatan</a>
-            <a href="kontak.html" class="block text-slate-300 hover:text-amber-400 py-1">Kontak Kami</a>
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-slate-900 border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="index.html" class="block text-gray-200 hover:text-amber-400 py-1">Beranda</a>
+            <a href="tentang.html" class="block text-gray-200 hover:text-amber-400 py-1">Tentang SFE</a>
+            <a href="program.html" class="block text-gray-200 hover:text-amber-400 py-1">Program Pendidikan</a>
+            <a href="layanan.html" class="block text-gray-200 hover:text-amber-400 py-1">Layanan Kami</a>
+            <a href="pengelolaan-tutor.html" class="block text-gray-200 hover:text-amber-400 py-1">Pengelolaan Tutor</a>
+            <a href="tim-manajemen.html" class="block text-gray-200 hover:text-amber-400 py-1">Management Team</a>
+            <!-- Sub-menu mobile -->
+            <div class="border-t border-slate-800 pt-2 space-y-2 pl-2">
+                <a href="dokumentasi.html" class="block text-gray-300 hover:text-amber-400 text-xs py-1">↳ Dokumentasi</a>
+                <a href="kemitraan.html" class="block text-gray-300 hover:text-amber-400 text-xs py-1">↳ Kemitraan</a>
+                <a href="berita.html" class="block text-gray-300 hover:text-amber-400 text-xs py-1">↳ Berita & Kegiatan</a>
+                <a href="kontak.html" class="block text-gray-300 hover:text-amber-400 text-xs py-1">↳ Kontak</a>
+            </div>
         </div>
     </header>
-
+    
     <!-- HERO SECTION TENTANG SFE -->
     <section class="relative bg-cover bg-center py-16 lg:py-24 overflow-hidden" style="background-image: url('images/background.jpg');">
         <div class="absolute inset-0 bg-gradient-to-r from-[#0A192F] via-[#0A192F]/85 to-transparent lg:w-4/5"></div>
