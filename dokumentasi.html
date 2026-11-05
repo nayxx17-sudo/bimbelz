@@ -3,12 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dokumentasi - SFE Bimbingan Belajar</title>
+    <title>Dokumentasi Kegiatan - SFE Bimbingan Belajar</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="css/custom.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body class="bg-slate-50 flex flex-col min-h-screen">
+    
+    <!-- TOPBAR -->
+    <div class="bg-slate-950 text-gray-300 text-xs py-2.5 px-4 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
+            <div class="flex items-center space-x-6">
+                <span class="flex items-center gap-2"><i class="fa-solid fa-envelope text-amber-400"></i> <span>info@sfebimbinganbelajar.com</span></span>
+                <span class="flex items-center gap-2"><i class="fa-solid fa-phone text-amber-400"></i> <span>0851-2378-6007</span></span>
+            </div>
+            <div class="flex items-center space-x-5">
+                <div class="flex items-center space-x-3 text-sm">
+                    <a href="#" class="hover:text-amber-400 transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="hover:text-amber-400 transition"><i class="fa-brands fa-threads"></i></a>
+                    <a href="#" class="hover:text-amber-400 transition"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" class="hover:text-amber-400 transition"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+                <div class="h-4 w-px bg-slate-700"></div>
+                <div class="relative flex items-center">
+                    <select id="lang-select" class="bg-slate-900 text-amber-400 text-xs font-semibold rounded px-2.5 py-1 border border-slate-700 focus:outline-none focus:ring-1 focus:ring-amber-400 cursor-pointer">
+                        <option value="id">ID - INDONESIA</option>
+                        <option value="en">EN - ENGLISH</option>
+                    </select>
+                </div>
+                <div id="google_translate_element"></div>
+            </div>
+        </div>
+    </div>
+
     <!-- MAIN NAVBAR -->
     <header class="bg-slate-900 sticky top-0 z-50 shadow-xl border-b border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -37,12 +64,12 @@
                     
                     <!-- DROPDOWN LAINNYA -->
                     <div class="relative group py-2">
-                        <button class="flex items-center gap-1.5 hover:text-amber-400 transition cursor-pointer">
+                        <button class="flex items-center gap-1.5 text-amber-400 transition cursor-pointer">
                             Lainnya <i class="fa-solid fa-chevron-down text-[10px]"></i>
                         </button>
                         <!-- Dropdown Menu Content -->
                         <div class="absolute left-0 top-full w-44 bg-slate-900 border border-slate-800 rounded-xl shadow-2xl py-2 hidden group-hover:block transition-all z-50">
-                            <a href="dokumentasi.html" class="block px-4 py-2 text-xs text-slate-300 hover:bg-amber-400 hover:text-slate-950 transition">Dokumentasi</a>
+                            <a href="dokumentasi.html" class="block px-4 py-2 text-xs text-amber-400 font-bold bg-slate-800 transition">Dokumentasi</a>
                             <a href="kemitraan.html" class="block px-4 py-2 text-xs text-slate-300 hover:bg-amber-400 hover:text-slate-950 transition">Kemitraan</a>
                             <a href="berita.html" class="block px-4 py-2 text-xs text-slate-300 hover:bg-amber-400 hover:text-slate-950 transition">Berita</a>
                             <a href="kontak.html" class="block px-4 py-2 text-xs text-slate-300 hover:bg-amber-400 hover:text-slate-950 transition">Kontak</a>
@@ -74,13 +101,147 @@
             <a href="tim-manajemen.html" class="block text-gray-200 hover:text-amber-400 py-1">Management Team</a>
             <!-- Sub-menu mobile -->
             <div class="border-t border-slate-800 pt-2 space-y-2 pl-2">
-                <a href="dokumentasi.html" class="block text-gray-300 hover:text-amber-400 text-xs py-1">↳ Dokumentasi</a>
+                <a href="dokumentasi.html" class="block text-amber-400 font-bold text-xs py-1">↳ Dokumentasi</a>
                 <a href="kemitraan.html" class="block text-gray-300 hover:text-amber-400 text-xs py-1">↳ Kemitraan</a>
                 <a href="berita.html" class="block text-gray-300 hover:text-amber-400 text-xs py-1">↳ Berita & Kegiatan</a>
                 <a href="kontak.html" class="block text-gray-300 hover:text-amber-400 text-xs py-1">↳ Kontak</a>
             </div>
         </div>
     </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative bg-cover bg-center py-16 lg:py-24 overflow-hidden" style="background-image: url('images/background.jpg');">
+        <div class="absolute inset-0 bg-gradient-to-r from-[#0A192F] via-[#0A192F]/85 to-transparent lg:w-4/5"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
+            <div class="max-w-2xl space-y-5">
+                <span class="inline-block text-amber-400 text-xs font-bold uppercase tracking-widest bg-amber-400/10 border border-amber-400/20 px-3.5 py-1.5 rounded-full">
+                    GALERI KEGIATAN & MOMEN BELAJAR
+                </span>
+                <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                    Dokumentasi Aktivitas SFE
+                </h1>
+                <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                    Merekam setiap momen interaktif proses bimbingan belajar, kegiatan inklusi, serta berbagai program pendidikan profesional di SFE.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERI GRID DENGAN FITUR MODAL BLUR -->
+    <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+            <span class="bg-amber-100 text-amber-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">MOMEN PILIHAN</span>
+            <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mt-2">Galeri Aktivitas SFE</h2>
+            <p class="text-slate-600 text-xs sm:text-sm mt-1">Klik pada foto untuk melihat ukuran penuh dengan jelas.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Item Galeri 1 -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-200 group cursor-pointer" onclick="openPhotoModal('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=800', 'Sesi Belajar Interaktif Kelas Privat')">
+                <div class="relative overflow-hidden h-60">
+                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=800" alt="Kegiatan 1" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                    <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white font-semibold text-sm gap-2">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i> Perbesar Foto
+                    </div>
+                </div>
+                <div class="p-4">
+                    <span class="text-[10px] font-bold text-amber-600 uppercase tracking-wider">Kelas Privat</span>
+                    <h4 class="font-bold text-slate-900 text-sm mt-0.5">Sesi Belajar Interaktif & Menyenangkan</h4>
+                </div>
+            </div>
+
+            <!-- Item Galeri 2 -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-200 group cursor-pointer" onclick="openPhotoModal('https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&q=80&w=800', 'Pendampingan Belajar Anak')">
+                <div class="relative overflow-hidden h-60">
+                    <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&q=80&w=800" alt="Kegiatan 2" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                    <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white font-semibold text-sm gap-2">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i> Perbesar Foto
+                    </div>
+                </div>
+                <div class="p-4">
+                    <span class="text-[10px] font-bold text-amber-600 uppercase tracking-wider">Pendampingan Khusus</span>
+                    <h4 class="font-bold text-slate-900 text-sm mt-0.5">Fokus & Perhatian Penuh untuk Peserta Didik</h4>
+                </div>
+            </div>
+
+            <!-- Item Galeri 3 -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-200 group cursor-pointer" onclick="openPhotoModal('https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&q=80&w=800', 'Diskusi Tim & Evaluasi Tutor SFE')">
+                <div class="relative overflow-hidden h-60">
+                    <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&q=80&w=800" alt="Kegiatan 3" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                    <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white font-semibold text-sm gap-2">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i> Perbesar Foto
+                    </div>
+                </div>
+                <div class="p-4">
+                    <span class="text-[10px] font-bold text-amber-600 uppercase tracking-wider">Manajemen & Tutor</span>
+                    <h4 class="font-bold text-slate-900 text-sm mt-0.5">Koordinasi & Evaluasi Kualitas Pengajaran</h4>
+                </div>
+            </div>
+
+            <!-- Item Galeri 4 -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-200 group cursor-pointer" onclick="openPhotoModal('https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&q=80&w=800', 'Suasana Belajar Kelompok & Diskusi')">
+                <div class="relative overflow-hidden h-60">
+                    <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&q=80&w=800" alt="Kegiatan 4" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                    <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white font-semibold text-sm gap-2">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i> Perbesar Foto
+                    </div>
+                </div>
+                <div class="p-4">
+                    <span class="text-[10px] font-bold text-amber-600 uppercase tracking-wider">Kelas Kelompok</span>
+                    <h4 class="font-bold text-slate-900 text-sm mt-0.5">Suasana Diskusi Kelompok yang Produktif</h4>
+                </div>
+            </div>
+
+            <!-- Item Galeri 5 -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-200 group cursor-pointer" onclick="openPhotoModal('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=800', 'Simulasi Pengajaran / Microteaching Tutor')">
+                <div class="relative overflow-hidden h-60">
+                    <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=800" alt="Kegiatan 5" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                    <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white font-semibold text-sm gap-2">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i> Perbesar Foto
+                    </div>
+                </div>
+                <div class="p-4">
+                    <span class="text-[10px] font-bold text-amber-600 uppercase tracking-wider">Pelatihan Tutor</span>
+                    <h4 class="font-bold text-slate-900 text-sm mt-0.5">Seleksi & Microteaching Calon Pengajar</h4>
+                </div>
+            </div>
+
+            <!-- Item Galeri 6 -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-200 group cursor-pointer" onclick="openPhotoModal('https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=800', 'Konsultasi Pendidikan Bersama Orang Tua')">
+                <div class="relative overflow-hidden h-60">
+                    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=800" alt="Kegiatan 6" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                    <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white font-semibold text-sm gap-2">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i> Perbesar Foto
+                    </div>
+                </div>
+                <div class="p-4">
+                    <span class="text-[10px] font-bold text-amber-600 uppercase tracking-wider">Konsultasi</span>
+                    <h4 class="font-bold text-slate-900 text-sm mt-0.5">Layanan Konsultasi Belajar & Pemetaan Siswa</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODAL POPUP PREVIEW FOTO (Efek Blur) -->
+    <div id="photoModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-950/70 backdrop-blur-sm p-4 transition-all">
+        <div class="relative bg-white rounded-2xl shadow-2xl max-w-2xl w-full overflow-hidden border border-slate-200 transform scale-95 transition-transform duration-300" id="modalContainer">
+            <button onclick="closePhotoModal()" class="absolute top-3 right-3 z-10 w-9 h-9 bg-slate-900/80 hover:bg-slate-900 text-white rounded-full flex items-center justify-center text-sm shadow-md transition cursor-pointer">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="p-2 bg-slate-900 flex justify-center items-center max-h-[75vh]">
+                <img id="modalImage" src="" alt="Zoomed Photo" class="w-full h-auto max-h-[70vh] rounded-lg object-contain shadow-inner">
+            </div>
+            <div class="p-4 bg-slate-950 text-white flex justify-between items-center px-6">
+                <span id="modalCaption" class="text-xs font-semibold text-amber-400">Keterangan Foto</span>
+                <button onclick="closePhotoModal()" class="text-xs text-slate-400 hover:text-white underline cursor-pointer">Tutup</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- FLOATING WHATSAPP BUTTON (CALON SISWA) -->
+    <a href="https://wa.me/6285123786007?text=Halo%20Admin%20SFE%20Bimbingan%20Belajar,%20saya%20ingin%20menanyakan%20informasi%20mengenai%20pendaftaran%20program%20bimbingan%20belajar%20(privat/kelas)%20serta%20ketersediaan%20tutor.%20Mohon%20bantuannya,%20terima%20kasih!" target="_blank" class="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition hover:scale-110">
+        <i class="fa-brands fa-whatsapp text-2xl"></i>
+    </a>
 
     <!-- FOOTER -->
     <footer class="bg-slate-950 text-gray-300 mt-auto border-t border-slate-800">
@@ -126,10 +287,45 @@
         </div>
     </footer>
 
-    <!-- FLOATING WHATSAPP BUTTON -->
-    <a href="https://wa.me/6285123786007?text=Halo%20Admin%20SFE%20Bimbingan%20Belajar,%20saya%20ingin%20bertanya%20mengenai%20layanan%20bimbingan%20belajar." target="_blank" class="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition hover:scale-110">
-        <i class="fa-brands fa-whatsapp text-2xl"></i>
-    </a>
+    <!-- SCRIPT MODAL BLUR -->
+    <script>
+        function openPhotoModal(imgSrc, captionText) {
+            const modal = document.getElementById('photoModal');
+            const modalImg = document.getElementById('modalImage');
+            const modalCaption = document.getElementById('modalCaption');
+            const modalContainer = document.getElementById('modalContainer');
+            
+            modalImg.src = imgSrc;
+            modalCaption.innerText = captionText;
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            
+            setTimeout(() => {
+                modalContainer.classList.remove('scale-95');
+                modalContainer.classList.add('scale-100');
+            }, 10);
+        }
+
+        function closePhotoModal() {
+            const modal = document.getElementById('photoModal');
+            const modalContainer = document.getElementById('modalContainer');
+            
+            modalContainer.classList.remove('scale-100');
+            modalContainer.classList.add('scale-95');
+            
+            setTimeout(() => {
+                modal.classList.remove('flex');
+                modal.classList.add('hidden');
+            }, 200);
+        }
+
+        window.addEventListener('click', function(e) {
+            const modal = document.getElementById('photoModal');
+            if (e.target === modal) {
+                closePhotoModal();
+            }
+        });
+    </script>
 
     <!-- Main JavaScript & Google Translate Sync -->
     <script src="js/main.js"></script>

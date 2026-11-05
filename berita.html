@@ -9,6 +9,33 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body class="bg-slate-50 flex flex-col min-h-screen">
+    
+    <!-- TOPBAR -->
+    <div class="bg-slate-950 text-gray-300 text-xs py-2.5 px-4 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
+            <div class="flex items-center space-x-6">
+                <span class="flex items-center gap-2"><i class="fa-solid fa-envelope text-amber-400"></i> <span>info@sfebimbinganbelajar.com</span></span>
+                <span class="flex items-center gap-2"><i class="fa-solid fa-phone text-amber-400"></i> <span>0851-2378-6007</span></span>
+            </div>
+            <div class="flex items-center space-x-5">
+                <div class="flex items-center space-x-3 text-sm">
+                    <a href="#" class="hover:text-amber-400 transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="hover:text-amber-400 transition"><i class="fa-brands fa-threads"></i></a>
+                    <a href="#" class="hover:text-amber-400 transition"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" class="hover:text-amber-400 transition"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+                <div class="h-4 w-px bg-slate-700"></div>
+                <div class="relative flex items-center">
+                    <select id="lang-select" class="bg-slate-900 text-amber-400 text-xs font-semibold rounded px-2.5 py-1 border border-slate-700 focus:outline-none focus:ring-1 focus:ring-amber-400 cursor-pointer">
+                        <option value="id">ID - INDONESIA</option>
+                        <option value="en">EN - ENGLISH</option>
+                    </select>
+                </div>
+                <div id="google_translate_element"></div>
+            </div>
+        </div>
+    </div>
+
     <!-- MAIN NAVBAR -->
     <header class="bg-slate-900 sticky top-0 z-50 shadow-xl border-b border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -37,14 +64,14 @@
                     
                     <!-- DROPDOWN LAINNYA -->
                     <div class="relative group py-2">
-                        <button class="flex items-center gap-1.5 hover:text-amber-400 transition cursor-pointer">
+                        <button class="flex items-center gap-1.5 text-amber-400 transition cursor-pointer">
                             Lainnya <i class="fa-solid fa-chevron-down text-[10px]"></i>
                         </button>
                         <!-- Dropdown Menu Content -->
                         <div class="absolute left-0 top-full w-44 bg-slate-900 border border-slate-800 rounded-xl shadow-2xl py-2 hidden group-hover:block transition-all z-50">
                             <a href="dokumentasi.html" class="block px-4 py-2 text-xs text-slate-300 hover:bg-amber-400 hover:text-slate-950 transition">Dokumentasi</a>
                             <a href="kemitraan.html" class="block px-4 py-2 text-xs text-slate-300 hover:bg-amber-400 hover:text-slate-950 transition">Kemitraan</a>
-                            <a href="berita.html" class="block px-4 py-2 text-xs text-slate-300 hover:bg-amber-400 hover:text-slate-950 transition">Berita</a>
+                            <a href="berita.html" class="block px-4 py-2 text-xs text-amber-400 font-bold bg-slate-800 transition">Berita</a>
                             <a href="kontak.html" class="block px-4 py-2 text-xs text-slate-300 hover:bg-amber-400 hover:text-slate-950 transition">Kontak</a>
                         </div>
                     </div>
@@ -76,11 +103,130 @@
             <div class="border-t border-slate-800 pt-2 space-y-2 pl-2">
                 <a href="dokumentasi.html" class="block text-gray-300 hover:text-amber-400 text-xs py-1">↳ Dokumentasi</a>
                 <a href="kemitraan.html" class="block text-gray-300 hover:text-amber-400 text-xs py-1">↳ Kemitraan</a>
-                <a href="berita.html" class="block text-gray-300 hover:text-amber-400 text-xs py-1">↳ Berita & Kegiatan</a>
+                <a href="berita.html" class="block text-amber-400 font-bold text-xs py-1">↳ Berita & Kegiatan</a>
                 <a href="kontak.html" class="block text-gray-300 hover:text-amber-400 text-xs py-1">↳ Kontak</a>
             </div>
         </div>
     </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative bg-cover bg-center py-16 lg:py-24 overflow-hidden" style="background-image: url('images/background.jpg');">
+        <div class="absolute inset-0 bg-gradient-to-r from-[#0A192F] via-[#0A192F]/85 to-transparent lg:w-4/5"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
+            <div class="max-w-2xl space-y-5">
+                <span class="inline-block text-amber-400 text-xs font-bold uppercase tracking-widest bg-amber-400/10 border border-amber-400/20 px-3.5 py-1.5 rounded-full">
+                    INFORMASI & ARTIKEL TERBARU
+                </span>
+                <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                    Berita & Kegiatan SFE
+                </h1>
+                <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                    Ikuti perkembangan terbaru, pengumuman program, tips belajar efektif, serta berbagai kegiatan inspiratif dari SFE Bimbingan Belajar.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN BERITA SECTION -->
+    <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Artikel Utama (Featured) -->
+        <div class="bg-white rounded-3xl overflow-hidden shadow-xl border border-slate-200 mb-12 grid grid-cols-1 lg:grid-cols-2">
+            <div class="relative h-72 lg:h-auto">
+                <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=800" alt="Featured News" class="w-full h-full object-cover">
+                <span class="absolute top-4 left-4 bg-amber-400 text-slate-950 text-xs font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">
+                    Utama
+                </span>
+            </div>
+            <div class="p-8 lg:p-12 flex flex-col justify-between space-y-4">
+                <div>
+                    <div class="flex items-center gap-3 text-xs text-slate-500 mb-2">
+                        <span><i class="fa-solid fa-calendar text-amber-600 mr-1"></i> 10 Juni 2026</span>
+                        <span>•</span>
+                        <span><i class="fa-solid fa-tag text-amber-600 mr-1"></i> Pengumuman</span>
+                    </div>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 leading-snug">
+                        Pembukaan Pendaftaran Semester Baru Program Bimbingan Intensif SFE 2026/2027
+                    </h2>
+                    <p class="text-slate-600 text-xs sm:text-sm mt-3 leading-relaxed">
+                        SFE secara resmi membuka pendaftaran program bimbingan belajar intensif untuk jenjang SD, SMP, SMA, serta persiapan khusus UTBK dengan kurikulum terarah dan pengajar profesional di bidangnya.
+                    </p>
+                </div>
+                <a href="kontak.html" class="inline-flex items-center gap-2 text-xs font-bold text-amber-600 hover:text-amber-700 transition">
+                    Daftar & Tanya Program via WhatsApp →
+                </a>
+            </div>
+        </div>
+
+        <!-- Grid Berita Lainnya -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            <!-- Berita 1 -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-200 flex flex-col justify-between">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&q=80&w=600" alt="Berita 1" class="w-full h-48 object-cover">
+                    <div class="p-6 space-y-2">
+                        <div class="flex items-center gap-3 text-[11px] text-slate-500">
+                            <span><i class="fa-solid fa-calendar text-amber-600 mr-1"></i> 25 Mei 2026</span>
+                            <span>• Tips Belajar</span>
+                        </div>
+                        <h3 class="font-bold text-base text-slate-900">Tips Efektif Mempersiapkan Diri Menghadapi Ujian Sekolah</h3>
+                        <p class="text-slate-600 text-xs leading-relaxed">
+                            Strategi manajemen waktu dan teknik memahami konsep materi pelajaran dengan lebih mudah tanpa merasa stres.
+                        </p>
+                    </div>
+                </div>
+                <div class="p-6 pt-0">
+                    <a href="kontak.html" class="text-xs font-bold text-amber-600 hover:underline">Baca Selengkapnya →</a>
+                </div>
+            </div>
+
+            <!-- Berita 2 -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-200 flex flex-col justify-between">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&q=80&w=600" alt="Berita 2" class="w-full h-48 object-cover">
+                    <div class="p-6 space-y-2">
+                        <div class="flex items-center gap-3 text-[11px] text-slate-500">
+                            <span><i class="fa-solid fa-calendar text-amber-600 mr-1"></i> 14 Mei 2026</span>
+                            <span>• Inklusi</span>
+                        </div>
+                        <h3 class="font-bold text-base text-slate-900">Pentingnya Peran Shadow Teacher dalam Pendidikan Inklusi</h3>
+                        <p class="text-slate-600 text-xs leading-relaxed">
+                            Mengenal bagaimana pendekatan khusus pendamping belajar dapat membantu mengoptimalkan potensi Anak Berkebutuhan Khusus.
+                        </p>
+                    </div>
+                </div>
+                <div class="p-6 pt-0">
+                    <a href="kontak.html" class="text-xs font-bold text-amber-600 hover:underline">Baca Selengkapnya →</a>
+                </div>
+            </div>
+
+            <!-- Berita 3 -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-200 flex flex-col justify-between">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&q=80&w=600" alt="Berita 3" class="w-full h-48 object-cover">
+                    <div class="p-6 space-y-2">
+                        <div class="flex items-center gap-3 text-[11px] text-slate-500">
+                            <span><i class="fa-solid fa-calendar text-amber-600 mr-1"></i> 02 Mei 2026</span>
+                            <span>• Kemitraan</span>
+                        </div>
+                        <h3 class="font-bold text-base text-slate-900">SFE Perluas Kerja Sama Penyediaan Tenaga Pengajar</h3>
+                        <p class="text-slate-600 text-xs leading-relaxed">
+                            Kolaborasi bersama berbagai institusi pendidikan dalam menghadirkan standar pengajaran profesional berkualitas tinggi.
+                        </p>
+                    </div>
+                </div>
+                <div class="p-6 pt-0">
+                    <a href="kontak.html" class="text-xs font-bold text-amber-600 hover:underline">Baca Selengkapnya →</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FLOATING WHATSAPP BUTTON (CALON SISWA) -->
+    <a href="https://wa.me/6285123786007?text=Halo%20Admin%20SFE%20Bimbingan%20Belajar,%20saya%20ingin%20menanyakan%20informasi%20mengenai%20pendaftaran%20program%20bimbingan%20belajar%20(privat/kelas)%20serta%20ketersediaan%20tutor.%20Mohon%20bantuannya,%20terima%20kasih!" target="_blank" class="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition hover:scale-110">
+        <i class="fa-brands fa-whatsapp text-2xl"></i>
+    </a>
 
     <!-- FOOTER -->
     <footer class="bg-slate-950 text-gray-300 mt-auto border-t border-slate-800">
@@ -125,11 +271,6 @@
             </div>
         </div>
     </footer>
-
-    <!-- FLOATING WHATSAPP BUTTON -->
-    <a href="https://wa.me/6285123786007?text=Halo%20Admin%20SFE%20Bimbingan%20Belajar,%20saya%20ingin%20bertanya%20mengenai%20layanan%20bimbingan%20belajar." target="_blank" class="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition hover:scale-110">
-        <i class="fa-brands fa-whatsapp text-2xl"></i>
-    </a>
 
     <!-- Main JavaScript & Google Translate Sync -->
     <script src="js/main.js"></script>
