@@ -39,7 +39,7 @@
         </div>
     </div>
 
-    <!-- MAIN NAVBAR -->
+<!-- MAIN NAVBAR -->
     <header class="bg-slate-900 sticky top-0 z-50 shadow-xl border-b border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
@@ -61,13 +61,24 @@
                     <a href="index.html" class="hover:text-amber-400 transition">Beranda</a>
                     <a href="tentang.html" class="hover:text-amber-400 transition">Tentang SFE</a>
                     <a href="program.html" class="hover:text-amber-400 transition">Program Pendidikan</a>
-                    <a href="layanan.html" class="text-amber-400 pb-1 border-b-2 border-amber-400">Layanan Kami</a>
+                    <a href="layanan.html" class="hover:text-amber-400 transition">Layanan Kami</a>
                     <a href="pengelolaan-tutor.html" class="hover:text-amber-400 transition">Pengelolaan Tutor</a>
                     <a href="tim-manajemen.html" class="hover:text-amber-400 transition">Management Team</a>
-                    <a href="dokumentasi.html" class="hover:text-amber-400 transition">Dokumentasi</a>
-                    <a href="kemitraan.html" class="hover:text-amber-400 transition">Kemitraan</a>
-                    <a href="berita.html" class="hover:text-amber-400 transition">Berita</a>
-                    <a href="kontak.html" class="hover:text-amber-400 transition">Kontak</a>
+                    
+                    <!-- DROPDOWN LAINNYA -->
+                    <div class="relative group py-2">
+                        <button class="flex items-center gap-1.5 hover:text-amber-400 transition cursor-pointer">
+                            Lainnya <i class="fa-solid fa-chevron-down text-[10px]"></i>
+                        </button>
+                        <!-- Dropdown Menu Content -->
+                        <div class="absolute left-0 top-full w-44 bg-slate-900 border border-slate-800 rounded-xl shadow-2xl py-2 hidden group-hover:block transition-all z-50">
+                            <a href="dokumentasi.html" class="block px-4 py-2 text-xs text-slate-300 hover:bg-amber-400 hover:text-slate-950 transition">Dokumentasi</a>
+                            <a href="kemitraan.html" class="block px-4 py-2 text-xs text-slate-300 hover:bg-amber-400 hover:text-slate-950 transition">Kemitraan</a>
+                            <a href="berita.html" class="block px-4 py-2 text-xs text-slate-300 hover:bg-amber-400 hover:text-slate-950 transition">Berita</a>
+                            <a href="kontak.html" class="block px-4 py-2 text-xs text-slate-300 hover:bg-amber-400 hover:text-slate-950 transition">Kontak</a>
+                        </div>
+                    </div>
+
                     <button class="text-white hover:text-amber-400 text-sm ml-2 cursor-pointer search-trigger"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </nav>
 
@@ -88,13 +99,16 @@
             <a href="index.html" class="block text-gray-200 hover:text-amber-400 py-1">Beranda</a>
             <a href="tentang.html" class="block text-gray-200 hover:text-amber-400 py-1">Tentang SFE</a>
             <a href="program.html" class="block text-gray-200 hover:text-amber-400 py-1">Program Pendidikan</a>
-            <a href="layanan.html" class="block text-amber-400 font-bold py-1">Layanan Kami</a>
+            <a href="layanan.html" class="block text-gray-200 hover:text-amber-400 py-1">Layanan Kami</a>
             <a href="pengelolaan-tutor.html" class="block text-gray-200 hover:text-amber-400 py-1">Pengelolaan Tutor</a>
             <a href="tim-manajemen.html" class="block text-gray-200 hover:text-amber-400 py-1">Management Team</a>
-            <a href="dokumentasi.html" class="block text-gray-200 hover:text-amber-400 py-1">Dokumentasi</a>
-            <a href="kemitraan.html" class="block text-gray-200 hover:text-amber-400 py-1">Kemitraan</a>
-            <a href="berita.html" class="block text-gray-200 hover:text-amber-400 py-1">Berita & Kegiatan</a>
-            <a href="kontak.html" class="block text-gray-200 hover:text-amber-400 py-1">Kontak</a>
+            <!-- Sub-menu mobile -->
+            <div class="border-t border-slate-800 pt-2 space-y-2 pl-2">
+                <a href="dokumentasi.html" class="block text-gray-300 hover:text-amber-400 text-xs py-1">↳ Dokumentasi</a>
+                <a href="kemitraan.html" class="block text-gray-300 hover:text-amber-400 text-xs py-1">↳ Kemitraan</a>
+                <a href="berita.html" class="block text-gray-300 hover:text-amber-400 text-xs py-1">↳ Berita & Kegiatan</a>
+                <a href="kontak.html" class="block text-gray-300 hover:text-amber-400 text-xs py-1">↳ Kontak</a>
+            </div>
         </div>
     </header>
 
