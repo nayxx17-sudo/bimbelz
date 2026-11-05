@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layanan Kami - SFE Bimbingan Belajar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-slate-50 flex flex-col min-h-screen">
+
+    <!-- TOPBAR -->
+    <div class="bg-slate-950 text-gray-300 text-xs py-2.5 px-4 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
+            <div class="flex items-center space-x-6">
+                <span class="flex items-center gap-2"><i class="fa-solid fa-envelope text-amber-400"></i> <span>info@sfebimbinganbelajar.com</span></span>
+                <span class="flex items-center gap-2"><i class="fa-solid fa-phone text-amber-400"></i> <span>0851-2378-6007</span></span>
+            </div>
+            <div class="flex items-center space-x-5">
+                <div class="flex items-center space-x-3 text-sm">
+                    <a href="#" class="hover:text-amber-400 transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="hover:text-amber-400 transition"><i class="fa-brands fa-threads"></i></a>
+                    <a href="#" class="hover:text-amber-400 transition"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" class="hover:text-amber-400 transition"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+                <div class="h-4 w-px bg-slate-700"></div>
+                
+                <!-- Dropdown Kustom Bersih (Auto-Translate Engine) -->
+                <div class="relative flex items-center">
+                    <select id="lang-select" class="bg-slate-900 text-amber-400 text-xs font-semibold rounded px-2.5 py-1 border border-slate-700 focus:outline-none focus:ring-1 focus:ring-amber-400 cursor-pointer">
+                        <option value="id">ID - INDONESIA</option>
+                        <option value="en">EN - ENGLISH</option>
+                    </select>
+                </div>
+                <!-- Elemen tersembunyi wajib untuk mesin Google Translate -->
+                <div id="google_translate_element"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN NAVBAR -->
+    <header class="bg-slate-900 sticky top-0 z-50 shadow-xl border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center gap-3.5 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-500 to-amber-300 flex items-center justify-center shadow-lg group-hover:scale-105 transition">
+                        <i class="fa-solid fa-graduation-cap text-slate-950 text-xl"></i>
+                    </div>
+                    <span class="text-white font-serif font-extrabold text-2xl sm:text-3xl tracking-wider leading-none">SFE</span>
+                    <div class="h-8 w-[1.5px] bg-slate-500"></div>
+                    <div class="flex flex-col text-white font-semibold text-xs sm:text-sm tracking-wide leading-tight">
+                        <span>Bimbingan</span>
+                        <span>Belajar</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav Links -->
+                <nav class="hidden xl:flex items-center gap-4 text-sm font-semibold text-slate-300 ml-12">
+                    <a href="index.html" class="hover:text-amber-400 transition">Beranda</a>
+                    <a href="tentang.html" class="hover:text-amber-400 transition">Tentang SFE</a>
+                    <a href="program.html" class="hover:text-amber-400 transition">Program Pendidikan</a>
+                    <a href="layanan.html" class="text-amber-400 pb-1 border-b-2 border-amber-400">Layanan Kami</a>
+                    <a href="pengelolaan-tutor.html" class="hover:text-amber-400 transition">Pengelolaan Tutor</a>
+                    <a href="tim-manajemen.html" class="hover:text-amber-400 transition">Management Team</a>
+                    <a href="dokumentasi.html" class="hover:text-amber-400 transition">Dokumentasi</a>
+                    <a href="kemitraan.html" class="hover:text-amber-400 transition">Kemitraan</a>
+                    <a href="berita.html" class="hover:text-amber-400 transition">Berita</a>
+                    <a href="kontak.html" class="hover:text-amber-400 transition">Kontak</a>
+                    <button class="text-white hover:text-amber-400 text-sm ml-2 cursor-pointer search-trigger"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <div class="lg:hidden flex items-center gap-3">
+                    <button class="search-trigger text-gray-300 hover:text-amber-400 p-2">
+                        <i class="fa-solid fa-magnifying-glass text-lg"></i>
+                    </button>
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-amber-400 focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-slate-900 border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="index.html" class="block text-gray-200 hover:text-amber-400 py-1">Beranda</a>
+            <a href="tentang.html" class="block text-gray-200 hover:text-amber-400 py-1">Tentang SFE</a>
+            <a href="program.html" class="block text-gray-200 hover:text-amber-400 py-1">Program Pendidikan</a>
+            <a href="layanan.html" class="block text-amber-400 font-bold py-1">Layanan Kami</a>
+            <a href="pengelolaan-tutor.html" class="block text-gray-200 hover:text-amber-400 py-1">Pengelolaan Tutor</a>
+            <a href="tim-manajemen.html" class="block text-gray-200 hover:text-amber-400 py-1">Management Team</a>
+            <a href="dokumentasi.html" class="block text-gray-200 hover:text-amber-400 py-1">Dokumentasi</a>
+            <a href="kemitraan.html" class="block text-gray-200 hover:text-amber-400 py-1">Kemitraan</a>
+            <a href="berita.html" class="block text-gray-200 hover:text-amber-400 py-1">Berita & Kegiatan</a>
+            <a href="kontak.html" class="block text-gray-200 hover:text-amber-400 py-1">Kontak</a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative bg-cover bg-center py-16 lg:py-24 overflow-hidden" style="background-image: url('images/background.jpg');">
+        <div class="absolute inset-0 bg-gradient-to-r from-[#0A192F] via-[#0A192F]/85 to-transparent lg:w-4/5"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
+            <div class="max-w-2xl space-y-5">
+                <span class="inline-block text-amber-400 text-xs font-bold uppercase tracking-widest bg-amber-400/10 border border-amber-400/20 px-3.5 py-1.5 rounded-full">
+                    OUR SERVICES
+                </span>
+
+                <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                    Comprehensive Education Services
+                </h1>
+
+                <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                    SFE menyediakan enam kategori utama layanan pendidikan terintegrasi untuk mendukung kebutuhan akademik, terapi, dan pengembangan bakat peserta didik.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN SERVICES LIST -->
+    <section class="py-14 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+        
+        <!-- Service 01: Private Tutoring -->
+        <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-200 hover-card-lift grid grid-cols-1 lg:grid-cols-3">
+            <div class="lg:col-span-1">
+                <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&q=80&w=600" alt="Private Tutoring" class="w-full h-full min-h-[250px] object-cover object-top">
+            </div>
+            <div class="lg:col-span-2 p-6 sm:p-8 flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center gap-4 mb-3">
+                        <div class="w-12 h-12 rounded-2xl bg-amber-400 text-slate-950 font-extrabold text-xl flex items-center justify-center shrink-0 shadow-md">01</div>
+                        <div>
+                            <span class="text-xs font-bold text-amber-600 uppercase tracking-wider">Personalized Learning for Academic Excellence</span>
+                            <h3 class="text-xl sm:text-2xl font-bold text-slate-900">PRIVATE TUTORING</h3>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4">
+                        Layanan les privat dengan sistem pembelajaran individual yang disesuaikan dengan jenjang pendidikan, mata pelajaran, target akademik, dan kebutuhan peserta didik.
+                    </p>
+                    
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 mb-4">
+                        <span class="text-xs font-bold text-amber-600 block mb-2 uppercase tracking-wider">Layanan:</span>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-600">
+                            <div><i class="fa-solid fa-check text-amber-500 mr-2"></i>Les privat SD, SMP, dan SMA.</div>
+                            <div><i class="fa-solid fa-check text-amber-500 mr-2"></i>Bahasa asing.</div>
+                            <div><i class="fa-solid fa-check text-amber-500 mr-2"></i>Persiapan ujian sekolah.</div>
+                            <div><i class="fa-solid fa-check text-amber-500 mr-2"></i>Calistung.</div>
+                            <div><i class="fa-solid fa-check text-amber-500 mr-2"></i>Persiapan UTBK.</div>
+                            <div><i class="fa-solid fa-check text-amber-500 mr-2"></i>Program akademik khusus.</div>
+                            <div class="sm:col-span-2"><i class="fa-solid fa-check text-amber-500 mr-2"></i>Pembelajaran Cambridge.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border-t border-slate-100 pt-4 flex items-center gap-4 text-xs font-semibold text-slate-700">
+                    <span class="text-amber-600 uppercase tracking-wider font-bold">Pilihan Pembelajaran:</span>
+                    <span class="flex items-center gap-1.5 bg-slate-100 px-3 py-1 rounded-full"><i class="fa-solid fa-house text-amber-500"></i> Home Visit</span>
+                    <span class="flex items-center gap-1.5 bg-slate-100 px-3 py-1 rounded-full"><i class="fa-solid fa-laptop text-amber-500"></i> Online Learning</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Service 02: Special Needs Education -->
+        <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-200 hover-card-lift grid grid-cols-1 lg:grid-cols-3">
+            <div class="lg:col-span-1">
+                <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=600" alt="Special Needs Education" class="w-full h-full min-h-[250px] object-cover object-top">
+            </div>
+            <div class="lg:col-span-2 p-6 sm:p-8 flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center gap-4 mb-3">
+                        <div class="w-12 h-12 rounded-2xl bg-amber-400 text-slate-950 font-extrabold text-xl flex items-center justify-center shrink-0 shadow-md">02</div>
+                        <div>
+                            <span class="text-xs font-bold text-amber-600 uppercase tracking-wider">Supporting Every Unique Learning Journey</span>
+                            <h3 class="text-xl sm:text-2xl font-bold text-slate-900">SPECIAL NEEDS EDUCATION</h3>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4">
+                        Layanan pendampingan pendidikan untuk anak berkebutuhan khusus dengan pendekatan pembelajaran individual yang ramah dan terstruktur.
+                    </p>
+                    
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 mb-4">
+                        <span class="text-xs font-bold text-amber-600 block mb-2 uppercase tracking-wider">Fokus Layanan:</span>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-600">
+                            <div><i class="fa-solid fa-check text-amber-500 mr-2"></i>Calistung ABK.</div>
+                            <div><i class="fa-solid fa-check text-amber-500 mr-2"></i>Pengembangan keterampilan dasar.</div>
+                            <div><i class="fa-solid fa-check text-amber-500 mr-2"></i>Pendampingan akademik.</div>
+                            <div><i class="fa-solid fa-check text-amber-500 mr-2"></i>Stimulasi pembelajaran.</div>
+                            <div><i class="fa-solid fa-check text-amber-500 mr-2"></i>Pengembangan kemandirian.</div>
+                            <div><i class="fa-solid fa-check text-amber-500 mr-2"></i>Program pembelajaran individual.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="text-[11px] text-slate-500 italic flex items-center gap-1.5 border-t border-slate-100 pt-3">
+                    <i class="fa-solid fa-circle-info text-amber-500 shrink-0"></i> Setiap program disesuaikan dengan karakteristik, kemampuan, dan kebutuhan peserta didik.
+                </p>
+            </div>
+        </div>
+
+        <!-- Service 03: Shadow Teacher -->
+        <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-200 hover-card-lift grid grid-cols-1 lg:grid-cols-3">
+            <div class="lg:col-span-1">
+                <img src="images/shadowteacheractivities.jpg" alt="Shadow Teacher" class="w-full h-full min-h-[250px] object-cover object-top">
+            </div>
+            <div class="lg:col-span-2 p-6 sm:p-8 flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center gap-4 mb-3">
+                        <div class="w-12 h-12 rounded-2xl bg-amber-400 text-slate-950 font-extrabold text-xl flex items-center justify-center shrink-0 shadow-md">03</div>
+                        <div>
+                            <span class="text-xs font-bold text-amber-600 uppercase tracking-wider">Supporting Inclusive Education</span>
+                            <h3 class="text-xl sm:text-2xl font-bold text-slate-900">SHADOW TEACHER</h3>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4">
+                        Layanan guru pendamping untuk membantu peserta didik mengikuti proses pembelajaran di lingkungan sekolah reguler.
+                    </p>
+                    
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 mb-4">
+                        <span class="text-xs font-bold text-amber-600 block mb-2 uppercase tracking-wider">Ruang Lingkup Pendampingan:</span>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-600">
+                            <div><i class="fa-solid fa-check text-amber-500 mr-2"></i>Dukungan aktivitas belajar di kelas.</div>
+                            <div><i class="fa-solid fa-check text-amber-500 mr-2"></i>Pengembangan kemandirian.</div>
+                            <div><i class="fa-solid fa-check text-amber-500 mr-2"></i>Pendampingan instruksi pembelajaran.</div>
+                            <div><i class="fa-solid fa-check text-amber-500 mr-2"></i>Pendampingan perilaku sesuai kebutuhan.</div>
+                            <div><i class="fa-solid fa-check text-amber-500 mr-2"></i>Dukungan interaksi sosial.</div>
+                            <div><i class="fa-solid fa-check text-amber-500 mr-2"></i>Koordinasi dengan guru dan orang tua.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="text-[11px] text-slate-500 italic flex items-center gap-1.5 border-t border-slate-100 pt-3">
+                    <i class="fa-solid fa-circle-info text-amber-500 shrink-0"></i> Penempatan shadow teacher dilakukan berdasarkan kebutuhan peserta didik, kualifikasi tenaga pendamping, dan kesesuaian lingkungan sekolah.
+                </p>
+            </div>
+        </div>
+
+        <!-- Service 04: Home Visit Therapy -->
+        <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-200 hover-card-lift grid grid-cols-1 lg:grid-cols-3">
+            <div class="lg:col-span-1">
+                <img src="images/homevisitlearning&therapy.jpg" alt="Home Visit Therapy" class="w-full h-full min-h-[250px] object-cover object-top">
+            </div>
+            <div class="lg:col-span-2 p-6 sm:p-8 flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center gap-4 mb-3">
+                        <div class="w-12 h-12 rounded-2xl bg-amber-400 text-slate-950 font-extrabold text-xl flex items-center justify-center shrink-0 shadow-md">04</div>
+                        <div>
+                            <span class="text-xs font-bold text-amber-600 uppercase tracking-wider">Professional Support for Child Development</span>
+                            <h3 class="text-xl sm:text-2xl font-bold text-slate-900">HOME VISIT THERAPY</h3>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4">
+                        Layanan kunjungan rumah untuk mendukung kebutuhan perkembangan anak melalui tenaga profesional sesuai bidang kompetensinya.
+                    </p>
+                    
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 mb-4">
+                        <span class="text-xs font-bold text-amber-600 block mb-2 uppercase tracking-wider">Layanan Dapat Mencakup:</span>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-600">
+                            <div><i class="fa-solid fa-check text-amber-500 mr-2"></i>Speech Therapy.</div>
+                            <div><i class="fa-solid fa-check text-amber-500 mr-2"></i>Behavioral Support.</div>
+                            <div><i class="fa-solid fa-check text-amber-500 mr-2"></i>Occupational Therapy.</div>
+                            <div><i class="fa-solid fa-check text-amber-500 mr-2"></i>Developmental Stimulation.</div>
+                            <div class="sm:col-span-2"><i class="fa-solid fa-check text-amber-500 mr-2"></i>Physiotherapy.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="text-[11px] text-slate-500 italic flex items-center gap-1.5 border-t border-slate-100 pt-3">
+                    <i class="fa-solid fa-circle-info text-amber-500 shrink-0"></i> Jenis layanan dan ketersediaan tenaga profesional disesuaikan dengan lokasi serta kebutuhan masing-masing keluarga.
+                </p>
+            </div>
+        </div>
+
+        <!-- Service 05: Extracurricular & Skill Development -->
+        <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-200 hover-card-lift grid grid-cols-1 lg:grid-cols-3">
+            <div class="lg:col-span-1">
+                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=600" alt="Extracurricular & Skill Development" class="w-full h-full min-h-[250px] object-cover object-top">
+            </div>
+            <div class="lg:col-span-2 p-6 sm:p-8 flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center gap-4 mb-3">
+                        <div class="w-12 h-12 rounded-2xl bg-amber-400 text-slate-950 font-extrabold text-xl flex items-center justify-center shrink-0 shadow-md">05</div>
+                        <div>
+                            <span class="text-xs font-bold text-amber-600 uppercase tracking-wider">Developing Talent Beyond the Classroom</span>
+                            <h3 class="text-xl sm:text-2xl font-bold text-slate-900">EXTRACURRICULAR & SKILL DEVELOPMENT</h3>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4">
+                        Program pengembangan bakat, minat, kreativitas, dan kepercayaan diri peserta didik.
+                    </p>
+                    
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 mb-4">
+                        <span class="text-xs font-bold text-amber-600 block mb-2 uppercase tracking-wider">Program:</span>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-600">
+                            <div><i class="fa-solid fa-check text-amber-500 mr-2"></i>Public Speaking.</div>
+                            <div><i class="fa-solid fa-check text-amber-500 mr-2"></i>Art & Creative Learning.</div>
+                            <div><i class="fa-solid fa-check text-amber-500 mr-2"></i>English Club.</div>
+                            <div><i class="fa-solid fa-check text-amber-500 mr-2"></i>Swimming.</div>
+                            <div><i class="fa-solid fa-check text-amber-500 mr-2"></i>Music & Vocal.</div>
+                            <div><i class="fa-solid fa-check text-amber-500 mr-2"></i>Communication Skills.</div>
+                            <div class="sm:col-span-2"><i class="fa-solid fa-check text-amber-500 mr-2"></i>Ballet & Dance.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="text-[11px] text-slate-500 italic flex items-center gap-1.5 border-t border-slate-100 pt-3">
+                    <i class="fa-solid fa-circle-info text-amber-500 shrink-0"></i> Tersedia untuk kebutuhan individu maupun kerja sama dengan sekolah dan lembaga pendidikan.
+                </p>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 text-gray-300 mt-auto border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-8 h-8 rounded-lg bg-amber-400 flex items-center justify-center">
+                            <i class="fa-solid fa-graduation-cap text-slate-950 text-base"></i>
+                        </div>
+                        <span class="text-lg font-bold text-white">SFE Bimbingan Belajar</span>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">Mendampingi setiap proses belajar dan mengembangkan potensi peserta didik secara maksimal dan penuh kepedulian.</p>
+                </div>
+                <div>
+                    <h4 class="text-amber-400 font-semibold text-sm mb-4">Navigasi Cepat</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="tentang.html" class="hover:text-amber-400 transition">Tentang Kami</a></li>
+                        <li><a href="program.html" class="hover:text-amber-400 transition">Program Pendidikan</a></li>
+                        <li><a href="layanan.html" class="hover:text-amber-400 transition">Layanan Utama</a></li>
+                        <li><a href="pengelolaan-tutor.html" class="hover:text-amber-400 transition">Alur Seleksi Tutor</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-amber-400 font-semibold text-sm mb-4">Informasi & Kemitraan</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="tim-manajemen.html" class="hover:text-amber-400 transition">Tim & Pengajar</a></li>
+                        <li><a href="kemitraan.html" class="hover:text-amber-400 transition">Kemitraan Sekolah</a></li>
+                        <li><a href="dokumentasi.html" class="hover:text-amber-400 transition">Dokumentasi</a></li>
+                        <li><a href="berita.html" class="hover:text-amber-400 transition">Berita Terkini</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-amber-400 font-semibold text-sm mb-4">Kontak Utama</h4>
+                    <p class="text-xs text-slate-400 mb-2"><i class="fa-solid fa-phone text-amber-400 mr-2"></i> 0851-2378-6007</p>
+                    <p class="text-xs text-slate-400 mb-2"><i class="fa-solid fa-envelope text-amber-400 mr-2"></i> info@sfebimbinganbelajar.com</p>
+                    <p class="text-xs text-slate-400"><i class="fa-solid fa-location-dot text-amber-400 mr-2"></i> Jakarta, Indonesia</p>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-6 text-center text-xs text-slate-500">
+                © 2026 SFE Bimbingan Belajar. Hak Cipta Dilindungi Undang-Undang.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JavaScript & Google Translate Sync -->
+    <script src="js/main.js"></script>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'id',
+                includedLanguages: 'id,en',
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const userLangSelect = document.getElementById('lang-select');
+            if (userLangSelect) {
+                const match = document.cookie.match(match = document.cookie.match('(^|;) ?googtrans=([^;]*)(;|$)'));
+                if (match && match[2]) {
+                    const currentLang = match[2].split('/')[2];
+                    if (currentLang) userLangSelect.value = currentLang;
+                }
+
+                userLangSelect.addEventListener('change', function() {
+                    const targetLang = this.value;
+                    const selectGoogle = document.querySelector('.goog-te-combo');
+                    if (selectGoogle) {
+                        selectGoogle.value = targetLang;
+                        selectGoogle.dispatchEvent(new Event('change'));
+                    } else {
+                        document.cookie = `googtrans=/id/${targetLang}`;
+                        location.reload();
+                    }
+                });
+            }
+        });
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>
