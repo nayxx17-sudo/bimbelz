@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beranda - SFE Bimbingan Belajar</title>
+    <title>Beranda - SFE - Smart Future Education</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="css/custom.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -25,20 +25,19 @@
                 </div>
                 <div class="h-4 w-px bg-slate-700"></div>
                 
-                <!-- Dropdown Kustom Bersih (Auto-Translate Engine) -->
+                <!-- Dropdown Kustom Bersih -->
                 <div class="relative flex items-center">
                     <select id="lang-select" class="bg-slate-900 text-amber-400 text-xs font-semibold rounded px-2.5 py-1 border border-slate-700 focus:outline-none focus:ring-1 focus:ring-amber-400 cursor-pointer">
                         <option value="id">ID - INDONESIA</option>
                         <option value="en">EN - ENGLISH</option>
                     </select>
                 </div>
-                <!-- Elemen tersembunyi wajib untuk mesin Google Translate -->
                 <div id="google_translate_element"></div>
             </div>
         </div>
     </div>
 
-<!-- MAIN NAVBAR -->
+    <!-- MAIN NAVBAR -->
     <header class="bg-slate-900 sticky top-0 z-50 shadow-xl border-b border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
@@ -50,8 +49,8 @@
                     <span class="text-white font-serif font-extrabold text-2xl sm:text-3xl tracking-wider leading-none">SFE</span>
                     <div class="h-8 w-[1.5px] bg-slate-500"></div>
                     <div class="flex flex-col text-white font-semibold text-xs sm:text-sm tracking-wide leading-tight">
-                        <span>Bimbingan</span>
-                        <span>Belajar</span>
+                        <span>Smart Future</span>
+                        <span>Education</span>
                     </div>
                 </a>
 
@@ -69,7 +68,6 @@
                         <button class="flex items-center gap-1.5 hover:text-amber-400 transition cursor-pointer">
                             Lainnya <i class="fa-solid fa-chevron-down text-[10px]"></i>
                         </button>
-                        <!-- Dropdown Menu Content -->
                         <div class="absolute left-0 top-full w-44 bg-slate-900 border border-slate-800 rounded-xl shadow-2xl py-2 hidden group-hover:block transition-all z-50">
                             <a href="dokumentasi.html" class="block px-4 py-2 text-xs text-slate-300 hover:bg-amber-400 hover:text-slate-950 transition">Dokumentasi</a>
                             <a href="kemitraan.html" class="block px-4 py-2 text-xs text-slate-300 hover:bg-amber-400 hover:text-slate-950 transition">Kemitraan</a>
@@ -93,32 +91,29 @@
             </div>
         </div>
 
-        <!-- Mobile Menu Dropdown -->
-        <div id="mobile-menu" class="hidden lg:hidden bg-slate-900 border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
-            <a href="index.html" class="block text-gray-200 hover:text-amber-400 py-1">Beranda</a>
+        <!-- Mobile Menu Dropdown (DIRAPIKAN TIDAK ADA SUBMENU KECIL) -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-slate-900 border-b border-slate-800 px-4 pt-3 pb-6 space-y-2.5">
+            <a href="index.html" class="block text-amber-400 font-semibold py-1">Beranda</a>
             <a href="tentang.html" class="block text-gray-200 hover:text-amber-400 py-1">Tentang SFE</a>
             <a href="program.html" class="block text-gray-200 hover:text-amber-400 py-1">Program Pendidikan</a>
             <a href="layanan.html" class="block text-gray-200 hover:text-amber-400 py-1">Layanan Kami</a>
             <a href="pengelolaan-tutor.html" class="block text-gray-200 hover:text-amber-400 py-1">Pengelolaan Tutor</a>
             <a href="tim-manajemen.html" class="block text-gray-200 hover:text-amber-400 py-1">Management Team</a>
-            <!-- Sub-menu mobile -->
-            <div class="border-t border-slate-800 pt-2 space-y-2 pl-2">
-                <a href="dokumentasi.html" class="block text-gray-300 hover:text-amber-400 text-xs py-1">↳ Dokumentasi</a>
-                <a href="kemitraan.html" class="block text-gray-300 hover:text-amber-400 text-xs py-1">↳ Kemitraan</a>
-                <a href="berita.html" class="block text-gray-300 hover:text-amber-400 text-xs py-1">↳ Berita & Kegiatan</a>
-                <a href="kontak.html" class="block text-gray-300 hover:text-amber-400 text-xs py-1">↳ Kontak</a>
-            </div>
+            <a href="dokumentasi.html" class="block text-gray-200 hover:text-amber-400 py-1">Dokumentasi</a>
+            <a href="kemitraan.html" class="block text-gray-200 hover:text-amber-400 py-1">Kemitraan</a>
+            <a href="berita.html" class="block text-gray-200 hover:text-amber-400 py-1">Berita & Kegiatan</a>
+            <a href="kontak.html" class="block text-gray-200 hover:text-amber-400 py-1">Kontak</a>
         </div>
     </header>
 
-<!-- HERO SECTION -->
-    <section class="relative bg-cover bg-center py-12 sm:py-16 lg:py-24 overflow-hidden" style="background-image: url('images/background.jpg');">
-        <div class="absolute inset-0 bg-gradient-to-r from-[#0A192F] via-[#0A192F]/85 to-transparent lg:w-4/5"></div>
+    <!-- HERO SECTION (BACKGROUND DISET BG-RIGHT AGAR ORANGNYA TERLIHAT DI MOBILE) -->
+    <section class="relative bg-cover bg-right sm:bg-center py-14 sm:py-16 lg:py-24 overflow-hidden" style="background-image: url('images/background.jpg');">
+        <div class="absolute inset-0 bg-gradient-to-r from-[#0A192F] via-[#0A192F]/90 sm:via-[#0A192F]/85 to-[#0A192F]/40 lg:w-4/5"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
-            <div class="max-w-2xl space-y-4 sm:space-y-5">
+            <div class="max-w-2xl space-y-4 sm:space-y-5 pb-8 sm:pb-0">
                 <span class="inline-block text-amber-400 text-xs font-bold uppercase tracking-widest bg-amber-400/10 border border-amber-400/20 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full">
-                    SFE BIMBINGAN BELAJAR
+                    SFE - SMART FUTURE EDUCATION
                 </span>
 
                 <h1 class="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
@@ -130,14 +125,14 @@
                 </p>
 
                 <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
-                    SFE Bimbingan Belajar menyediakan layanan pendidikan personal melalui les privat, Shadow Teacher, pendampingan anak berkebutuhan khusus, serta program pengembangan keterampilan. Kami membantu setiap anak belajar sesuai kebutuhan, kemampuan, dan potensi terbaiknya.
+                    SFE - Smart Future Education menyediakan layanan pendidikan personal melalui les privat, Shadow Teacher, pendampingan anak berkebutuhan khusus, serta program pengembangan keterampilan. Kami membantu setiap anak belajar sesuai kebutuhan, kemampuan, dan potensi terbaiknya.
                 </p>
 
                 <div class="flex flex-wrap gap-3 pt-2">
-                    <a href="kontak.html" class="bg-amber-400 hover:bg-amber-500 text-slate-950 font-bold px-6 py-3 rounded-xl shadow-lg transition text-xs sm:text-sm flex items-center gap-2">
+                    <a href="kontak.html" class="bg-amber-400 hover:bg-amber-500 text-slate-950 font-bold px-6 py-3.5 rounded-xl shadow-lg transition text-xs sm:text-sm flex items-center gap-2">
                         Konsultasi Sekarang →
                     </a>
-                    <a href="program.html" class="border border-slate-400 hover:border-amber-400 text-white font-semibold px-6 py-3 rounded-xl transition text-xs sm:text-sm flex items-center gap-2 bg-slate-900/40 backdrop-blur-sm">
+                    <a href="program.html" class="border border-slate-400 hover:border-amber-400 text-white font-semibold px-6 py-3.5 rounded-xl transition text-xs sm:text-sm flex items-center gap-2 bg-slate-900/40 backdrop-blur-sm">
                         Jelajahi Program →
                     </a>
                 </div>
@@ -145,8 +140,8 @@
         </div>
     </section>
 
-<!-- BOTTOM OVERLAY STRIP -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10 sm:-mt-12 relative z-20">
+    <!-- BOTTOM OVERLAY STRIP (JARAK MOBILE DIATUR AGAR TIDAK TERLALU MEPET TOMBOL) -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6 sm:-mt-12 relative z-20 mb-6 sm:mb-0">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             
             <!-- Kartu 1: Personalized Learning -->
@@ -188,7 +183,7 @@
         </div>
     </section>
 
-<!-- MAIN SERVICES GRID (8 PROGRAM LENGKAP) -->
+    <!-- MAIN SERVICES GRID (8 PROGRAM LENGKAP) -->
     <section class="max-w-7xl mx-auto px-4 sm:px-8 py-12 sm:py-14">
         <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
             <span class="bg-amber-100 text-amber-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">PROGRAM PENDIDIKAN SFE</span>
@@ -363,7 +358,7 @@
                 "Setiap anak memiliki potensi dan cara belajar yang berbeda."
             </p>
             <h2 class="text-xl sm:text-2xl font-bold text-slate-100 leading-relaxed max-w-2xl mx-auto">
-                SFE berkomitmen menghadirkan pengalaman belajar yang personal, terarah, dan bermakna untuk mendukung perkembangan setiap peserta didik.
+                SFE - Smart Future Education berkomitmen menghadirkan pengalaman belajar yang personal, terarah, dan bermakna untuk mendukung perkembangan setiap peserta didik.
             </h2>
         </div>
     </section>
@@ -378,7 +373,7 @@
                     <p class="text-slate-900 text-xs sm:text-sm">Konsultasikan kebutuhan pendidikan anak bersama tim SFE sekarang juga.</p>
                 </div>
                 <div class="shrink-0 w-full md:w-auto">
-                    <a href="https://wa.me/6285123786007?text=Halo%20Admin%20SFE%20Bimbingan%20Belajar,%20saya%20ingin%20berkonsultasi%20mengenai%20kebutuhan%20pendidikan%20anak%20saya." target="_blank" class="inline-flex items-center justify-center gap-2 bg-slate-950 hover:bg-slate-900 text-amber-400 font-bold px-7 py-4 rounded-xl shadow-lg transition text-xs sm:text-sm w-full md:w-auto">
+                    <a href="https://wa.me/6285123786007?text=Halo%20Admin%20SFE%20-%20Smart%20Future%20Education,%20saya%20ingin%20berkonsultasi%20mengenai%20kebutuhan%20pendidikan%20anak%20saya." target="_blank" class="inline-flex items-center justify-center gap-2 bg-slate-950 hover:bg-slate-900 text-amber-400 font-bold px-7 py-4 rounded-xl shadow-lg transition text-xs sm:text-sm w-full md:w-auto">
                         <i class="fa-brands fa-whatsapp text-base"></i>
                         <span>HUBUNGI ADMIN SFE</span>
                     </a>
@@ -388,7 +383,7 @@
     </section>
 
     <!-- FLOATING WHATSAPP BUTTON -->
-    <a href="https://wa.me/6285123786007?text=Halo%20Admin%20SFE%20Bimbingan%20Belajar,%20saya%20ingin%20bertanya%20mengenai%20layanan%20bimbingan%20belajar." target="_blank" class="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition hover:scale-110">
+    <a href="https://wa.me/6285123786007?text=Halo%20Admin%20SFE%20-%20Smart%20Future%20Education,%20saya%20ingin%20bertanya%20mengenai%20layanan%20bimbingan%20belajar." target="_blank" class="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition hover:scale-110">
         <i class="fa-brands fa-whatsapp text-2xl"></i>
     </a>
 
@@ -401,7 +396,7 @@
                         <div class="w-8 h-8 rounded-lg bg-amber-400 flex items-center justify-center">
                             <i class="fa-solid fa-graduation-cap text-slate-950 text-base"></i>
                         </div>
-                        <span class="text-lg font-bold text-white">SFE Bimbingan Belajar</span>
+                        <span class="text-lg font-bold text-white">SFE - Smart Future Education</span>
                     </div>
                     <p class="text-xs text-slate-400 leading-relaxed">Mendampingi setiap proses belajar dan mengembangkan potensi peserta didik secara maksimal dan penuh kepedulian.</p>
                 </div>
@@ -431,7 +426,7 @@
                 </div>
             </div>
             <div class="border-t border-slate-800 pt-6 text-center text-xs text-slate-500">
-                © 2026 SFE Bimbingan Belajar. Hak Cipta Dilindungi Undang-Undang.
+                © 2026 SFE - Smart Future Education. Hak Cipta Dilindungi Undang-Undang.
             </div>
         </div>
     </footer>
@@ -439,7 +434,7 @@
     <!-- Main JavaScript -->
     <script src="js/main.js"></script>
 
-    <!-- Script Penghubung Custom Dropdown ke Google Translate Engine -->
+    <!-- Script Google Translate -->
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
@@ -452,7 +447,6 @@
         document.addEventListener('DOMContentLoaded', () => {
             const userLangSelect = document.getElementById('lang-select');
             if (userLangSelect) {
-                // Set nilai awal dari cookie jika ada
                 const match = document.cookie.match(match = document.cookie.match('(^|;) ?googtrans=([^;]*)(;|$)'));
                 if (match && match[2]) {
                     const currentLang = match[2].split('/')[2];
@@ -466,7 +460,6 @@
                         selectGoogle.value = targetLang;
                         selectGoogle.dispatchEvent(new Event('change'));
                     } else {
-                        // Fallback jika iframe Google belum siap
                         document.cookie = `googtrans=/id/${targetLang}`;
                         location.reload();
                     }
