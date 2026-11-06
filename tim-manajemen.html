@@ -34,41 +34,47 @@
 <body class="bg-slate-50 flex flex-col min-h-screen">
 
 <!-- TOPBAR -->
-    <div class="bg-slate-950 text-gray-300 text-xs py-2.5 px-4 border-b border-slate-800">
+    <div class="bg-slate-950 text-gray-300 text-xs py-2 px-4 border-b border-slate-800">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
-            <!-- Kontak Kiri -->
-            <div class="flex items-center space-x-6">
-                <span class="flex items-center gap-2"><i class="fa-solid fa-envelope text-amber-400"></i> <span>sfe060924@gmail.com</span></span>
-                <span class="flex items-center gap-2"><i class="fa-solid fa-phone text-amber-400"></i> <span>0851-2378-6007</span></span>
+            
+            <!-- Baris HP / Kiri Desktop: Email & Telepon -->
+            <div class="flex flex-wrap items-center justify-center md:justify-start gap-x-4 gap-y-1 text-center">
+                <span class="flex items-center gap-1.5"><i class="fa-solid fa-envelope text-amber-400"></i> <span>sfe060924@gmail.com</span></span>
+                <span class="hidden sm:inline text-slate-600">•</span>
+                <span class="flex items-center gap-1.5"><i class="fa-solid fa-phone text-amber-400"></i> <span>0851-2378-6007</span></span>
             </div>
             
-            <!-- Sosial Media, Jam WIB & Language Select Kanan -->
-            <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+            <!-- Baris Bawah HP / Kanan Desktop: Sosmed, Jam WIB, & Translate -->
+            <div class="flex flex-wrap items-center justify-center gap-3">
+                
+                <!-- Ikon Sosial Media (Lengkap & Tampil di Mobile/Desktop) -->
                 <div class="flex items-center space-x-3 text-sm">
                     <a href="#" class="hover:text-amber-400 transition"><i class="fa-brands fa-instagram"></i></a>
-                    
                     <a href="#" class="hover:text-amber-400 transition"><i class="fa-brands fa-facebook"></i></a>
                     <a href="#" class="hover:text-amber-400 transition"><i class="fa-brands fa-youtube"></i></a>
                 </div>
-                <div class="hidden sm:block h-4 w-px bg-slate-700"></div>
+                
+                <div class="h-4 w-px bg-slate-700"></div>
 
-                <!-- INDIKATOR JAM REALTIME WIB & STATUS (BUKA/TUTUP) -->
-                <div id="wib-status-container" class="flex items-center gap-2 bg-slate-900 border border-slate-700 px-2.5 py-1 rounded text-[11px] sm:text-xs font-semibold">
-                    <span id="wib-status-dot" class="w-2 h-2 rounded-full bg-slate-500"></span>
-                    <span id="wib-status-text" class="text-slate-300">Loading...</span>
-                    <span id="wib-clock" class="text-white font-mono border-l border-slate-700 pl-2">00:00:00 WIB</span>
+                <!-- INDIKATOR JAM REALTIME WIB & STATUS -->
+                <div id="wib-status-container" class="flex items-center gap-1.5 bg-slate-900 border border-slate-700 px-2 py-0.5 rounded text-[10px] sm:text-xs font-semibold shrink-0">
+                    <span id="wib-status-dot" class="w-1.5 h-1.5 rounded-full bg-slate-500"></span>
+                    <span id="wib-status-text" class="text-slate-300">...</span>
+                    <span id="wib-clock" class="text-white font-mono border-l border-slate-700 pl-1.5">00:00 WIB</span>
                 </div>
 
                 <div class="h-4 w-px bg-slate-700"></div>
                 
-                <div class="relative flex items-center">
-                    <select id="lang-select" class="bg-slate-900 text-amber-400 text-xs font-semibold rounded px-2.5 py-1 border border-slate-700 focus:outline-none focus:ring-1 focus:ring-amber-400 cursor-pointer">
-                        <option value="id">ID - INDONESIA</option>
-                        <option value="en">EN - ENGLISH</option>
+                <!-- Dropdown Translate -->
+                <div class="relative flex items-center shrink-0">
+                    <select id="lang-select" class="bg-slate-900 text-amber-400 text-xs font-semibold rounded px-2 py-0.5 border border-slate-700 focus:outline-none focus:ring-1 focus:ring-amber-400 cursor-pointer">
+                        <option value="id">ID</option>
+                        <option value="en">EN</option>
                     </select>
                 </div>
-                <div id="google_translate_element"></div>
+                <div id="google_translate_element" class="hidden"></div>
             </div>
+
         </div>
     </div>
 
