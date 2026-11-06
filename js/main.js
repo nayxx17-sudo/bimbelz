@@ -1,5 +1,5 @@
 /* ==========================================================================
-   SFE Bimbingan Belajar - Main Script (Updated & Complete)
+   SFE - Smart Future Education - Main Script (Updated & Complete)
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -77,8 +77,62 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.addEventListener('click', () => {
             const query = prompt('Masukkan kata kunci pencarian (misal: Les Privat, UTBK, ABK):');
             if (query) {
-                alert(`Mencari informasi tentang: "${query}" di SFE Bimbingan Belajar...`);
+                alert(`Mencari informasi tentang: "${query}" di SFE - Smart Future Education...`);
             }
         });
     });
+
+    // 5. Real-time WIB Clock & Operational Status (Open/Closed)
+    initWibClock();
 });
+
+/**
+ * Fungsi untuk menghitung waktu WIB (UTC+7) dan mengupdate UI jam serta status buka/tutup secara realtime.
+ */
+function initWibClock() {
+    function updateClock() {
+        const clockElem = document.getElementById('wib-clock');
+        const statusTextElem = document.getElementById('wib-status-text');
+        const statusDotElem = document.getElementById('wib-status-dot');
+
+        if (!clockElem || !statusTextElem || !statusDotElem) return;
+
+        // Ambil waktu saat ini dan konversi ke zona waktu WIB (Asia/Jakarta)
+        const now = new Date();
+        const options = { timeZone: 'Asia/Jakarta', hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' };
+        const timeString = new Intl.DateTimeFormat('id-ID', options).format(now).replace(/\./g, ':');
+
+        // Ambil hari dan jam di zona waktu Jakarta
+        const dayOfWeekStr = new Intl.DateTimeFormat('en-US', { timeZone: 'Asia/Jakarta', weekday: 'short' }).format(now);
+        const hourStr = new Intl.DateTimeFormat('en-US', { timeZone: 'Asia/Jakarta', hour: '2-digit', hour12: false }).format(now);
+        const currentHour = parseInt(hourStr, 10);
+
+        // Aturan Operasional SFE:
+        // - Buka: Senin (Mon) - Sabtu (Sat), Pukul 08:00 sampai sebelum 17:00 WIB
+        // - Tutup: Minggu (Sun) ATAU di luar jam 08:00 - 17:00 WIB
+        const isSunday = (dayOfWeekStr === 'Sun');
+        const isOpen = !isSunday && (currentHour >= 8 && currentHour < 17);
+
+        // Update Text Tampilan Jam
+        clockElem.textContent = `${timeString} WIB`;
+
+        // Update UI Warna & Indikator berdasarkan status
+        if (isOpen) {
+            // Status BUKA: Teks Putih, Dot Hijau Berdenyut
+            statusTextElem.textContent = 'BUKA';
+            statusTextElem.className = 'text-white font-bold tracking-wider';
+            statusDotElem.className = 'w-2 h-2 rounded-full bg-emerald-500 animate-pulse';
+            clockElem.className = 'text-white font-mono border-l border-slate-700 pl-2';
+        } else {
+            // Status TUTUP: Teks Merah, Dot Merah
+            statusTextElem.textContent = 'TUTUP';
+            statusTextElem.className = 'text-red-400 font-bold tracking-wider';
+            statusDotElem.className = 'w-2 h-2 rounded-full bg-red-500';
+            clockElem.className = 'text-red-400 font-mono border-l border-slate-700 pl-2';
+        }
+    }
+
+    // Jalankan pertama kali saat load lalu set interval tiap 1 detik
+    updateClock();
+    setInterval(updateClock, 1000);
+}

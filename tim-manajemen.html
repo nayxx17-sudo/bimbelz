@@ -33,20 +33,32 @@
 </head>
 <body class="bg-slate-50 flex flex-col min-h-screen">
 
-    <!-- TOPBAR -->
+<!-- TOPBAR -->
     <div class="bg-slate-950 text-gray-300 text-xs py-2.5 px-4 border-b border-slate-800">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
+            <!-- Kontak Kiri -->
             <div class="flex items-center space-x-6">
                 <span class="flex items-center gap-2"><i class="fa-solid fa-envelope text-amber-400"></i> <span>sfe060924@gmail.com</span></span>
                 <span class="flex items-center gap-2"><i class="fa-solid fa-phone text-amber-400"></i> <span>0851-2378-6007</span></span>
             </div>
-            <div class="flex items-center space-x-5">
+            
+            <!-- Sosial Media, Jam WIB & Language Select Kanan -->
+            <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
                 <div class="flex items-center space-x-3 text-sm">
                     <a href="#" class="hover:text-amber-400 transition"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#" class="hover:text-amber-400 transition"><i class="fa-brands fa-threads"></i></a>
+                    
                     <a href="#" class="hover:text-amber-400 transition"><i class="fa-brands fa-facebook"></i></a>
                     <a href="#" class="hover:text-amber-400 transition"><i class="fa-brands fa-youtube"></i></a>
                 </div>
+                <div class="hidden sm:block h-4 w-px bg-slate-700"></div>
+
+                <!-- INDIKATOR JAM REALTIME WIB & STATUS (BUKA/TUTUP) -->
+                <div id="wib-status-container" class="flex items-center gap-2 bg-slate-900 border border-slate-700 px-2.5 py-1 rounded text-[11px] sm:text-xs font-semibold">
+                    <span id="wib-status-dot" class="w-2 h-2 rounded-full bg-slate-500"></span>
+                    <span id="wib-status-text" class="text-slate-300">Loading...</span>
+                    <span id="wib-clock" class="text-white font-mono border-l border-slate-700 pl-2">00:00:00 WIB</span>
+                </div>
+
                 <div class="h-4 w-px bg-slate-700"></div>
                 
                 <div class="relative flex items-center">
@@ -100,7 +112,7 @@
                         </div>
                     </div>
 
-                    <button class="text-white hover:text-amber-400 text-sm ml-2 cursor-pointer search-trigger"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    
                 </nav>
 
                 <!-- Mobile Menu Button -->
@@ -151,7 +163,7 @@
                     Tim Manajemen & Pengajar Profesional
                 </h1>
                 <p class="text-slate-200 sm:text-slate-300 text-xs sm:text-sm leading-relaxed">
-                    Didukung oleh tim manajemen yang terorganisasi dan tenaga pendidik dari berbagai bidang keahlian di SFE - Smart Future Education[cite: 9].
+                    Didukung oleh tim manajemen yang terorganisasi dan tenaga pendidik dari berbagai bidang keahlian di SFE - Smart Future Education.
                 </p>
             </div>
         </div>
