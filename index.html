@@ -106,43 +106,44 @@
         </div>
     </header>
 
-<!-- HERO SECTION RESPONSIF (TIDAK ZOOM & PAS DI MOBILE) -->
-<section class="relative py-16 lg:py-24 overflow-hidden bg-slate-900">
-    <!-- Gambar Background sebagai elemen HTML <img> agar ukurannya natural dan tidak ter-zoom berlebihan -->
+<!-- HERO SECTION RESPONSIF (TANPA SHADOW GELAP DI MOBILE & TIDAK ZOOM) -->
+<section class="relative py-14 sm:py-16 lg:py-24 overflow-hidden bg-slate-900">
+    <!-- Gambar Background: Terang di HP (opacity-100), Mengunci Objek Orang di Kanan (object-[85%_center]) -->
     <div class="absolute inset-0 w-full h-full overflow-hidden">
-        <img src="images/background.jpg" alt="Background SFE" class="w-full h-full object-cover object-right sm:object-center opacity-40 sm:opacity-100">
+        <img src="images/background.jpg" alt="Background SFE" class="w-full h-full object-cover object-[85%_center] sm:object-center opacity-100 sm:opacity-90">
     </div>
 
-    <!-- Gradient Overlay agar teks sangat terbaca jelas -->
-    <div class="absolute inset-0 bg-gradient-to-r from-[#0A192F] via-[#0A192F]/95 sm:via-[#0A192F]/85 to-[#0A192F]/40 lg:w-4/5"></div>
+    <!-- Gradient Overlay: TRANSPARAN di HP (tidak ada bayangan gelap), Baru Aktif Gelap saat Layar Komputer (sm:bg-gradient-to-r) -->
+    <div class="absolute inset-0 bg-gradient-to-t from-[#0A192F]/90 via-[#0A192F]/40 to-transparent sm:bg-gradient-to-r sm:from-[#0A192F] sm:via-[#0A192F]/85 sm:to-transparent lg:w-4/5"></div>
 
     <!-- Konten Teks -->
     <div class="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
         <div class="max-w-2xl space-y-4 sm:space-y-5">
-            <span class="inline-block text-amber-400 text-xs font-bold uppercase tracking-widest bg-amber-400/10 border border-amber-400/20 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full">
+            <span class="inline-block text-amber-400 text-xs font-bold uppercase tracking-widest bg-slate-950/80 border border-amber-400/30 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full backdrop-blur-md">
                 SFE - SMART FUTURE EDUCATION
             </span>
 
-            <h1 class="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
+            <h1 class="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight drop-shadow-md">
                 Personalized Learning, <span class="text-amber-400">Brighter Future.</span>
             </h1>
 
-            <p class="text-amber-300 font-semibold text-xs sm:text-sm tracking-wide">
+            <p class="text-amber-300 font-semibold text-xs sm:text-sm tracking-wide drop-shadow">
                 Pendampingan Belajar Profesional untuk Setiap Potensi Anak.
             </p>
 
-            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+            <p class="text-slate-100 sm:text-slate-300 text-xs sm:text-sm leading-relaxed drop-shadow bg-slate-950/30 sm:bg-transparent p-3 sm:p-0 rounded-xl backdrop-blur-[2px] sm:backdrop-blur-none">
                 SFE - Smart Future Education menyediakan layanan pendidikan personal melalui les privat, Shadow Teacher, pendampingan anak berkebutuhan khusus, serta program pengembangan keterampilan. Kami membantu setiap anak belajar sesuai kebutuhan, kemampuan, dan potensi terbaiknya.
             </p>
-        </div>
+
             <div class="flex flex-wrap gap-3 pt-2">
-                <a href="kontak.html" class="bg-amber-400 hover:bg-amber-500 text-slate-950 font-bold px-6 py-3.5 rounded-xl shadow-lg transition text-xs sm:text-sm flex items-center gap-2">
+                <a href="kontak.html" class="bg-amber-400 hover:bg-amber-500 text-slate-950 font-bold px-6 py-3.5 rounded-xl shadow-xl transition text-xs sm:text-sm flex items-center gap-2">
                     Konsultasi Sekarang →
                 </a>
-                <a href="program.html" class="border border-slate-400 hover:border-amber-400 text-white font-semibold px-6 py-3.5 rounded-xl transition text-xs sm:text-sm flex items-center gap-2 bg-slate-900/40 backdrop-blur-sm">
+                <a href="program.html" class="border border-slate-300 hover:border-amber-400 text-white font-semibold px-6 py-3.5 rounded-xl transition text-xs sm:text-sm flex items-center gap-2 bg-slate-950/60 backdrop-blur-md">
                     Jelajahi Program →
                 </a>
             </div>
+        </div>
     </div>
 </section>
 
