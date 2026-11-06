@@ -10,7 +10,7 @@
 </head>
 <body class="bg-slate-50 flex flex-col min-h-screen">
     
-<!-- TOPBAR -->
+    <!-- TOPBAR -->
     <div class="bg-slate-950 text-gray-300 text-xs py-2 px-4 border-b border-slate-800">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
             
@@ -23,8 +23,6 @@
             
             <!-- Baris Bawah HP / Kanan Desktop: Sosmed, Jam WIB, & Translate -->
             <div class="flex flex-wrap items-center justify-center gap-3">
-                
-                <!-- Ikon Sosial Media (Lengkap & Tampil di Mobile/Desktop) -->
                 <div class="flex items-center space-x-3 text-sm">
                     <a href="#" class="hover:text-amber-400 transition"><i class="fa-brands fa-instagram"></i></a>
                     <a href="#" class="hover:text-amber-400 transition"><i class="fa-brands fa-facebook"></i></a>
@@ -86,7 +84,6 @@
                         <button class="flex items-center gap-1.5 text-amber-400 transition cursor-pointer">
                             Lainnya <i class="fa-solid fa-chevron-down text-[10px]"></i>
                         </button>
-                        <!-- Dropdown Menu Content -->
                         <div class="absolute left-0 top-full w-44 bg-slate-900 border border-slate-800 rounded-xl shadow-2xl py-2 hidden group-hover:block transition-all z-50">
                             <a href="dokumentasi.html" class="block px-4 py-2 text-xs text-amber-400 font-bold bg-slate-800 transition">Dokumentasi</a>
                             <a href="kemitraan.html" class="block px-4 py-2 text-xs text-slate-300 hover:bg-amber-400 hover:text-slate-950 transition">Kemitraan</a>
@@ -94,15 +91,10 @@
                             <a href="kontak.html" class="block px-4 py-2 text-xs text-slate-300 hover:bg-amber-400 hover:text-slate-950 transition">Kontak</a>
                         </div>
                     </div>
-
-                    
                 </nav>
 
                 <!-- Mobile Menu Button -->
                 <div class="lg:hidden flex items-center gap-3">
-                    <button class="search-trigger text-gray-300 hover:text-amber-400 p-2">
-                        <i class="fa-solid fa-magnifying-glass text-lg"></i>
-                    </button>
                     <button id="mobile-menu-btn" class="text-gray-300 hover:text-amber-400 focus:outline-none">
                         <i class="fa-solid fa-bars text-2xl"></i>
                     </button>
@@ -110,7 +102,7 @@
             </div>
         </div>
 
-        <!-- Mobile Menu Dropdown (DENGAN DROPDOWN "LAINNYA" YANG RAPI) -->
+        <!-- Mobile Menu Dropdown -->
         <div id="mobile-menu" class="hidden lg:hidden bg-slate-900 border-b border-slate-800 px-4 pt-3 pb-6 space-y-2.5">
             <a href="index.html" class="block text-gray-200 hover:text-amber-400 py-1">Beranda</a>
             <a href="tentang.html" class="block text-gray-200 hover:text-amber-400 py-1">Tentang SFE</a>
@@ -134,7 +126,7 @@
         </div>
     </header>
 
-    <!-- HERO SECTION (BACKGROUND POSISI KANAN KHUSUS MOBILE, GRADASI HALUS) -->
+    <!-- HERO SECTION -->
     <section class="relative bg-cover bg-right sm:bg-center py-12 sm:py-16 lg:py-24 overflow-hidden bg-slate-900" style="background-image: url('images/background.jpg');">
         <div class="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/70 to-transparent sm:from-[#0A192F] sm:via-[#0A192F]/85 sm:to-transparent lg:w-4/5"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
@@ -161,89 +153,161 @@
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Item Galeri 1 -->
-            <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-200 group cursor-pointer" onclick="openPhotoModal('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=800', 'Sesi Belajar Interaktif Kelas Privat')">
-                <div class="relative overflow-hidden h-52 sm:h-60">
-                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=800" alt="Kegiatan 1" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+            
+            <!-- Foto 1: Prestasi -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-200 group cursor-pointer" onclick="openPhotoModal('images/dokumentasi/prestasi.jpg', 'Apresiasi Prestasi & Keberhasilan Peserta Didik')">
+                <div class="relative overflow-hidden h-64 sm:h-72">
+                    <img src="images/dokumentasi/prestasi.jpg" alt="Prestasi Siswa SFE" class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-300">
                     <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white font-semibold text-sm gap-2">
                         <i class="fa-solid fa-magnifying-glass-plus"></i> Perbesar Foto
                     </div>
                 </div>
                 <div class="p-4">
-                    <span class="text-[10px] font-bold text-amber-600 uppercase tracking-wider">Kelas Privat</span>
-                    <h4 class="font-bold text-slate-900 text-sm mt-0.5">Sesi Belajar Interaktif & Menyenangkan</h4>
+                    <span class="text-[10px] font-bold text-amber-600 uppercase tracking-wider">Apresiasi Siswa</span>
+                    <h4 class="font-bold text-slate-900 text-sm mt-0.5">Penghargaan & Prestasi Belajar Siswa</h4>
                 </div>
             </div>
 
-            <!-- Item Galeri 2 -->
-            <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-200 group cursor-pointer" onclick="openPhotoModal('https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&q=80&w=800', 'Pendampingan Belajar Anak')">
-                <div class="relative overflow-hidden h-52 sm:h-60">
-                    <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&q=80&w=800" alt="Kegiatan 2" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+            <!-- Foto 2: Keterampilan / Motorik -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-200 group cursor-pointer" onclick="openPhotoModal('images/dokumentasi/keterampilan.jpg', 'Pelatihan Keterampilan & Motorik Halus Anak')">
+                <div class="relative overflow-hidden h-64 sm:h-72">
+                    <img src="images/dokumentasi/keterampilan.jpg" alt="Keterampilan Motorik Anak" class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-300">
                     <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white font-semibold text-sm gap-2">
                         <i class="fa-solid fa-magnifying-glass-plus"></i> Perbesar Foto
                     </div>
                 </div>
                 <div class="p-4">
-                    <span class="text-[10px] font-bold text-amber-600 uppercase tracking-wider">Pendampingan Khusus</span>
-                    <h4 class="font-bold text-slate-900 text-sm mt-0.5">Fokus & Perhatian Penuh untuk Peserta Didik</h4>
+                    <span class="text-[10px] font-bold text-amber-600 uppercase tracking-wider">Pengembangan Karakter</span>
+                    <h4 class="font-bold text-slate-900 text-sm mt-0.5">Latihan Keterampilan & Motorik Halus</h4>
                 </div>
             </div>
 
-            <!-- Item Galeri 3 -->
-            <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-200 group cursor-pointer" onclick="openPhotoModal('https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&q=80&w=800', 'Diskusi Tim & Evaluasi Tutor SFE')">
-                <div class="relative overflow-hidden h-52 sm:h-60">
-                    <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&q=80&w=800" alt="Kegiatan 3" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+            <!-- Foto 3: Belajar Online (Biologi) -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-200 group cursor-pointer" onclick="openPhotoModal('images/dokumentasi/online.jpg', 'Sesi Bimbingan Belajar Daring Interaktif (Google Meet)')">
+                <div class="relative overflow-hidden h-64 sm:h-72">
+                    <img src="images/dokumentasi/online.jpg" alt="Bimbingan Online SFE" class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-300">
                     <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white font-semibold text-sm gap-2">
                         <i class="fa-solid fa-magnifying-glass-plus"></i> Perbesar Foto
                     </div>
                 </div>
                 <div class="p-4">
-                    <span class="text-[10px] font-bold text-amber-600 uppercase tracking-wider">Manajemen & Tutor</span>
-                    <h4 class="font-bold text-slate-900 text-sm mt-0.5">Koordinasi & Evaluasi Kualitas Pengajaran</h4>
+                    <span class="text-[10px] font-bold text-amber-600 uppercase tracking-wider">Kelas Online</span>
+                    <h4 class="font-bold text-slate-900 text-sm mt-0.5">Sesi Pendampingan Belajar Daring Interaktif</h4>
                 </div>
             </div>
 
-            <!-- Item Galeri 4 -->
-            <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-200 group cursor-pointer" onclick="openPhotoModal('https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&q=80&w=800', 'Suasana Belajar Kelompok & Diskusi')">
-                <div class="relative overflow-hidden h-52 sm:h-60">
-                    <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&q=80&w=800" alt="Kegiatan 4" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+            <!-- Foto 4: Home Visit / Privat Rumah -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-200 group cursor-pointer" onclick="openPhotoModal('images/dokumentasi/homevisit.jpg', 'Pendampingan Belajar Nyaman di Rumah (Home Visit)')">
+                <div class="relative overflow-hidden h-64 sm:h-72">
+                    <img src="images/dokumentasi/homevisit.jpg" alt="Home Visit Privat" class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-300">
                     <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white font-semibold text-sm gap-2">
                         <i class="fa-solid fa-magnifying-glass-plus"></i> Perbesar Foto
                     </div>
                 </div>
                 <div class="p-4">
-                    <span class="text-[10px] font-bold text-amber-600 uppercase tracking-wider">Kelas Kelompok</span>
-                    <h4 class="font-bold text-slate-900 text-sm mt-0.5">Suasana Diskusi Kelompok yang Produktif</h4>
+                    <span class="text-[10px] font-bold text-amber-600 uppercase tracking-wider">Les Privat Rumah</span>
+                    <h4 class="font-bold text-slate-900 text-sm mt-0.5">Pendampingan Belajar Nyaman di Rumah</h4>
                 </div>
             </div>
 
-            <!-- Item Galeri 5 -->
-            <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-200 group cursor-pointer" onclick="openPhotoModal('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=800', 'Simulasi Pengajaran / Microteaching Tutor')">
-                <div class="relative overflow-hidden h-52 sm:h-60">
-                    <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=800" alt="Kegiatan 5" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+            <!-- Foto 5: Kelas / Mewarnai -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-200 group cursor-pointer" onclick="openPhotoModal('images/dokumentasi/kelas.jpg', 'Suasana Kelas Bimbingan Belajar Interaktif')">
+                <div class="relative overflow-hidden h-64 sm:h-72">
+                    <img src="images/dokumentasi/kelas.jpg" alt="Suasana Kelas SFE" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-300">
                     <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white font-semibold text-sm gap-2">
                         <i class="fa-solid fa-magnifying-glass-plus"></i> Perbesar Foto
                     </div>
                 </div>
                 <div class="p-4">
-                    <span class="text-[10px] font-bold text-amber-600 uppercase tracking-wider">Pelatihan Tutor</span>
-                    <h4 class="font-bold text-slate-900 text-sm mt-0.5">Seleksi & Microteaching Calon Pengajar</h4>
+                    <span class="text-[10px] font-bold text-amber-600 uppercase tracking-wider">Aktivitas Kelas</span>
+                    <h4 class="font-bold text-slate-900 text-sm mt-0.5">Suasana Belajar & Mewarnai Bersama</h4>
                 </div>
             </div>
 
-            <!-- Item Galeri 6 -->
-            <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-200 group cursor-pointer" onclick="openPhotoModal('https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=800', 'Konsultasi Pendidikan Bersama Orang Tua')">
-                <div class="relative overflow-hidden h-52 sm:h-60">
-                    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=800" alt="Kegiatan 6" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+            <!-- Foto 6: Mandarin / Bahasa Asing -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-200 group cursor-pointer" onclick="openPhotoModal('images/dokumentasi/mandarin.jpg', 'Program Belajar Bahasa Asing & Literasi Anak')">
+                <div class="relative overflow-hidden h-64 sm:h-72">
+                    <img src="images/dokumentasi/mandarin.jpg" alt="Belajar Bahasa Asing" class="w-full h-72 object-cover object-top group-hover:scale-105 transition duration-300">
                     <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white font-semibold text-sm gap-2">
                         <i class="fa-solid fa-magnifying-glass-plus"></i> Perbesar Foto
                     </div>
                 </div>
                 <div class="p-4">
-                    <span class="text-[10px] font-bold text-amber-600 uppercase tracking-wider">Konsultasi</span>
-                    <h4 class="font-bold text-slate-900 text-sm mt-0.5">Layanan Konsultasi Belajar & Pemetaan Siswa</h4>
+                    <span class="text-[10px] font-bold text-amber-600 uppercase tracking-wider">Kelas Bahasa</span>
+                    <h4 class="font-bold text-slate-900 text-sm mt-0.5">Pembelajaran Bahasa Asing & Literasi</h4>
                 </div>
             </div>
+
+            <!-- Foto 7: Keakraban Tutor & Siswa -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-200 group cursor-pointer" onclick="openPhotoModal('images/dokumentasi/tutor.jpg', 'Kehangatan & Kedekatan Pendampingan Tutor SFE')">
+                <div class="relative overflow-hidden h-64 sm:h-72">
+                    <img src="images/dokumentasi/tutor.jpg" alt="Keakraban Tutor dan Siswa" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-300">
+                    <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white font-semibold text-sm gap-2">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i> Perbesar Foto
+                    </div>
+                </div>
+                <div class="p-4">
+                    <span class="text-[10px] font-bold text-amber-600 uppercase tracking-wider">Hubungan Edututor</span>
+                    <h4 class="font-bold text-slate-900 text-sm mt-0.5">Kehangatan Pendampingan Tutor SFE</h4>
+                </div>
+            </div>
+
+            <!-- Foto 8: Latihan Matematika Online -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-200 group cursor-pointer" onclick="openPhotoModal('images/dokumentasi/matematika.jpg', 'Bimbingan Belajar Online Terarah & Pemecahan Soal')">
+                <div class="relative overflow-hidden h-64 sm:h-72">
+                    <img src="images/dokumentasi/matematika.jpg" alt="Latihan Matematika Online" class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-300">
+                    <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white font-semibold text-sm gap-2">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i> Perbesar Foto
+                    </div>
+                </div>
+                <div class="p-4">
+                    <span class="text-[10px] font-bold text-amber-600 uppercase tracking-wider">Eksakta Online</span>
+                    <h4 class="font-bold text-slate-900 text-sm mt-0.5">Pembahasan Latihan Soal Matematika</h4>
+                </div>
+            </div>
+
+            <!-- Foto 9: Mencatat & Menghitung -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-200 group cursor-pointer" onclick="openPhotoModal('images/dokumentasi/akuntansi.jpg', 'Fokus & Konsentrasi dalam Sesi Latihan Soal')">
+                <div class="relative overflow-hidden h-64 sm:h-72">
+                    <img src="images/dokumentasi/akuntansi.jpg" alt="Siswa Mencatat Soal" class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-300">
+                    <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white font-semibold text-sm gap-2">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i> Perbesar Foto
+                    </div>
+                </div>
+                <div class="p-4">
+                    <span class="text-[10px] font-bold text-amber-600 uppercase tracking-wider">Fokus Belajar</span>
+                    <h4 class="font-bold text-slate-900 text-sm mt-0.5">Konsentrasi & Pendalaman Materi Hitung</h4>
+                </div>
+            </div>
+
+            <!-- Foto 10: Worksheet Matematika -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-200 group cursor-pointer" onclick="openPhotoModal('images/dokumentasi/worksheet.jpg', 'Pendampingan Pemecahan Soal Lembar Kerja Siswa')">
+                <div class="relative overflow-hidden h-64 sm:h-72">
+                    <img src="images/dokumentasi/worksheet.jpg" alt="Pengerjaan Worksheet" class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-300">
+                    <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white font-semibold text-sm gap-2">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i> Perbesar Foto
+                    </div>
+                </div>
+                <div class="p-4">
+                    <span class="text-[10px] font-bold text-amber-600 uppercase tracking-wider">Modul & Worksheet</span>
+                    <h4 class="font-bold text-slate-900 text-sm mt-0.5">Latihan Mandiri Pemecahan Soal LKS</h4>
+                </div>
+            </div>
+
+            <!-- Foto 11: Belajar Mandiri / Privat SFE -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-200 group cursor-pointer" onclick="openPhotoModal('images/dokumentasi/belajar.jpg', 'Suasana Belajar Mandiri & Pendampingan Privat yang Nyaman')">
+                <div class="relative overflow-hidden h-64 sm:h-72">
+                    <img src="images/dokumentasi/belajar.jpg" alt="Siswa Belajar Privat SFE" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-300">
+                    <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white font-semibold text-sm gap-2">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i> Perbesar Foto
+                    </div>
+                </div>
+                <div class="p-4">
+                    <span class="text-[10px] font-bold text-amber-600 uppercase tracking-wider">Pendampingan Intensif</span>
+                    <h4 class="font-bold text-slate-900 text-sm mt-0.5">Suasana Belajar Privat Nyaman & Terarah</h4>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -263,7 +327,7 @@
         </div>
     </div>
 
-    <!-- FLOATING WHATSAPP BUTTON (CALON SISWA) -->
+    <!-- FLOATING WHATSAPP BUTTON -->
     <a href="https://wa.me/6285123786007?text=Halo%20Admin%20SFE%20-%20Smart%20Future%20Education,%20saya%20ingin%20menanyakan%20informasi%20mengenai%20pendaftaran%20program%20bimbingan%20belajar%20(privat/kelas)%20serta%20ketersediaan%20tutor.%20Mohon%20bantuannya,%20terima%20kasih!" target="_blank" class="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition hover:scale-110">
         <i class="fa-brands fa-whatsapp text-2xl"></i>
     </a>
