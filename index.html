@@ -501,76 +501,27 @@
     </script>
     <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-    <!-- MODAL POP-UP INFORMASI PENTING SFE (Tampil Saat Pertama Akses Homepage) -->
+    <!-- MODAL POP-UP INFO KEUNGGULAN SFE (Berbasis Gambar Infografis) -->
     <div id="promoModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-950/80 backdrop-blur-sm p-4 transition-all">
-        <div id="promoModalContainer" class="relative bg-white rounded-3xl shadow-2xl max-w-lg w-full overflow-hidden border border-slate-200 transform scale-90 transition-all duration-300">
+        <div id="promoModalContainer" class="relative bg-white rounded-3xl shadow-2xl max-w-2xl w-full overflow-hidden border border-slate-200 transform scale-90 transition-all duration-300">
             
-            <!-- Tombol Close (Silang) -->
-            <button onclick="closePromoModal()" class="absolute top-4 right-4 z-20 w-8 h-8 bg-slate-900/60 hover:bg-slate-900 text-white rounded-full flex items-center justify-center text-sm shadow-md transition cursor-pointer">
+            <!-- Tombol Close (Silang) di Pojok Kanan Atas -->
+            <button onclick="closePromoModal()" class="absolute top-3 right-3 z-20 w-9 h-9 bg-slate-900/80 hover:bg-slate-900 text-white rounded-full flex items-center justify-center text-sm shadow-md transition cursor-pointer">
                 <i class="fa-solid fa-xmark"></i>
             </button>
 
-            <!-- Header Pop-up -->
-            <div class="bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 p-6 text-center relative overflow-hidden">
-                <div class="absolute -right-6 -bottom-6 w-24 h-24 bg-amber-400/10 rounded-full blur-xl"></div>
-                
-                <span class="inline-block bg-amber-400 text-slate-950 text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-widest shadow-md mb-2">
-                    SELAMAT DATANG DI SFE
-                </span>
-                <h3 class="text-xl sm:text-2xl font-extrabold text-white leading-tight">
-                    Smart Future Education
-                </h3>
-                <p class="text-amber-300 text-xs mt-1 font-medium">
-                    Personalized Learning, Brighter Future.
-                </p>
+            <!-- Bagian Gambar Infografis -->
+            <div class="bg-slate-950 p-2 max-h-[75vh] overflow-y-auto flex justify-center items-center">
+                <img src="images/keunggulan.jpeg" alt="Keunggulan Layanan SFE" class="w-full h-auto rounded-xl object-contain shadow-inner">
             </div>
 
-            <!-- Isian Informasi Penting SFE -->
-            <div class="p-6 space-y-4 bg-slate-50">
-                <p class="text-xs text-slate-600 text-center leading-relaxed">
-                    Pusat layanan pendidikan profesional yang mendampingi setiap potensi anak melalui pendekatan belajar personal dan terarah.
-                </p>
-
-                <div class="space-y-2.5">
-                    <!-- Poin 1 -->
-                    <div class="flex items-start gap-3 bg-white p-3 rounded-xl border border-slate-200/80 shadow-sm">
-                        <div class="w-7 h-7 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center shrink-0 font-bold text-xs">
-                            <i class="fa-solid fa-bullseye"></i>
-                        </div>
-                        <div>
-                            <h4 class="text-xs font-bold text-slate-900">Personalized Learning</h4>
-                            <p class="text-[11px] text-slate-600 leading-tight mt-0.5">Program pembelajaran yang disesuaikan dengan kebutuhan & kemampuan spesifik siswa.</p>
-                        </div>
-                    </div>
-
-                    <!-- Poin 2 -->
-                    <div class="flex items-start gap-3 bg-white p-3 rounded-xl border border-slate-200/80 shadow-sm">
-                        <div class="w-7 h-7 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center shrink-0 font-bold text-xs">
-                            <i class="fa-solid fa-chalkboard-user"></i>
-                        </div>
-                        <div>
-                            <h4 class="text-xs font-bold text-slate-900">Layanan Komprehensif</h4>
-                            <p class="text-[11px] text-slate-600 leading-tight mt-0.5">Mulai dari Private Tutoring, Shadow Teacher, ABK, Calistung, hingga Bahasa Asing.</p>
-                        </div>
-                    </div>
-
-                    <!-- Poin 3 -->
-                    <div class="flex items-start gap-3 bg-white p-3 rounded-xl border border-slate-200/80 shadow-sm">
-                        <div class="w-7 h-7 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center shrink-0 font-bold text-xs">
-                            <i class="fa-solid fa-house-laptop"></i>
-                        </div>
-                        <div>
-                            <h4 class="text-xs font-bold text-slate-900">Fleksibel & Terarah</h4>
-                            <p class="text-[11px] text-slate-600 leading-tight mt-0.5">Tersedia pilihan metode belajar secara Home Visit (ke rumah) maupun Online.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Tombol Action Navigasi / Konsultasi -->
-                <div class="pt-2 text-center space-y-2">               
-                    <button onclick="closePromoModal()" class="text-[11px] text-slate-500 hover:text-slate-700 underline block w-full py-1 cursor-pointer">
-                        Tutup & Lanjutkan ke Beranda
-                    </button>
+            <!-- Footer Pop-up dengan Tombol Aksi ke Program / Konsultasi -->
+            <div class="p-4 bg-slate-900 text-white flex flex-col sm:flex-row justify-between items-center gap-3 px-6">
+                <span class="text-xs text-amber-400 font-semibold">Ingin tahu lebih lanjut tentang layanan SFE?</span>
+                <div class="flex items-center gap-2 w-full sm:w-auto">
+                    <a href="index.html" class="flex-1 sm:flex-none bg-amber-400 hover:bg-amber-500 text-slate-950 font-bold px-4 py-2 rounded-xl text-xs text-center transition">
+                        Ke Beranda
+                    </a>
                 </div>
             </div>
 
