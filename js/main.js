@@ -84,6 +84,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 5. Real-time WIB Clock & Operational Status (Open/Closed)
     initWibClock();
+
+    // 6. Promotional Pop-up Modal (Muncul otomatis saat pertama kali akses Homepage)
+    initPromoPopup();
 });
 
 /**
@@ -135,4 +138,53 @@ function initWibClock() {
     // Jalankan pertama kali saat load lalu set interval tiap 1 detik
     updateClock();
     setInterval(updateClock, 1000);
+}
+
+/**
+ * Fungsi untuk mengontrol kemunculan pop-up iklan promosi SFE
+ */
+function initPromoPopup() {
+    const promoModal = document.getElementById('promoModal');
+    if (!promoModal) return; // Hanya berjalan jika elemen modal promosi tersedia di halaman tersebut (index.html)
+
+    const hasSeenPromo = sessionStorage.getItem('sfe_promo_seen');
+    
+    if (!hasSeenPromo) {
+        setTimeout(() => {
+            openPromoModal();
+        }, 1000); // Muncul 1 detik setelah halaman dimuat
+    }
+}
+
+function openPromoModal() {
+    const modal = document.getElementById('promoModal');
+    const container = document.getElementById('promoModalContainer');
+    
+    if (!modal || !container) return;
+
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    
+    setTimeout(() => {
+        container.classList.remove('scale-90');
+        container.classList.add('scale-100');
+    }, 10);
+
+    // Tandai agar dalam sesi browser ini pop-up tidak muncul berulang kali
+    sessionStorage.setItem('sfe_promo_seen', 'true');
+}
+
+function closePromoModal() {
+    const modal = document.getElementById('promoModal');
+    const container = document.getElementById('promoModalContainer');
+
+    if (!modal || !container) return;
+
+    container.classList.remove('scale-100');
+    container.classList.add('scale-90');
+
+    setTimeout(() => {
+        modal.classList.remove('flex');
+        modal.classList.add('hidden');
+    }, 200);
 }
