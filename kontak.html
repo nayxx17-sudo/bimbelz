@@ -19,7 +19,7 @@
     <title>Kontak Kami - SFE - Smart Future Education</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="css/custom.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body class="bg-slate-50 flex flex-col min-h-screen">
     
@@ -39,9 +39,9 @@
                 
                 <!-- Ikon Sosial Media (Lengkap & Tampil di Mobile/Desktop) -->
                 <div class="flex items-center space-x-3 text-sm">
-                    <a href="#" class="hover:text-amber-400 transition"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#" class="hover:text-amber-400 transition"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="#" class="hover:text-amber-400 transition"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://www.instagram.com/nurizafirdachaniago?dlrf=MXdhemZoN200YTc5Yw==" class="hover:text-amber-400 transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/share/1EqiyZcrvQ/" class="hover:text-amber-400 transition"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.threads.com/@nurizafirdachaniago" class="hover:text-amber-400 transition"><i class="fa-brands fa-threads"></i></a>
                 </div>
                 
                 <div class="h-4 w-px bg-slate-700"></div>
@@ -192,15 +192,25 @@
                         </div>
                     </div>
 
-                    <div class="flex items-start gap-4">
-                        <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center shrink-0">
-                            <i class="fa-solid fa-location-dot"></i>
-                        </div>
-                        <div>
-                            <h4 class="text-xs font-bold text-slate-400 uppercase">Lokasi Kantor</h4>
-                            <p class="text-sm font-bold text-slate-800 mt-0.5">Jakarta, Indonesia</p>
-                        </div>
-                    </div>
+<div class="flex items-start gap-4">
+    <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center shrink-0">
+        <i class="fa-solid fa-location-dot"></i>
+    </div>
+    <div class="space-y-2">
+        <div>
+            <h4 class="text-xs font-bold text-slate-400 uppercase">Lokasi Kantor SFE</h4>
+            <p class="text-sm font-bold text-slate-800 mt-0.5 leading-relaxed">
+                Bekasi Barat, Perumahan Harapan Baru 2, Jl. Rajawali 4 No.11, RT.01/RW.03
+            </p>
+        </div>
+        
+        <!-- Tombol Link Resmi Google Maps -->
+        <a href="https://maps.app.goo.gl/J6AuLmRKDcRf3W5Z8" target="_blank" class="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-950 text-amber-400 text-xs font-bold px-3.5 py-2 rounded-xl transition shadow-sm">
+            <i class="fa-solid fa-map-location-dot"></i>
+            <span>Lihat Lokasi di Google Maps →</span>
+        </a>
+    </div>
+</div>
                 </div>
 
                 <div class="bg-gradient-to-br from-slate-900 to-slate-950 text-white rounded-3xl p-8 shadow-xl space-y-4">
@@ -283,7 +293,7 @@
                     <h4 class="text-amber-400 font-semibold text-sm mb-4">Kontak Utama</h4>
                     <p class="text-xs text-slate-400 mb-2"><i class="fa-solid fa-phone text-amber-400 mr-2"></i> 0851-2378-6007</p>
                     <p class="text-xs text-slate-400 mb-2"><i class="fa-solid fa-envelope text-amber-400 mr-2"></i> sfe060924@gmail.com</p>
-                    <p class="text-xs text-slate-400"><i class="fa-solid fa-location-dot text-amber-400 mr-2"></i> Jakarta, Indonesia</p>
+                    <a href="https://maps.app.goo.gl/J6AuLmRKDcRf3W5Z8" <p class="text-xs text-slate-400"><i class="fa-solid fa-location-dot text-amber-400 mr-2"></i> Bekasi Barat, Perumahan Harapan Baru 2, Jl. Rajawali 4 No.11, RT.01/RW.03 </p> </a>
                 </div>
             </div>
             <div class="border-t border-slate-800 pt-6 text-center text-xs text-slate-500">
@@ -350,5 +360,28 @@
         });
     </script>
     <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <!-- SCRIPT WHATSAPP REDIRECT GENERATOR -->
+    <script>
+        function sendToWhatsApp(e) {
+            e.preventDefault();
+            
+            const categorySelect = document.getElementById('waCategory');
+            const category = categorySelect ? categorySelect.value : "";
+            
+            let categoryText = "";
+            switch(category) {
+                case 'A': categoryText = "Tanya Program Belajar (Privat / Kelas / Bahasa)"; break;
+                case 'B': categoryText = "Konsultasi Layanan Khusus (Shadow Teacher / ABK)"; break;
+                case 'C': categoryText = "Kemitraan Sekolah & Institusi"; break;
+                case 'D': categoryText = "Pendaftaran / Lowongan Tutor SFE"; break;
+                default: categoryText = "Pertanyaan Umum Lainnya";
+            }
+            
+            const phone = "6285123786007";
+            const text = `Halo Admin SFE - Smart Future Education,%0A%0ASaya ingin berkonsultasi:%0A*Kategori:* ${categoryText}%0A%0AMohon bantuannya, terima kasih!`;
+            
+            window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
+        }
+    </script>
 </body>
 </html>
